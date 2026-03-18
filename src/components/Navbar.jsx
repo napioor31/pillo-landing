@@ -21,7 +21,7 @@ const Navbar = ({ activeRole, onRoleChange, isDark = false }) => {
         ? `shadow-sm ${isDark ? 'glass-effect-caregiver' : 'glass-effect'}`
         : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className={`flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:rounded-lg ${
           isDark ? 'focus-visible:ring-[#3F8F6B]' : 'focus-visible:ring-primary'

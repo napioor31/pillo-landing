@@ -121,7 +121,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-surface/80 backdrop-blur-sm border border-divider/60 rounded-2xl shadow-sm p-8"
+            className="bg-surface/80 backdrop-blur-sm border border-divider/60 rounded-2xl shadow-sm p-5 sm:p-8"
           >
             <AnimatePresence mode="wait">
               {status === 'success' ? (

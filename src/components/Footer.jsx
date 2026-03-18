@@ -94,7 +94,7 @@ const Footer = ({ activeRole = 'patient', footer = {} }) => {
             </nav>
 
             {/* Copyright */}
-            <p className="text-surface/60 text-sm flex-1 text-right">
+            <p className="text-surface/60 text-sm flex-1 text-center md:text-right">
               © 2026 Pillo. Wszystkie prawa zastrzeżone.
             </p>
           </div>

@@ -30,7 +30,7 @@ export default function Download() {
   }, []);
 
   return (
-    <div className="h-screen overflow-hidden flex flex-col bg-surface relative">
+    <div className="min-h-screen flex flex-col bg-surface relative overflow-x-hidden">
 
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
@@ -70,10 +70,10 @@ export default function Download() {
       </nav>
 
       {/* Main — fills remaining height, no scroll */}
-      <main className="relative z-10 flex-1 overflow-hidden">
+      <main className="relative z-10 flex-1 pb-8">
 
         {/* Text + badges — top center */}
-        <div className="text-center px-6 pt-10 sm:pt-14 relative z-20">
+        <div className="text-center px-4 sm:px-6 pt-8 sm:pt-14 relative z-20">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ export default function Download() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl sm:text-6xl md:text-7xl font-bold text-primary leading-[1.1] mb-4 font-[family-name:var(--font-family-heading)]"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-[1.1] mb-4 font-[family-name:var(--font-family-heading)]"
           >
             Zadbaj o siebie<br />
             <span className="text-primary/55">każdego dnia</span>
@@ -155,16 +155,20 @@ export default function Download() {
           </motion.p>
         </div>
 
-        {/* Phone image — absolute overlay, bottom-anchored */}
-        <motion.img
-          src="/images/download -pl.png"
-          alt="Aplikacja Pillo na telefonie"
-          draggable="false"
+        {/* Phone image */}
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-auto h-[55vh] sm:h-[62vh] max-h-[520px] object-contain object-bottom pointer-events-none select-none z-10 [@media(max-height:860px)]:hidden"
-        />
+          className="flex justify-center mt-8 px-6"
+        >
+          <img
+            src="/images/download -pl.png"
+            alt="Aplikacja Pillo na telefonie"
+            draggable="false"
+            className="w-auto h-[40vh] sm:h-[50vh] md:h-[55vh] max-h-[480px] object-contain pointer-events-none select-none"
+          />
+        </motion.div>
 
       </main>
 

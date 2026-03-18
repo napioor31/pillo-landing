@@ -5,7 +5,7 @@ const TestimonialsSection = ({ activeRole = 'patient', testimonials = [] }) => {
   const isCaregiver = activeRole === 'caregiver';
 
   return (
-    <section className={`w-full py-24 relative overflow-hidden transition-colors duration-700 ${
+    <section className={`w-full py-14 sm:py-24 relative overflow-hidden transition-colors duration-700 ${
       isCaregiver ? 'bg-surface' : 'bg-[#243D34]'
     }`}>
       {/* Background decoration */}
@@ -25,7 +25,7 @@ const TestimonialsSection = ({ activeRole = 'patient', testimonials = [] }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10 sm:mb-16"
         >
           <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 transition-colors duration-500 ${
             isCaregiver ? 'bg-[#3F8F6B]/10 text-[#3F8F6B]' : 'bg-white/10 text-white/80'

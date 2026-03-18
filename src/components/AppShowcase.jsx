@@ -34,7 +34,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
   };
 
   return (
-    <section className={`w-full py-24 relative overflow-hidden transition-colors duration-700 ${
+    <section className={`w-full py-14 sm:py-24 relative overflow-hidden transition-colors duration-700 ${
       isCaregiver ? 'bg-[#1B2E27]' : 'bg-surface'
     }`}>
       {/* Background decoration */}
@@ -51,7 +51,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10 sm:mb-16"
         >
           <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 transition-colors duration-500 ${
             isCaregiver ? 'bg-[#3F8F6B]/20 text-[#5DB38D]' : 'bg-primary/10 text-primary'
@@ -75,7 +75,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
           {/* Navigation Buttons */}
           <motion.button
             onClick={() => scroll('left')}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+            className={`hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 rounded-full shadow-lg items-center justify-center transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
               isCaregiver 
                 ? 'bg-[#243D34] text-white hover:bg-[#2A4539] focus-visible:ring-[#3F8F6B]' 
                 : 'bg-surface text-primary hover:bg-surface-alt focus-visible:ring-primary'
@@ -89,7 +89,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
           
           <motion.button
             onClick={() => scroll('right')}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+            className={`hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 rounded-full shadow-lg items-center justify-center transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
               isCaregiver 
                 ? 'bg-[#243D34] text-white hover:bg-[#2A4539] focus-visible:ring-[#3F8F6B]' 
                 : 'bg-surface text-primary hover:bg-surface-alt focus-visible:ring-primary'
@@ -115,7 +115,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex-shrink-0 w-72 snap-center"
+                className="flex-shrink-0 w-[calc(85vw-1.5rem)] sm:w-72 snap-center"
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 <div className={`rounded-3xl p-8 h-full border transition-all duration-500 ${

@@ -9,7 +9,7 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
   
   return (
     <section 
-      className={`h-screen w-full relative overflow-hidden flex flex-col transition-colors duration-700 ${
+      className={`min-h-screen w-full relative overflow-hidden flex flex-col transition-colors duration-700 ${
         isCaregiver 
           ? 'bg-[#1B2E27]' 
           : 'bg-surface'
@@ -51,8 +51,8 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
 
       {/* Hero Content */}
       <div className="flex-1 flex items-center">
-        <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-0">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-0">
             
             {/* Left Column - Copy */}
             <AnimatePresence mode="wait">
@@ -65,28 +65,28 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
               >
                 
                 {/* Headline */}
-                <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-[family-name:var(--font-family-heading)] mb-6 transition-colors duration-500 ${
+                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-[family-name:var(--font-family-heading)] mb-4 sm:mb-6 transition-colors duration-500 ${
                   isCaregiver ? 'text-white' : 'text-text-primary'
                 }`}>
                   {content.headline}
                 </h1>
                 
                 {/* Subtitle */}
-                <p className={`text-lg max-w-lg leading-relaxed mb-8 transition-colors duration-500 ${
+                <p className={`text-base sm:text-lg max-w-lg leading-relaxed mb-6 sm:mb-8 transition-colors duration-500 ${
                   isCaregiver ? 'text-white/70' : 'text-text-secondary'
                 }`}>
                   {content.subheadline}
                 </p>
                 
                 {/* CTA Buttons - role colored */}
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
                   <motion.div
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <Link
                       to="/download"
-                      className={`group px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+                      className={`group px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-500 flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
                         isCaregiver
                           ? 'bg-white text-[#1B2E27] hover:bg-white/90 shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]'
                           : 'bg-primary text-surface hover:bg-primary-dark shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 focus-visible:ring-primary'
@@ -124,7 +124,7 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
                       };
                       requestAnimationFrame(step);
                     }}
-                    className={`px-8 py-4 rounded-full font-semibold text-lg border-2 transition-all duration-500 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+                    className={`px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-base sm:text-lg border-2 transition-all duration-500 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
                       isCaregiver
                         ? 'bg-transparent text-white border-white/30 hover:border-white/60 hover:bg-white/10 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]'
                         : 'bg-surface text-text-primary border-divider hover:border-primary-light hover:bg-surface focus-visible:ring-primary'
@@ -186,7 +186,7 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-              className="relative flex items-center justify-center lg:justify-end h-full"
+              className="hidden lg:flex relative items-center justify-center lg:justify-end h-full"
             >
               {/* Glow effect behind image - role specific */}
               <motion.div 

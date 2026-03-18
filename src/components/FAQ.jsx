@@ -12,7 +12,7 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
   };
 
   return (
-    <section className={`w-full py-24 relative overflow-hidden transition-colors duration-700 ${
+    <section className={`w-full py-14 sm:py-24 relative overflow-hidden transition-colors duration-700 ${
       isCaregiver ? 'bg-[#243D34]' : 'bg-surface'
     }`}>
       {/* Background decoration */}
@@ -29,7 +29,7 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 transition-colors duration-500 ${
             isCaregiver ? 'bg-[#3F8F6B]/20 text-[#5DB38D]' : 'bg-primary/10 text-primary'
