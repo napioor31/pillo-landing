@@ -78,6 +78,9 @@ const FeaturesSection = ({ activeRole, features }) => {
                     <img
                       src={feature.image}
                       alt={feature.title}
+                      loading="lazy"
+                      width={400}
+                      height={400}
                       className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
                     />
                     {/* Gradient fade at bottom */}

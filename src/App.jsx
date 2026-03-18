@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { roleContent } from './data/content';
@@ -8,11 +8,12 @@ import FeaturesSection from './components/FeaturesSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
-import Regulamin from './pages/Regulamin';
-import PolitykaPrywatnosci from './pages/PolitykaPrywatnosci';
-import Download from './pages/Download';
-import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
+
+const Regulamin = lazy(() => import('./pages/Regulamin'));
+const PolitykaPrywatnosci = lazy(() => import('./pages/PolitykaPrywatnosci'));
+const Download = lazy(() => import('./pages/Download'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 function LandingPage({ loaderDone }) {
   const [activeRole, setActiveRole] = useState('patient');
@@ -45,7 +46,7 @@ function App() {
   const [loaderDone, setLoaderDone] = useState(false);
 
   useEffect(() => {
-    const MIN_MS = 1200;
+    const MIN_MS = 0;
     const start = window.__loaderStart ?? Date.now();
     const elapsed = Date.now() - start;
     const delay = Math.max(0, MIN_MS - elapsed);
@@ -70,13 +71,15 @@ function App() {
     <BrowserRouter>
       <SpeedInsights />
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<LandingPage loaderDone={loaderDone} />} />
-        <Route path="/regulamin" element={<Regulamin />} />
-        <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosci />} />
-        <Route path="/download" element={<Download />} />
-        <Route path="/kontakt" element={<Contact />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<LandingPage loaderDone={loaderDone} />} />
+          <Route path="/regulamin" element={<Regulamin />} />
+          <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosci />} />
+          <Route path="/download" element={<Download />} />
+          <Route path="/kontakt" element={<Contact />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

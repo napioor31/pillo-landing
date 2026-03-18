@@ -29,6 +29,8 @@ const Navbar = ({ activeRole, onRoleChange, isDark = false }) => {
           <img
             src={logo.src}
             alt={logo.alt}
+            width={40}
+            height={40}
             className="h-10 w-auto rounded-xl"
           />
           <span className={`text-xl font-bold transition-colors duration-500 ${

@@ -48,6 +48,9 @@ const Footer = ({ activeRole = 'patient', footer = {} }) => {
               <img
                 src="/images/badges/app-store.svg"
                 alt="Pobierz w App Store"
+                loading="lazy"
+                width={144}
+                height={48}
                 className="w-full h-auto"
               />
             </a>
@@ -67,6 +70,9 @@ const Footer = ({ activeRole = 'patient', footer = {} }) => {
               <img
                 src="/images/badges/google-play.png"
                 alt="Pobierz w Google Play"
+                loading="lazy"
+                width={176}
+                height={52}
                 className="w-full h-auto"
               />
             </a>
@@ -81,6 +87,9 @@ const Footer = ({ activeRole = 'patient', footer = {} }) => {
               <img
                 src={logo.src}
                 alt={logo.alt}
+                loading="lazy"
+                width={40}
+                height={40}
                 className="h-10 w-auto rounded-xl"
               />
               <span className="text-xl font-bold text-surface">Pillo</span>

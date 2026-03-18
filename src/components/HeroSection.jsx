@@ -32,30 +32,21 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
     >
       {/* Background gradient orbs - role specific, desktop only so mobile has flat solid bg */}
       <div className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          className={`absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full blur-[120px] translate-x-1/3 transition-colors duration-700 ${
-            isCaregiver 
-              ? 'bg-[#3F8F6B]/20' 
+        <div
+          className={`animate-orb-slow absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full blur-[120px] translate-x-1/3 transition-colors duration-700 ${
+            isCaregiver
+              ? 'bg-[#3F8F6B]/20'
               : 'bg-accent-gold/10'
-          }`} 
+          }`}
           aria-hidden="true"
-          animate={{ 
-            scale: isCaregiver ? [1, 1.1, 1] : [1, 1.05, 1],
-            opacity: isCaregiver ? 0.6 : 0.5
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
-        <motion.div 
-          className={`absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3 transition-colors duration-700 ${
-            isCaregiver 
-              ? 'bg-[#2F4A3F]/30' 
+        <div
+          className={`animate-orb-slower absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3 transition-colors duration-700 ${
+            isCaregiver
+              ? 'bg-[#2F4A3F]/30'
               : 'bg-primary/8'
-          }`} 
+          }`}
           aria-hidden="true"
-          animate={{ 
-            scale: isCaregiver ? [1, 1.15, 1] : [1, 1.08, 1]
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
       </div>
       
@@ -80,6 +71,8 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
           <img
             src={heroPhone[activeRole].src}
             alt=""
+            width={390}
+            height={844}
             className="absolute top-0 left-0 w-full h-auto"
             onLoad={measureHalf}
           />
@@ -237,18 +230,13 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
               className="hidden lg:flex relative items-center justify-center lg:justify-end h-full"
             >
               {/* Glow effect behind image - role specific */}
-              <motion.div 
-                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-[100px] transition-colors duration-700 ${
-                  isCaregiver 
-                    ? 'bg-[#3F8F6B]/20' 
+              <div
+                className={`animate-orb-slow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-[100px] transition-colors duration-700 ${
+                  isCaregiver
+                    ? 'bg-[#3F8F6B]/20'
                     : 'bg-accent-gold/20'
-                }`} 
+                }`}
                 aria-hidden="true"
-                animate={{ 
-                  scale: [1, 1.1, 1],
-                  opacity: [0.6, 0.8, 0.6]
-                }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               />
               
               {/* Hero Image with float animation */}
@@ -264,6 +252,9 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
                   <img
                     src={heroPhone[activeRole].src}
                     alt={heroPhone[activeRole].alt}
+                    width={390}
+                    height={844}
+                    fetchpriority="high"
                     className="relative z-10 max-h-[70vh] w-auto object-contain drop-shadow-2xl"
                   />
                 </motion.div>

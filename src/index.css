@@ -1,5 +1,15 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+@keyframes orb-pulse-slow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+@keyframes orb-pulse-slower {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+.animate-orb-slow { animation: orb-pulse-slow 8s ease-in-out infinite; }
+.animate-orb-slower { animation: orb-pulse-slower 10s ease-in-out infinite; }
 
 @theme {
   /* Brand Colors - zachowane z brandingiem aplikacji */

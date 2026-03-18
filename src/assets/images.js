@@ -11,11 +11,11 @@
 // Telefon w sekcji hero (prawa strona) - zależne od roli
 export const heroPhone = {
   patient: {
-    src: '/images/hero/hero_patient - pl.png',
+    src: '/images/hero/hero_patient.webp',
     alt: 'Aplikacja Pillo na telefonie - widok pacjenta'
   },
   caregiver: {
-    src: '/images/hero/hero_caregiver - pl.png',
+    src: '/images/hero/hero_caregiver.webp',
     alt: 'Aplikacja Pillo na telefonie - widok opiekuna'
   }
 };
@@ -101,7 +101,7 @@ export const storeBadges = {
 
 // ==================== LOGO ====================
 export const logo = {
-  src: '/images/logo/Pillo_logo_A.png',
+  src: '/images/logo/pillo-logo.webp',
   alt: 'Pillo logo'
 };
 

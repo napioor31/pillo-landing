@@ -35,19 +35,19 @@ export const roleContent = {
         icon: "Type",
         title: "Przejrzyste i czytelne",
         description: "Duże litery, wyraźne przyciski — wszystko widoczne od razu. Zaprojektowane tak, żeby nie trzeba było się domyślać.",
-        image: "/images/przejrzyste i czytelne -pl.png"
+        image: "/images/przejrzyste i czytelne -pl.webp"
       },
       {
         icon: "Bell",
         title: "Przypomni, jeśli zapomnisz odpowiedzieć",
         description: "Jeśli nie zareagujesz od razu, Pillo przypomni jeszcze raz. Bez poganiania — po prostu jest.",
-        image: "/images/przypomni -pl.png"
+        image: "/images/przypomni -pl.webp"
       },
       {
         icon: "CheckCircle",
         title: "Tylko to, co potrzebne",
         description: "Żadnych zbędnych funkcji. Tylko Twoje leki i Twój plan dnia — w jednym miejscu.",
-        image: "/images/to co potrzebne -pl.png"
+        image: "/images/to co potrzebne -pl.webp"
       }
     ],
 
@@ -136,19 +136,19 @@ export const roleContent = {
         icon: "BellRing",
         title: "Powiadomienie tylko gdy coś się dzieje",
         description: "Nie zasypujemy Cię aktualizacjami. Odezwiemy się, gdy lek nie został wzięty i mija czas reakcji. Wtedy — i tylko wtedy.",
-        image: "/images/powiadomienie -pl.png"
+        image: "/images/powiadomienie -pl.webp"
       },
       {
         icon: "History",
         title: "Cały tydzień jednym spojrzeniem",
         description: "Widzisz, jak wyglądał każdy dzień — wzięte na czas, spóźnione, pominięte. Bez dzwonienia, bez pytania. Po prostu wiesz.",
-        image: "/images/tydzien -pl.png"
+        image: "/images/tydzien -pl.webp"
       },
       {
         icon: "BarChart3",
         title: "Pełna historia przy wizycie u lekarza",
         description: "Gdy idziesz z bliską osobą do lekarza, masz przy sobie dokładny obraz ostatnich tygodni. Żadnego zgadywania, żadnego 'chyba brałam'.",
-        image: "/images/tydzien -pl.png"
+        image: "/images/tydzien -pl.webp"
       }
     ],
 
