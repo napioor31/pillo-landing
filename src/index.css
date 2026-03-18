@@ -1,0 +1,427 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import '@flaticon/flaticon-uicons/css/regular/rounded.css';
+@import '@flaticon/flaticon-uicons/css/brands/all.css';
+
+@theme {
+  /* Brand Colors - zachowane z brandingiem aplikacji */
+  --color-primary: #2F4A3F;
+  --color-primary-light: #7E9C8F;
+  --color-primary-dark: #1B2E27;
+  
+  /* Caregiver Specific Colors - vibrant green */
+  --color-caregiver: #3F8F6B;
+  --color-caregiver-light: #5DB38D;
+  --color-caregiver-dark: #2D6B4F;
+  --color-caregiver-glow: rgba(63, 143, 107, 0.3);
+  
+  /* Patient Specific Colors - warm gold accent */
+  --color-patient-accent: #E8C27A;
+  --color-patient-glow: rgba(232, 194, 122, 0.4);
+  
+  /* Surface Colors */
+  --color-surface: #FAF7F3;
+  --color-surface-alt: #F1EDE7;
+  --color-divider: #D9D4CC;
+  
+  /* Caregiver Surface - subtle green tint */
+  --color-surface-caregiver: #F5F9F7;
+  --color-surface-caregiver-alt: #E8F0EC;
+  
+  /* Text Colors */
+  --color-text-primary: #2B2B2B;
+  --color-text-secondary: #5F5F5F;
+  
+  /* Accent Colors */
+  --color-accent-gold: #E8C27A;
+  --color-success: #3F8F6B;
+  --color-warning: #DFA245;
+  --color-error: #B95252;
+  
+  /* Glow Colors */
+  --color-glow-gold: rgba(232, 194, 122, 0.4);
+  --color-glow-primary: rgba(47, 74, 63, 0.25);
+  --color-glow-pink: rgba(232, 194, 122, 0.15);
+  
+  /* Font Families */
+  --font-family-heading: 'Lora', Georgia, serif;
+  --font-family-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-body);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-primary-light);
+  color: white;
+}
+
+/* ============================================
+   ROLE-BASED SMOOTH TRANSITIONS
+   ============================================ */
+
+/* Smooth transition for all role-based color changes */
+.role-transition {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Role indicator backgrounds */
+.bg-role-patient {
+  background-color: var(--color-primary);
+}
+
+.bg-role-caregiver {
+  background-color: var(--color-caregiver);
+}
+
+/* Role text colors */
+.text-role-patient {
+  color: var(--color-primary);
+}
+
+.text-role-caregiver {
+  color: var(--color-caregiver);
+}
+
+/* Role border colors */
+.border-role-patient {
+  border-color: var(--color-primary);
+}
+
+.border-role-caregiver {
+  border-color: var(--color-caregiver);
+}
+
+/* Role glow effects */
+.shadow-role-patient {
+  box-shadow: 0 0 80px -20px rgba(47, 74, 63, 0.35),
+              0 0 120px -40px rgba(47, 74, 63, 0.2);
+}
+
+.shadow-role-caregiver {
+  box-shadow: 0 0 80px -20px rgba(63, 143, 107, 0.4),
+              0 0 120px -40px rgba(63, 143, 107, 0.25);
+}
+
+/* Role surface backgrounds */
+.bg-surface-role-patient {
+  background-color: var(--color-surface);
+}
+
+.bg-surface-role-caregiver {
+  background-color: var(--color-surface-caregiver);
+}
+
+.bg-surface-alt-role-patient {
+  background-color: var(--color-surface-alt);
+}
+
+.bg-surface-alt-role-caregiver {
+  background-color: var(--color-surface-caregiver-alt);
+}
+
+/* ============================================
+   GLOW EFFECTS (z prettyprogress.app)
+   ============================================ */
+
+/* Złote świecenie wokół elementów */
+.glow-gold {
+  box-shadow: 
+    0 0 80px -20px rgba(232, 194, 122, 0.5),
+    0 0 120px -40px rgba(232, 194, 122, 0.3);
+}
+
+.glow-gold-sm {
+  box-shadow: 
+    0 0 60px -15px rgba(232, 194, 122, 0.4),
+    0 0 100px -30px rgba(232, 194, 122, 0.2);
+}
+
+/* Zielone świecenie (primary) */
+.glow-primary {
+  box-shadow: 
+    0 0 80px -20px rgba(47, 74, 63, 0.35),
+    0 0 120px -40px rgba(47, 74, 63, 0.2);
+}
+
+.glow-primary-sm {
+  box-shadow: 
+    0 0 60px -15px rgba(47, 74, 63, 0.3),
+    0 0 100px -30px rgba(47, 74, 63, 0.15);
+}
+
+/* Caregiver glow - vibrant green */
+.glow-caregiver {
+  box-shadow: 
+    0 0 80px -20px rgba(63, 143, 107, 0.45),
+    0 0 120px -40px rgba(63, 143, 107, 0.3);
+}
+
+.glow-caregiver-sm {
+  box-shadow: 
+    0 0 60px -15px rgba(63, 143, 107, 0.35),
+    0 0 100px -30px rgba(63, 143, 107, 0.2);
+}
+
+/* Świecenie dla sekcji */
+.section-glow {
+  position: relative;
+}
+
+.section-glow::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(232, 194, 122, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+.section-glow-caregiver::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(63, 143, 107, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+/* ============================================
+   FLOATING ANIMATION
+   ============================================ */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-12px) rotate(-0.5deg);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+/* ============================================
+   PILL SHAPES (zwiększone border-radius)
+   ============================================ */
+
+.pill-shape {
+  border-radius: 32px;
+}
+
+.pill-shape-lg {
+  border-radius: 48px;
+}
+
+/* ============================================
+   HORIZONTAL SCROLL HIDE
+   ============================================ */
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================
+   SMOOTH HOVER TRANSITIONS
+   ============================================ */
+
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* ============================================
+   GRADIENT TEXT
+   ============================================ */
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-caregiver {
+  background: linear-gradient(135deg, var(--color-caregiver) 0%, var(--color-caregiver-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   BLUR BACKDROP
+   ============================================ */
+
+.glass-effect {
+  background: rgba(250, 247, 243, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-effect-caregiver {
+  background: rgba(245, 249, 247, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ============================================
+   FLATICON STYLES
+   ============================================ */
+
+/* Base styles for Flaticon icons */
+.fi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Icon sizing utilities */
+.fi.fi-rr-sparkles,
+.fi.fi-rr-heart,
+.fi.fi-rr-shield-check {
+  font-size: 1.25rem;
+}
+
+/* Star icons in testimonials and ratings */
+.fi.fi-rr-star {
+  font-size: 1rem;
+}
+
+/* Small icons */
+.fi.fi-rr-download,
+.fi.fi-rr-comment {
+  font-size: 1rem;
+}
+
+/* Medium icons in cards */
+.fi.fi-rr-bell,
+.fi.fi-rr-medicine,
+.fi.fi-rr-clock,
+.fi.fi-rr-calendar,
+.fi.fi-rr-users,
+.fi.fi-rr-chart-simple,
+.fi.fi-rr-check-circle,
+.fi.fi-rr-activity,
+.fi.fi-rr-exclamation,
+.fi.fi-rr-text,
+.fi.fi-rr-volume,
+.fi.fi-rr-chart-histogram,
+.fi.fi-rr-time-past,
+.fi.fi-rr-bell-ring,
+.fi.fi-rr-qr-code {
+  font-size: 1.5rem;
+}
+
+/* Large icons in feature boxes */
+.fi.fi-rr-angle-left,
+.fi.fi-rr-angle-right,
+.fi.fi-rr-angle-down {
+  font-size: 1.25rem;
+}
+
+/* Quote icon */
+.fi.fi-rr-quote-right {
+  font-size: 0.875rem;
+}
+
+/* Brand icons */
+.fi.fi-brands-apple,
+.fi.fi-brands-google {
+  font-size: 1.75rem;
+}
+
+/* Phone mockup icons */
+.fi.fi-rr-smartphone,
+.fi.fi-rr-arrow-right {
+  font-size: 1.25rem;
+}
+
+/* Hide scrollbar for carousels */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
