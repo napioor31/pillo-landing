@@ -70,10 +70,10 @@ export default function Download() {
       </nav>
 
       {/* Main — fills remaining height, no scroll */}
-      <main className="relative z-10 flex-1 flex flex-col overflow-hidden">
+      <main className="relative z-10 flex-1 flex flex-col overflow-hidden [@media(max-height:900px)]:justify-center">
 
         {/* Text + badges — top center */}
-        <div className="text-center px-4 sm:px-6 pt-4 sm:pt-6 relative z-20 shrink-0">
+        <div className="text-center px-4 sm:px-6 pt-4 sm:pt-6 [@media(max-height:900px)]:pt-0 relative z-20 shrink-0">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
