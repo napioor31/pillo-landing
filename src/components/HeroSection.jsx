@@ -5,7 +5,7 @@ import { Smartphone, ArrowRight, ShieldCheck, Star } from 'lucide-react';
 import Navbar from './Navbar';
 import { heroPhone } from '../assets/images';
 
-const HeroSection = ({ activeRole, onRoleChange, content }) => {
+const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) => {
   const isCaregiver = activeRole === 'caregiver';
   const containerRef = useRef(null);
   const [containerHeight, setContainerHeight] = useState(null);
@@ -71,9 +71,9 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
           ref={containerRef}
           className={`lg:hidden flex-shrink-0 overflow-hidden relative mx-auto rounded-2xl ${isCaregiver ? 'bg-[#1B2E27]' : 'bg-surface'}`}
           style={{ height: containerHeight ? `${containerHeight}px` : 'calc((100vh - 72px) * 0.38)', width: '72%' }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={loaderDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
           aria-hidden="true"
         >
@@ -106,7 +106,7 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
                 <motion.div
                   key={activeRole}
                   initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  animate={loaderDone ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
                   exit={{ opacity: 0, x: 30 }}
                   transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 >
@@ -194,8 +194,8 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
               {/* Trust badges — outside AnimatePresence so they fade in once and don't re-animate on role switch */}
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.9 }}
+                animate={loaderDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
+                transition={{ duration: 0.4, delay: loaderDone ? 0.3 : 0 }}
                 className="flex items-center gap-6 flex-wrap"
               >
                 <div className="flex items-center gap-2">
@@ -213,8 +213,8 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
                         key={i}
                         aria-hidden="true"
                         initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.5 + i * 0.1 }}
+                        animate={loaderDone ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                        transition={{ delay: loaderDone ? 0.4 + i * 0.08 : 0 }}
                       >
                         <Star size={16} fill="currentColor" className={`transition-colors duration-500 ${
                           isCaregiver ? 'text-[#E8C27A]' : 'text-accent-gold'
@@ -232,8 +232,8 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
             {/* Right Column - Hero Image */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              animate={loaderDone ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
               className="hidden lg:flex relative items-center justify-center lg:justify-end h-full"
             >
               {/* Glow effect behind image - role specific */}
@@ -279,8 +279,8 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
           isCaregiver ? 'bg-[#3F8F6B]' : 'bg-primary'
         }`}
         initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
+        animate={loaderDone ? { scaleX: 1 } : { scaleX: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
       />
     </section>
   );

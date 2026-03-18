@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { roleContent } from './data/content';
 import HeroSection from './components/HeroSection';
 import HowItWorksSection from './components/HowItWorksSection';
@@ -13,7 +14,7 @@ import Download from './pages/Download';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
 
-function LandingPage() {
+function LandingPage({ loaderDone }) {
   const [activeRole, setActiveRole] = useState('patient');
   const currentContent = roleContent[activeRole];
 
@@ -23,6 +24,7 @@ function LandingPage() {
         activeRole={activeRole}
         onRoleChange={setActiveRole}
         content={currentContent}
+        loaderDone={loaderDone}
       />
       <HowItWorksSection
         activeRole={activeRole}
@@ -40,6 +42,8 @@ function LandingPage() {
 }
 
 function App() {
+  const [loaderDone, setLoaderDone] = useState(false);
+
   useEffect(() => {
     const MIN_MS = 1200;
     const start = window.__loaderStart ?? Date.now();
@@ -50,7 +54,12 @@ function App() {
       const loader = document.getElementById('page-loader');
       if (loader) {
         loader.classList.add('hidden');
-        loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+        loader.addEventListener('transitionend', () => {
+          loader.remove();
+          setLoaderDone(true);
+        }, { once: true });
+      } else {
+        setLoaderDone(true);
       }
     }, delay);
 
@@ -59,9 +68,10 @@ function App() {
 
   return (
     <BrowserRouter>
+      <SpeedInsights />
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage loaderDone={loaderDone} />} />
         <Route path="/regulamin" element={<Regulamin />} />
         <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosci />} />
         <Route path="/download" element={<Download />} />
