@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { roleContent } from './data/content';
 import HeroSection from './components/HeroSection';
@@ -40,6 +40,23 @@ function LandingPage() {
 }
 
 function App() {
+  useEffect(() => {
+    const MIN_MS = 1200;
+    const start = window.__loaderStart ?? Date.now();
+    const elapsed = Date.now() - start;
+    const delay = Math.max(0, MIN_MS - elapsed);
+
+    const timer = setTimeout(() => {
+      const loader = document.getElementById('page-loader');
+      if (loader) {
+        loader.classList.add('hidden');
+        loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+      }
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <BrowserRouter>
       <ScrollToTop />

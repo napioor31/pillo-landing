@@ -30,8 +30,8 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
           : 'bg-surface'
       }`}
     >
-      {/* Background gradient orbs - role specific */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Background gradient orbs - role specific, desktop only so mobile has flat solid bg */}
+      <div className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 
           className={`absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full blur-[120px] translate-x-1/3 transition-colors duration-700 ${
             isCaregiver 
@@ -69,7 +69,7 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
         <motion.div
           key={activeRole}
           ref={containerRef}
-          className="lg:hidden flex-shrink-0 overflow-hidden relative mx-auto rounded-2xl"
+          className={`lg:hidden flex-shrink-0 overflow-hidden relative mx-auto rounded-2xl ${isCaregiver ? 'bg-[#1B2E27]' : 'bg-surface'}`}
           style={{ height: containerHeight ? `${containerHeight}px` : 'calc((100vh - 72px) * 0.38)', width: '72%' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -85,11 +85,12 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
           />
           {/* Bottom fade into background */}
           <div
-            className={`absolute bottom-0 left-0 right-0 h-1/2 transition-colors duration-700 ${
-              isCaregiver
-                ? 'bg-gradient-to-t from-[#1B2E27] via-[#1B2E27]/60 to-transparent'
-                : 'bg-gradient-to-t from-surface via-surface/60 to-transparent'
-            }`}
+            className="absolute bottom-0 left-0 right-0 h-2/3 transition-colors duration-700"
+            style={{
+              background: isCaregiver
+                ? 'linear-gradient(to top, #1B2E27 0%, rgba(27,46,39,0.85) 40%, rgba(27,46,39,0.4) 70%, transparent 100%)'
+                : 'linear-gradient(to top, #FAF7F3 0%, rgba(250,247,243,0.85) 40%, rgba(250,247,243,0.4) 70%, transparent 100%)'
+            }}
           />
         </motion.div>
       </AnimatePresence>
