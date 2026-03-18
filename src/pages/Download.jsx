@@ -30,10 +30,10 @@ export default function Download() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-surface relative overflow-x-hidden">
+    <div className="h-screen overflow-hidden flex flex-col bg-surface relative">
 
       {/* Background */}
-      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
         {/* Base mesh gradient */}
         <div className="absolute inset-0" style={{
           background: 'radial-gradient(ellipse 80% 60% at 15% 10%, #E8C27A33 0%, transparent 65%), radial-gradient(ellipse 70% 70% at 85% 15%, #2F4A3F18 0%, transparent 60%), radial-gradient(ellipse 90% 60% at 50% 100%, #5DB38D28 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 70%, #E8C27A18 0%, transparent 55%)'
@@ -70,15 +70,15 @@ export default function Download() {
       </nav>
 
       {/* Main — fills remaining height, no scroll */}
-      <main className="relative z-10 flex-1 pb-8">
+      <main className="relative z-10 flex-1 flex flex-col overflow-hidden">
 
         {/* Text + badges — top center */}
-        <div className="text-center px-4 sm:px-6 pt-8 sm:pt-14 relative z-20">
+        <div className="text-center px-4 sm:px-6 pt-4 sm:pt-6 relative z-20 shrink-0">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-[#5DB38D] text-sm font-semibold uppercase tracking-widest mb-3"
+            className="text-[#5DB38D] text-sm font-semibold uppercase tracking-widest mb-2"
           >
             Dostępne bezpłatnie
           </motion.p>
@@ -87,7 +87,7 @@ export default function Download() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-[1.1] mb-4 font-[family-name:var(--font-family-heading)]"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-[1.1] mb-3 font-[family-name:var(--font-family-heading)]"
           >
             Zadbaj o siebie<br />
             <span className="text-primary/55">każdego dnia</span>
@@ -123,7 +123,7 @@ export default function Download() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-7"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-4"
           >
             <a
               href={GOOGLE_PLAY_URL}
@@ -160,13 +160,14 @@ export default function Download() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
-          className="flex justify-center mt-8 px-6"
+          className="flex-1 min-h-0 flex items-end justify-center mt-2 px-6 [@media(max-height:900px)]:hidden"
         >
           <img
             src="/images/download -pl.png"
             alt="Aplikacja Pillo na telefonie"
             draggable="false"
-            className="w-auto h-[40vh] sm:h-[50vh] md:h-[55vh] max-h-[480px] object-contain pointer-events-none select-none"
+            className="w-auto object-contain object-bottom pointer-events-none select-none"
+            style={{ height: 'calc(100vh - 220px)' }}
           />
         </motion.div>
 

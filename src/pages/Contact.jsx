@@ -64,10 +64,10 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-surface relative overflow-x-hidden">
+    <div className="min-h-dvh flex flex-col bg-surface relative overflow-x-hidden">
 
       {/* Background */}
-      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
         <div className="absolute inset-0" style={{
           background: 'radial-gradient(ellipse 80% 60% at 15% 10%, #E8C27A22 0%, transparent 65%), radial-gradient(ellipse 70% 70% at 85% 15%, #2F4A3F12 0%, transparent 60%), radial-gradient(ellipse 90% 60% at 50% 100%, #5DB38D18 0%, transparent 60%)',
         }} />

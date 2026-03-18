@@ -100,131 +100,133 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-0">
             
             {/* Left Column - Copy */}
-            <AnimatePresence mode="wait">
-              <motion.div 
-                key={activeRole}
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 30 }}
-                transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-              >
-                
-                {/* Headline */}
-                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-[family-name:var(--font-family-heading)] mb-4 sm:mb-6 transition-colors duration-500 ${
-                  isCaregiver ? 'text-white' : 'text-text-primary'
-                }`}>
-                  {content.headline}
-                </h1>
-                
-                {/* Subtitle */}
-                <p className={`text-base sm:text-lg max-w-lg leading-relaxed mb-6 sm:mb-8 transition-colors duration-500 ${
-                  isCaregiver ? 'text-white/70' : 'text-text-secondary'
-                }`}>
-                  {content.subheadline}
-                </p>
-                
-                {/* CTA Buttons - role colored */}
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                  <motion.div
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Link
-                      to="/download"
-                      className={`group px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-500 flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-                        isCaregiver
-                          ? 'bg-white text-[#1B2E27] hover:bg-white/90 shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]'
-                          : 'bg-primary text-surface hover:bg-primary-dark shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 focus-visible:ring-primary'
-                      }`}
-                      aria-label="Pobierz aplikację Pillo za darmo"
-                    >
-                      <Smartphone size={20} aria-hidden="true" />
-                      {content.ctaPrimary}
-                      <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                    </Link>
-                  </motion.div>
-                  <a
-                    href="#jak-to-dziala"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const target = document.getElementById('jak-to-dziala');
-                      if (!target) return;
-                      const html = document.documentElement;
-                      html.style.scrollBehavior = 'auto';
-                      const start = window.scrollY;
-                      const navbarHeight = 72;
-                      const end = target.getBoundingClientRect().top + start - navbarHeight;
-                      const duration = 1400;
-                      const startTime = performance.now();
-                      const ease = (t) => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
-                      const step = (now) => {
-                        const elapsed = now - startTime;
-                        const progress = Math.min(elapsed / duration, 1);
-                        window.scrollTo(0, start + (end - start) * ease(progress));
-                        if (progress < 1) {
-                          requestAnimationFrame(step);
-                        } else {
-                          html.style.scrollBehavior = '';
-                        }
-                      };
-                      requestAnimationFrame(step);
-                    }}
-                    className={`px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-base sm:text-lg border-2 transition-all duration-500 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-                      isCaregiver
-                        ? 'bg-transparent text-white border-white/30 hover:border-white/60 hover:bg-white/10 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]'
-                        : 'bg-surface text-text-primary border-divider hover:border-primary-light hover:bg-surface focus-visible:ring-primary'
-                    }`}
-                    aria-label="Zobacz jak działa aplikacja"
-                  >
-                    {content.ctaSecondary}
-                  </a>
-                </div>
-                
-                {/* Trust note */}
-                <p className={`text-sm mb-8 transition-colors duration-500 ${
-                  isCaregiver ? 'text-white/50' : 'text-text-secondary'
-                }`}>
-                  {content.trustNote}
-                </p>
-
-                {/* Trust badges — fade in together after stars finish */}
+            <div>
+              <AnimatePresence mode="wait">
                 <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.9 }}
-                  className="flex items-center gap-6 flex-wrap"
+                  key={activeRole}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 30 }}
+                  transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 >
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck size={18} className={`transition-colors duration-500 ${
-                      isCaregiver ? 'text-white' : 'text-success'
-                    }`} aria-hidden="true" />
-                    <span className={`text-sm transition-colors duration-500 ${
-                      isCaregiver ? 'text-white/60' : 'text-text-secondary'
-                    }`}>Bezpieczne dane</span>
+
+                  {/* Headline */}
+                  <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-[family-name:var(--font-family-heading)] mb-4 sm:mb-6 transition-colors duration-500 ${
+                    isCaregiver ? 'text-white' : 'text-text-primary'
+                  }`}>
+                    {content.headline}
+                  </h1>
+
+                  {/* Subtitle */}
+                  <p className={`text-base sm:text-lg max-w-lg leading-relaxed mb-6 sm:mb-8 transition-colors duration-500 ${
+                    isCaregiver ? 'text-white/70' : 'text-text-secondary'
+                  }`}>
+                    {content.subheadline}
+                  </p>
+
+                  {/* CTA Buttons - role colored */}
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
+                    <motion.div
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Link
+                        to="/download"
+                        className={`group px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-500 flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+                          isCaregiver
+                            ? 'bg-white text-[#1B2E27] hover:bg-white/90 shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]'
+                            : 'bg-primary text-surface hover:bg-primary-dark shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 focus-visible:ring-primary'
+                        }`}
+                        aria-label="Pobierz aplikację Pillo za darmo"
+                      >
+                        <Smartphone size={20} aria-hidden="true" />
+                        {content.ctaPrimary}
+                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                      </Link>
+                    </motion.div>
+                    <a
+                      href="#jak-to-dziala"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const target = document.getElementById('jak-to-dziala');
+                        if (!target) return;
+                        const html = document.documentElement;
+                        html.style.scrollBehavior = 'auto';
+                        const start = window.scrollY;
+                        const navbarHeight = 72;
+                        const end = target.getBoundingClientRect().top + start - navbarHeight;
+                        const duration = 1400;
+                        const startTime = performance.now();
+                        const ease = (t) => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+                        const step = (now) => {
+                          const elapsed = now - startTime;
+                          const progress = Math.min(elapsed / duration, 1);
+                          window.scrollTo(0, start + (end - start) * ease(progress));
+                          if (progress < 1) {
+                            requestAnimationFrame(step);
+                          } else {
+                            html.style.scrollBehavior = '';
+                          }
+                        };
+                        requestAnimationFrame(step);
+                      }}
+                      className={`px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-base sm:text-lg border-2 transition-all duration-500 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+                        isCaregiver
+                          ? 'bg-transparent text-white border-white/30 hover:border-white/60 hover:bg-white/10 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]'
+                          : 'bg-surface text-text-primary border-divider hover:border-primary-light hover:bg-surface focus-visible:ring-primary'
+                      }`}
+                      aria-label="Zobacz jak działa aplikacja"
+                    >
+                      {content.ctaSecondary}
+                    </a>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="flex" aria-label="Ocena 4.9 na 5 gwiazdek">
-                      {[...Array(5)].map((_, i) => (
-                        <motion.div
-                          key={i}
-                          aria-hidden="true"
-                          initial={{ opacity: 0, scale: 0 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.5 + i * 0.1 }}
-                        >
-                          <Star size={16} className={`transition-colors duration-500 ${
-                            isCaregiver ? 'text-[#E8C27A]' : 'text-accent-gold'
-                          }`} />
-                        </motion.div>
-                      ))}
-                    </div>
-                    <span className={`text-sm transition-colors duration-500 ${
-                      isCaregiver ? 'text-white/60' : 'text-text-secondary'
-                    }`}>4.9/5 ocena</span>
-                  </div>
+
+                  {/* Trust note */}
+                  <p className={`text-sm mb-8 transition-colors duration-500 ${
+                    isCaregiver ? 'text-white/50' : 'text-text-secondary'
+                  }`}>
+                    {content.trustNote}
+                  </p>
                 </motion.div>
+              </AnimatePresence>
+
+              {/* Trust badges — outside AnimatePresence so they fade in once and don't re-animate on role switch */}
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.9 }}
+                className="flex items-center gap-6 flex-wrap"
+              >
+                <div className="flex items-center gap-2">
+                  <ShieldCheck size={18} className={`transition-colors duration-500 ${
+                    isCaregiver ? 'text-white' : 'text-success'
+                  }`} aria-hidden="true" />
+                  <span className={`text-sm transition-colors duration-500 ${
+                    isCaregiver ? 'text-white/60' : 'text-text-secondary'
+                  }`}>Bezpieczne dane</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="flex" aria-label="Ocena 4.9 na 5 gwiazdek">
+                    {[...Array(5)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        aria-hidden="true"
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.5 + i * 0.1 }}
+                      >
+                        <Star size={16} fill="currentColor" className={`transition-colors duration-500 ${
+                          isCaregiver ? 'text-[#E8C27A]' : 'text-accent-gold'
+                        }`} />
+                      </motion.div>
+                    ))}
+                  </div>
+                  <span className={`text-sm transition-colors duration-500 ${
+                    isCaregiver ? 'text-white/60' : 'text-text-secondary'
+                  }`}>4.9/5 ocena</span>
+                </div>
               </motion.div>
-            </AnimatePresence>
+            </div>
             
             {/* Right Column - Hero Image */}
             <motion.div

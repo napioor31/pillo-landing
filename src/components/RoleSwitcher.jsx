@@ -32,7 +32,7 @@ const RoleSwitcher = ({ activeRole, onRoleChange, isDark = false }) => {
             onClick={() => onRoleChange(key)}
             aria-pressed={isActive}
             aria-label={labelFull}
-            className={`relative flex items-center justify-center gap-2 rounded-full font-semibold text-sm transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1
+            className={`relative flex items-center justify-center gap-2 rounded-full font-semibold text-sm transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 cursor-pointer
               p-2.5 sm:px-5 sm:py-2.5
               ${isActive
                 ? isDark

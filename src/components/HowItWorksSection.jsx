@@ -7,7 +7,6 @@ const HowItWorksSection = ({ activeRole, content }) => {
     <section id="jak-to-dziala" className={`w-full py-14 sm:py-24 relative overflow-hidden transition-colors duration-700 ${
       isCaregiver ? 'bg-surface' : 'bg-[#243D34]'
     }`}>
-      {/* Background decoration */}
       <div className="absolute inset-0">
         <div className={`absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 transition-colors duration-700 ${
           isCaregiver ? 'bg-[#3F8F6B]/10' : 'bg-primary/20'
@@ -18,7 +17,6 @@ const HowItWorksSection = ({ activeRole, content }) => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +36,6 @@ const HowItWorksSection = ({ activeRole, content }) => {
           </h2>
         </motion.div>
 
-        {/* Steps */}
         <div className="grid md:grid-cols-3 gap-8 items-stretch">
           {content.steps.map((step, index) => (
             <motion.div
@@ -49,7 +46,6 @@ const HowItWorksSection = ({ activeRole, content }) => {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
             >
-              {/* Connector line */}
               {index < 2 && (
                 <div className={`hidden md:block absolute top-12 left-1/2 w-full h-0.5 -translate-y-1/2 transition-colors duration-500 ${
                   isCaregiver ? 'bg-[#3F8F6B]/20' : 'bg-[#3F8F6B]/30'
@@ -65,7 +61,6 @@ const HowItWorksSection = ({ activeRole, content }) => {
                   ? 'bg-surface-alt border-[#3F8F6B]/20 hover:border-[#3F8F6B]/40 hover:shadow-lg hover:shadow-[#3F8F6B]/10'
                   : 'bg-surface-alt border-[#3F8F6B]/20 hover:border-[#3F8F6B]/40 hover:shadow-lg hover:shadow-[#3F8F6B]/10'
               }`}>
-                {/* Step number + Title */}
                 <div className="flex items-center gap-4 mb-4">
                   <div className={`shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center transition-colors duration-500 ${
                     isCaregiver ? 'bg-[#3F8F6B]' : 'bg-primary'
