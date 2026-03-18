@@ -1,17 +1,32 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { Smartphone, ArrowRight, ShieldCheck, Star } from 'lucide-react';
 import Navbar from './Navbar';
 import { heroPhone } from '../assets/images';
 
 const HeroSection = ({ activeRole, onRoleChange, content }) => {
   const isCaregiver = activeRole === 'caregiver';
+  const containerRef = useRef(null);
+  const [containerHeight, setContainerHeight] = useState(null);
+
+  const measureHalf = useCallback(() => {
+    const img = containerRef.current?.querySelector('img');
+    if (!img || !img.naturalWidth) return;
+    const ratio = img.naturalHeight / img.naturalWidth;
+    setContainerHeight(Math.round(img.clientWidth * ratio / 2));
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', measureHalf);
+    return () => window.removeEventListener('resize', measureHalf);
+  }, [measureHalf]);
   
   return (
-    <section 
-      className={`min-h-screen w-full relative overflow-hidden flex flex-col transition-colors duration-700 ${
-        isCaregiver 
-          ? 'bg-[#1B2E27]' 
+    <section
+      className={`h-screen lg:min-h-screen w-full relative overflow-hidden flex flex-col transition-colors duration-700 ${
+        isCaregiver
+          ? 'bg-[#1B2E27]'
           : 'bg-surface'
       }`}
     >
@@ -49,9 +64,39 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
       {/* Spacer for always-fixed navbar */}
       <div className="h-[72px] shrink-0" aria-hidden="true" />
 
+      {/* Mobile Hero Image — top 40% crop, above title */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeRole}
+          ref={containerRef}
+          className="lg:hidden flex-shrink-0 overflow-hidden relative mx-auto rounded-2xl"
+          style={{ height: containerHeight ? `${containerHeight}px` : 'calc((100vh - 72px) * 0.38)', width: '72%' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          aria-hidden="true"
+        >
+          <img
+            src={heroPhone[activeRole].src}
+            alt=""
+            className="absolute top-0 left-0 w-full h-auto"
+            onLoad={measureHalf}
+          />
+          {/* Bottom fade into background */}
+          <div
+            className={`absolute bottom-0 left-0 right-0 h-1/2 transition-colors duration-700 ${
+              isCaregiver
+                ? 'bg-gradient-to-t from-[#1B2E27] via-[#1B2E27]/60 to-transparent'
+                : 'bg-gradient-to-t from-surface via-surface/60 to-transparent'
+            }`}
+          />
+        </motion.div>
+      </AnimatePresence>
+
       {/* Hero Content */}
-      <div className="flex-1 flex items-center">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-0">
+      <div className="flex-1 flex items-center min-h-0 overflow-hidden">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-0">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-0">
             
             {/* Left Column - Copy */}
