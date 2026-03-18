@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, MessageCircle } from 'lucide-react';
 
@@ -115,8 +116,8 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
           <p className={`mb-4 transition-colors duration-500 ${
             isCaregiver ? 'text-white/70' : 'text-text-secondary'
           }`}>Nie znalazłeś odpowiedzi na swoje pytanie?</p>
-          <a
-            href="mailto:kontakt@pillo.pl"
+          <Link
+            to="/kontakt"
             className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 ${
               isCaregiver
                 ? 'bg-[#3F8F6B]/20 text-[#5DB38D] hover:bg-[#3F8F6B]/30 focus-visible:ring-[#3F8F6B]'
@@ -125,7 +126,7 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
           >
             <MessageCircle size={16} aria-hidden="true" />
             Skontaktuj się z nami
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

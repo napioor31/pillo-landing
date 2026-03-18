@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Regulamin from './pages/Regulamin';
 import PolitykaPrywatnosci from './pages/PolitykaPrywatnosci';
 import Download from './pages/Download';
+import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
 
 function LandingPage() {
@@ -47,6 +48,7 @@ function App() {
         <Route path="/regulamin" element={<Regulamin />} />
         <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosci />} />
         <Route path="/download" element={<Download />} />
+        <Route path="/kontakt" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );

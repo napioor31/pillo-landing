@@ -90,7 +90,7 @@ const Footer = ({ activeRole = 'patient', footer = {} }) => {
             <nav className="flex flex-wrap items-center justify-center gap-6">
               <Link to="/polityka-prywatnosci" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">Polityka prywatności</Link>
               <Link to="/regulamin" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">Regulamin</Link>
-              <a href="#" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">Kontakt</a>
+              <Link to="/kontakt" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">Kontakt</Link>
             </nav>
 
             {/* Copyright */}
