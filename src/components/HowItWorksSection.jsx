@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 
 const HowItWorksSection = ({ activeRole, content }) => {
   const isCaregiver = activeRole === 'caregiver';
@@ -18,7 +19,13 @@ const HowItWorksSection = ({ activeRole, content }) => {
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 transition-colors duration-500 ${
             isCaregiver ? 'bg-[#3F8F6B]/10 text-[#3F8F6B]' : 'bg-white/10 text-white/80'
           }`}>
@@ -29,35 +36,43 @@ const HowItWorksSection = ({ activeRole, content }) => {
           }`}>
             {content.subtitle}
           </h2>
-        </div>
+        </motion.div>
 
         {/* Steps */}
         <div className="grid md:grid-cols-3 gap-8 items-stretch">
           {content.steps.map((step, index) => (
-            <div
+            <motion.div
               key={index}
               className="relative flex"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
             >
               {/* Connector line */}
               {index < 2 && (
                 <div className={`hidden md:block absolute top-12 left-1/2 w-full h-0.5 -translate-y-1/2 transition-colors duration-500 ${
-                  isCaregiver ? 'bg-[#3F8F6B]/20' : 'bg-white/20'
+                  isCaregiver ? 'bg-[#3F8F6B]/20' : 'bg-[#3F8F6B]/30'
                 }`}>
                   <div className={`absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-colors duration-500 ${
-                    isCaregiver ? 'bg-[#3F8F6B]' : 'bg-accent-gold'
+                    isCaregiver ? 'bg-[#3F8F6B]' : 'bg-[#3F8F6B]'
                   }`} />
                 </div>
               )}
 
-              <div className="rounded-3xl p-8 border bg-surface-alt border-[#3F8F6B]/20 hover:border-[#3F8F6B]/40 hover:shadow-lg hover:shadow-[#3F8F6B]/10 transition-all duration-500 relative z-10 w-full">
+              <div className={`rounded-3xl p-8 border transition-all duration-500 relative z-10 w-full ${
+                isCaregiver
+                  ? 'bg-surface-alt border-[#3F8F6B]/20 hover:border-[#3F8F6B]/40 hover:shadow-lg hover:shadow-[#3F8F6B]/10'
+                  : 'bg-surface-alt border-[#3F8F6B]/20 hover:border-[#3F8F6B]/40 hover:shadow-lg hover:shadow-[#3F8F6B]/10'
+              }`}>
                 {/* Step number + Title */}
                 <div className="flex items-center gap-4 mb-4">
                   <div className={`shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center transition-colors duration-500 ${
-                    isCaregiver ? 'bg-[#3F8F6B]' : 'bg-accent-gold'
+                    isCaregiver ? 'bg-[#3F8F6B]' : 'bg-primary'
                   }`}>
-                    <span className="font-bold text-xl text-[#1B2E27]">{index + 1}</span>
+                    <span className="font-bold text-xl text-white">{index + 1}</span>
                   </div>
-                  <h3 className="text-xl font-bold font-[family-name:var(--font-family-heading)] text-text-primary leading-tight">
+                  <h3 className="text-xl font-bold font-[family-name:var(--font-family-heading)] leading-tight text-text-primary">
                     {step.title}
                   </h3>
                 </div>
@@ -65,7 +80,7 @@ const HowItWorksSection = ({ activeRole, content }) => {
                   {step.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ArrowLeft } from 'lucide-react';
 import { logo, storeBadges } from '../assets/images';
 
 const APP_STORE_URL = 'https://apps.apple.com';
@@ -62,7 +63,7 @@ export default function Download() {
             to="/"
             className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors text-sm font-medium"
           >
-            <i className="fi fi-rr-arrow-left text-base leading-none" aria-hidden="true" />
+            <ArrowLeft size={16} aria-hidden="true" />
             Wróć na stronę
           </Link>
         </div>
@@ -129,9 +130,8 @@ export default function Download() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Pobierz z Google Play"
-              className={`block transition-all duration-300 hover:scale-105 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
-                platform === 'android' ? 'ring-2 ring-accent-gold ring-offset-2' : ''
-              }`}
+              className={`block transition-all duration-300 hover:scale-105 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${platform === 'android' ? 'ring-2 ring-accent-gold ring-offset-2' : ''
+                }`}
             >
               <img src={storeBadges.googlePlay} alt="Pobierz w Google Play" className="w-44 h-auto" />
             </a>
@@ -140,9 +140,8 @@ export default function Download() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Pobierz z App Store"
-              className={`block transition-all duration-300 hover:scale-105 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
-                platform === 'ios' ? 'ring-2 ring-accent-gold ring-offset-2' : ''
-              }`}
+              className={`block transition-all duration-300 hover:scale-105 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${platform === 'ios' ? 'ring-2 ring-accent-gold ring-offset-2' : ''
+                }`}
             >
               <img src={storeBadges.appStore} alt="Pobierz w App Store" className="w-36 h-auto" />
             </a>
@@ -164,7 +163,7 @@ export default function Download() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-auto h-[72vh] sm:h-[78vh] object-contain object-bottom pointer-events-none select-none"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-auto h-[55vh] sm:h-[62vh] max-h-[520px] object-contain object-bottom pointer-events-none select-none z-10 [@media(max-height:860px)]:hidden"
         />
 
       </main>

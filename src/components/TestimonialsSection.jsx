@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Quote, Star } from 'lucide-react';
 
 const TestimonialsSection = ({ activeRole = 'patient', testimonials = [] }) => {
   const isCaregiver = activeRole === 'caregiver';
@@ -57,17 +58,17 @@ const TestimonialsSection = ({ activeRole = 'patient', testimonials = [] }) => {
               <div className={`absolute -top-4 left-8 w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-500 ${
                 isCaregiver ? 'bg-[#3F8F6B]' : 'bg-accent-gold'
               }`}>
-                <i className={`fi fi-rr-quote-right ${
+                <Quote size={14} className={`${
                   isCaregiver ? 'text-white' : 'text-[#1B2E27]'
-                }`} aria-hidden="true"></i>
+                }`} aria-hidden="true" />
               </div>
 
               {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <i key={i} className={`fi fi-rr-star transition-colors duration-500 ${
+                  <Star key={i} size={16} className={`transition-colors duration-500 ${
                     isCaregiver ? 'text-[#3F8F6B]' : 'text-accent-gold'
-                  }`} aria-hidden="true"></i>
+                  }`} aria-hidden="true" />
                 ))}
               </div>
 

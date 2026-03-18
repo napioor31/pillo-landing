@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { User, Users } from 'lucide-react';
 
 const RoleSwitcher = ({ activeRole, onRoleChange, isDark = false }) => {
   return (
@@ -51,14 +52,15 @@ const RoleSwitcher = ({ activeRole, onRoleChange, isDark = false }) => {
         aria-label="Pokaż funkcje dla pacjenta"
       >
         <span className="relative z-10 flex items-center gap-2">
-          <motion.i 
-            className="fi fi-rr-user text-lg"
-            animate={{ 
+          <motion.div
+            animate={{
               scale: activeRole === 'patient' ? 1.1 : 1,
               rotate: activeRole === 'patient' ? [0, -5, 5, 0] : 0
             }}
             transition={{ duration: 0.3 }}
-          />
+          >
+            <User size={18} />
+          </motion.div>
           Jestem pacjentem
         </span>
       </button>
@@ -76,14 +78,15 @@ const RoleSwitcher = ({ activeRole, onRoleChange, isDark = false }) => {
         aria-label="Pokaż funkcje dla opiekuna"
       >
         <span className="relative z-10 flex items-center gap-2">
-          <motion.i
-            className="fi fi-rr-users text-lg"
+          <motion.div
             animate={{
               scale: activeRole === 'caregiver' ? 1.1 : 1,
               rotate: activeRole === 'caregiver' ? [0, 5, -5, 0] : 0
             }}
             transition={{ duration: 0.3 }}
-          />
+          >
+            <Users size={18} />
+          </motion.div>
           Jestem opiekunem
         </span>
       </button>

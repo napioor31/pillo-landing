@@ -1,15 +1,16 @@
-// Mapowanie nazw ikon Lucide na klasy Flaticon (rounded style)
+import { Bell, CheckCircle, Type, Volume2, Users, ShieldCheck, BarChart3, History, BellRing, MessageCircle } from 'lucide-react';
+
 const iconMap = {
-  Bell: 'fi fi-rr-bell',
-  CheckCircle: 'fi fi-rr-check-circle',
-  Type: 'fi fi-rr-text',
-  Volume2: 'fi fi-rr-volume',
-  Users: 'fi fi-rr-users',
-  Shield: 'fi fi-rr-shield-check',
-  BarChart3: 'fi fi-rr-chart-histogram',
-  History: 'fi fi-rr-time-past',
-  BellRing: 'fi fi-rr-bell-ring',
-  MessageCircle: 'fi fi-rr-comment'
+  Bell,
+  CheckCircle,
+  Type,
+  Volume2,
+  Users,
+  Shield: ShieldCheck,
+  BarChart3,
+  History,
+  BellRing,
+  MessageCircle
 };
 
 const FeaturesSection = ({ activeRole, features }) => {
@@ -58,7 +59,7 @@ const FeaturesSection = ({ activeRole, features }) => {
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-6">
           {features.map((feature, index) => {
-            const iconClass = iconMap[feature.icon];
+            const IconComponent = iconMap[feature.icon];
             const hasImage = !!feature.image;
             return (
               <div
@@ -92,9 +93,11 @@ const FeaturesSection = ({ activeRole, features }) => {
                   <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 ${
                     isCaregiver ? 'bg-[#3F8F6B]/20' : 'bg-primary/10'
                   }`}>
-                    <i className={`${iconClass} text-xl transition-colors duration-500 ${
-                      isCaregiver ? 'text-[#5DB38D]' : 'text-primary'
-                    }`} aria-hidden="true"></i>
+                    {IconComponent && (
+                      <IconComponent size={20} className={`transition-colors duration-500 ${
+                        isCaregiver ? 'text-[#5DB38D]' : 'text-primary'
+                      }`} aria-hidden="true" />
+                    )}
                   </div>
 
                   <h3 className={`text-xl font-bold mb-3 transition-colors duration-500 font-[family-name:var(--font-family-heading)] ${

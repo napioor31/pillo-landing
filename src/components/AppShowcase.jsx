@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { Pill, Bell, Calendar, Users, BarChart2, ShieldCheck, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const features = [
-  { icon: 'fi fi-rr-medicine', title: 'Leki', description: 'Pełna lista leków z dawkowaniem' },
-  { icon: 'fi fi-rr-bell', title: 'Przypomnienia', description: 'Powiadomienia o każdej dawce' },
-  { icon: 'fi fi-rr-calendar', title: 'Harmonogram', description: 'Tygodniowy plan przyjmowania' },
-  { icon: 'fi fi-rr-users', title: 'Opiekunowie', description: 'Połączenie z bliskimi' },
-  { icon: 'fi fi-rr-chart-simple', title: 'Raporty', description: 'Statystyki zażywania leków' },
-  { icon: 'fi fi-rr-shield-check', title: 'Bezpieczeństwo', description: 'Szyfrowane dane medyczne' }
+  { Icon: Pill, title: 'Leki', description: 'Pełna lista leków z dawkowaniem' },
+  { Icon: Bell, title: 'Przypomnienia', description: 'Powiadomienia o każdej dawce' },
+  { Icon: Calendar, title: 'Harmonogram', description: 'Tygodniowy plan przyjmowania' },
+  { Icon: Users, title: 'Opiekunowie', description: 'Połączenie z bliskimi' },
+  { Icon: BarChart2, title: 'Raporty', description: 'Statystyki zażywania leków' },
+  { Icon: ShieldCheck, title: 'Bezpieczeństwo', description: 'Szyfrowane dane medyczne' }
 ];
 
 const AppShowcase = ({ activeRole = 'patient' }) => {
@@ -83,7 +84,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <i className="fi fi-rr-angle-left text-xl" aria-hidden="true"></i>
+            <ChevronLeft size={20} aria-hidden="true" />
           </motion.button>
           
           <motion.button
@@ -97,7 +98,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <i className="fi fi-rr-angle-right text-xl" aria-hidden="true"></i>
+            <ChevronRight size={20} aria-hidden="true" />
           </motion.button>
           
           {/* Cards Container */}
@@ -129,9 +130,9 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
                     }`}
                     whileHover={{ rotate: 5, scale: 1.1 }}
                   >
-                    <i className={`${feature.icon} text-3xl transition-colors duration-500 ${
+                    <feature.Icon size={28} className={`transition-colors duration-500 ${
                       isCaregiver ? 'text-[#5DB38D]' : 'text-primary'
-                    }`} aria-hidden="true"></i>
+                    }`} aria-hidden="true" />
                   </motion.div>
                   
                   {/* Content */}

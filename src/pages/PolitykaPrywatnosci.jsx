@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react';
 import LegalPageLayout from '../components/LegalPageLayout';
 
 const Section = ({ number, title, children }) => (
@@ -38,7 +39,7 @@ const ThirdPartyCard = ({ name, purpose, data, policyUrl }) => (
     {policyUrl && (
       <a href={policyUrl} target="_blank" rel="noopener noreferrer" className="text-primary text-sm hover:underline inline-flex items-center gap-1">
         Polityka prywatności
-        <i className="fi fi-rr-arrow-up-right text-xs" aria-hidden="true"></i>
+        <ArrowUpRight size={12} aria-hidden="true" />
       </a>
     )}
   </div>

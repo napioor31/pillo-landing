@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Smartphone, ArrowRight, ShieldCheck, Star } from 'lucide-react';
 import Navbar from './Navbar';
 import { heroPhone } from '../assets/images';
 
@@ -45,6 +46,8 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
       
       {/* Navigation */}
       <Navbar activeRole={activeRole} onRoleChange={onRoleChange} isDark={isCaregiver} />
+      {/* Spacer for always-fixed navbar */}
+      <div className="h-[72px] shrink-0" aria-hidden="true" />
 
       {/* Hero Content */}
       <div className="flex-1 flex items-center">
@@ -90,16 +93,40 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
                       }`}
                       aria-label="Pobierz aplikację Pillo za darmo"
                     >
-                      <i className="fi fi-rr-smartphone text-xl" aria-hidden="true"></i>
+                      <Smartphone size={20} aria-hidden="true" />
                       {content.ctaPrimary}
-                      <i className="fi fi-rr-arrow-right text-xl group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                      <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </motion.div>
-                  <a 
+                  <a
                     href="#jak-to-dziala"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const target = document.getElementById('jak-to-dziala');
+                      if (!target) return;
+                      const html = document.documentElement;
+                      html.style.scrollBehavior = 'auto';
+                      const start = window.scrollY;
+                      const navbarHeight = 72;
+                      const end = target.getBoundingClientRect().top + start - navbarHeight;
+                      const duration = 1400;
+                      const startTime = performance.now();
+                      const ease = (t) => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+                      const step = (now) => {
+                        const elapsed = now - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        window.scrollTo(0, start + (end - start) * ease(progress));
+                        if (progress < 1) {
+                          requestAnimationFrame(step);
+                        } else {
+                          html.style.scrollBehavior = '';
+                        }
+                      };
+                      requestAnimationFrame(step);
+                    }}
                     className={`px-8 py-4 rounded-full font-semibold text-lg border-2 transition-all duration-500 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-                      isCaregiver 
-                        ? 'bg-transparent text-white border-white/30 hover:border-white/60 hover:bg-white/10 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]' 
+                      isCaregiver
+                        ? 'bg-transparent text-white border-white/30 hover:border-white/60 hover:bg-white/10 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]'
                         : 'bg-surface text-text-primary border-divider hover:border-primary-light hover:bg-surface focus-visible:ring-primary'
                     }`}
                     aria-label="Zobacz jak działa aplikacja"
@@ -115,12 +142,17 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
                   {content.trustNote}
                 </p>
 
-                {/* Trust badges */}
-                <div className="flex items-center gap-6 flex-wrap">
+                {/* Trust badges — fade in together after stars finish */}
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.9 }}
+                  className="flex items-center gap-6 flex-wrap"
+                >
                   <div className="flex items-center gap-2">
-                    <i className={`fi fi-rr-shield-check text-lg transition-colors duration-500 ${
+                    <ShieldCheck size={18} className={`transition-colors duration-500 ${
                       isCaregiver ? 'text-white' : 'text-success'
-                    }`} aria-hidden="true"></i>
+                    }`} aria-hidden="true" />
                     <span className={`text-sm transition-colors duration-500 ${
                       isCaregiver ? 'text-white/60' : 'text-text-secondary'
                     }`}>Bezpieczne dane</span>
@@ -128,23 +160,24 @@ const HeroSection = ({ activeRole, onRoleChange, content }) => {
                   <div className="flex items-center gap-2">
                     <div className="flex" aria-label="Ocena 4.9 na 5 gwiazdek">
                       {[...Array(5)].map((_, i) => (
-                        <motion.i 
-                          key={i} 
-                          className={`fi fi-rr-star transition-colors duration-500 ${
-                            isCaregiver ? 'text-[#E8C27A]' : 'text-accent-gold'
-                          }`} 
+                        <motion.div
+                          key={i}
                           aria-hidden="true"
                           initial={{ opacity: 0, scale: 0 }}
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: 0.5 + i * 0.1 }}
-                        />
+                        >
+                          <Star size={16} className={`transition-colors duration-500 ${
+                            isCaregiver ? 'text-[#E8C27A]' : 'text-accent-gold'
+                          }`} />
+                        </motion.div>
                       ))}
                     </div>
                     <span className={`text-sm transition-colors duration-500 ${
                       isCaregiver ? 'text-white/60' : 'text-text-secondary'
                     }`}>4.9/5 ocena</span>
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             </AnimatePresence>
             

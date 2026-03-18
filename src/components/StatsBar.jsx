@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
+import { Users, Star, ShieldCheck, Download } from 'lucide-react';
 
 const stats = [
-  { icon: 'fi fi-rr-users', value: '50K+', label: 'Aktywnych użytkowników' },
-  { icon: 'fi fi-rr-star', value: '4.9', label: 'Średnia ocena' },
-  { icon: 'fi fi-rr-shield-check', value: '100%', label: 'Bezpieczeństwo danych' },
-  { icon: 'fi fi-rr-download', value: '100K+', label: 'Pobrań' }
+  { Icon: Users, value: '50K+', label: 'Aktywnych użytkowników' },
+  { Icon: Star, value: '4.9', label: 'Średnia ocena' },
+  { Icon: ShieldCheck, value: '100%', label: 'Bezpieczeństwo danych' },
+  { Icon: Download, value: '100K+', label: 'Pobrań' }
 ];
 
 const StatsBar = ({ activeRole = 'patient' }) => {
@@ -33,9 +34,9 @@ const StatsBar = ({ activeRole = 'patient' }) => {
               className="text-center"
             >
               <div className="flex items-center justify-center gap-3 mb-2">
-                <i className={`${stat.icon} text-2xl transition-colors duration-500 ${
+                <stat.Icon size={24} className={`transition-colors duration-500 ${
                   isCaregiver ? 'text-[#3F8F6B]/80' : 'text-white/80'
-                }`} aria-hidden="true"></i>
+                }`} aria-hidden="true" />
                 <span className={`text-3xl md:text-4xl font-bold font-[family-name:var(--font-family-heading)] transition-colors duration-500 ${
                   isCaregiver ? 'text-[#1B2E27]' : 'text-white'
                 }`}>

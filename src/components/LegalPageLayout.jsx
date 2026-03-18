@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 import { logo } from '../assets/images';
 
 const LegalPageLayout = ({ title, subtitle, date, children }) => {
@@ -15,7 +16,7 @@ const LegalPageLayout = ({ title, subtitle, date, children }) => {
             to="/"
             className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
           >
-            <i className="fi fi-rr-arrow-left text-base" aria-hidden="true"></i>
+            <ArrowLeft size={16} aria-hidden="true" />
             Wróć
           </Link>
         </div>

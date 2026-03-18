@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, MessageCircle } from 'lucide-react';
 
 const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
   const isCaregiver = activeRole === 'caregiver';
@@ -73,12 +74,13 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
                 <span className={`font-semibold pr-4 transition-colors duration-500 ${
                   isCaregiver ? 'text-white' : 'text-text-primary'
                 }`}>{faq.question}</span>
-                <i
-                  className={`fi fi-rr-angle-down transition-colors duration-500 flex-shrink-0 ${
+                <ChevronDown
+                  size={20}
+                  className={`transition-all duration-300 flex-shrink-0 ${
                     isCaregiver ? 'text-[#5DB38D]' : 'text-primary'
                   } ${openIndex === index ? 'rotate-180' : ''}`}
                   aria-hidden="true"
-                ></i>
+                />
               </button>
 
               <AnimatePresence>
@@ -121,7 +123,7 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
                 : 'bg-primary/10 text-primary hover:bg-primary/20 focus-visible:ring-primary'
             }`}
           >
-            <i className="fi fi-rr-comment" aria-hidden="true"></i>
+            <MessageCircle size={16} aria-hidden="true" />
             Skontaktuj się z nami
           </a>
         </motion.div>
