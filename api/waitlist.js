@@ -25,12 +25,13 @@ export default async function handler(req, res) {
 
   const { error } = await resend.contacts.create({
     email,
-    segments: [{ id: SEGMENT_ID }],
     unsubscribed: false,
+    segments: [{ id: SEGMENT_ID }],
   });
 
   if (error) {
-    return res.status(500).json({ error: error.message });
+    console.error('[waitlist] Resend error:', JSON.stringify(error, null, 2));
+    return res.status(500).json({ error: error.message, details: error });
   }
 
   return res.status(200).json({ success: true });
