@@ -1,27 +1,29 @@
 import { motion } from 'framer-motion';
 import { Users, Star, ShieldCheck, Download } from 'lucide-react';
-
-const stats = [
-  { Icon: Users, value: '50K+', label: 'Aktywnych użytkowników' },
-  { Icon: Star, value: '4.9', label: 'Średnia ocena' },
-  { Icon: ShieldCheck, value: '100%', label: 'Bezpieczeństwo danych' },
-  { Icon: Download, value: '100K+', label: 'Pobrań' }
-];
+import { useTranslation } from 'react-i18next';
 
 const StatsBar = ({ activeRole = 'patient' }) => {
   const isCaregiver = activeRole === 'caregiver';
-  
+  const { t } = useTranslation();
+
+  const stats = [
+    { Icon: Users, value: '50K+', label: t('stats.activeUsers') },
+    { Icon: Star, value: '4.9', label: t('stats.avgRating') },
+    { Icon: ShieldCheck, value: '100%', label: t('stats.dataSecurity') },
+    { Icon: Download, value: '100K+', label: t('stats.downloads') },
+  ];
+
   return (
     <section className={`w-full py-16 relative overflow-hidden transition-colors duration-700 ${
       isCaregiver ? 'bg-surface' : 'bg-[#243D34]'
     }`}>
       {/* Background decoration */}
       <div className={`absolute inset-0 transition-colors duration-700 ${
-        isCaregiver 
-          ? 'bg-gradient-to-b from-surface-alt to-transparent opacity-50' 
+        isCaregiver
+          ? 'bg-gradient-to-b from-surface-alt to-transparent opacity-50'
           : 'bg-gradient-to-b from-[#1B2E27] to-transparent opacity-50'
       }`} aria-hidden="true" />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (

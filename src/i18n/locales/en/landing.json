@@ -1,0 +1,174 @@
+{
+  "patient": {
+    "headline": "You no longer need to keep everything in your head",
+    "subheadline": "Pillo tracks your medications — reminding you of every dose at the right moment. You focus on everything else.",
+    "ctaPrimary": "Download for free",
+    "ctaSecondary": "How does it work?",
+    "trustNote": "Free · No account needed · iOS and Android",
+    "howItWorks": {
+      "title": "How it works",
+      "subtitle": "Three simple steps to better health control",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Download Pillo",
+          "description": "No account, no email required. Download the app, open it — and you're ready to go. No steps to slow you down."
+        },
+        {
+          "number": "02",
+          "title": "Enter your medications",
+          "description": "Enter the name and dosage times. If you need help setting it up — a loved one can help."
+        },
+        {
+          "number": "03",
+          "title": "Pillo handles the rest",
+          "description": "You'll get a reminder at every scheduled time. One tap and you're done."
+        }
+      ]
+    },
+    "features": [
+      {
+        "title": "Clear and easy to read",
+        "description": "Large text, clear buttons — everything visible at a glance. Designed so you never have to guess."
+      },
+      {
+        "title": "Reminds you if you miss it",
+        "description": "If you don't respond right away, Pillo reminds you again. No nagging — it's just there."
+      },
+      {
+        "title": "Only what you need",
+        "description": "No unnecessary features. Just your medications and your daily plan — in one place."
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "My daughter installed it and after a week I already knew where to tap. I didn't think it would be so simple.",
+        "author": "Jadwiga Kowalska",
+        "role": "73 years old, Warsaw"
+      },
+      {
+        "quote": "I tried other apps but they were too complicated. This one works the way it should — no unnecessary steps.",
+        "author": "Stanisław Nowak",
+        "role": "68 years old, Kraków"
+      },
+      {
+        "quote": "Finally one place for all my medications. Nothing gets lost, nothing slips through.",
+        "author": "Henryk Wiśniewski",
+        "role": "71 years old, Gdańsk"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Is Pillo free?",
+        "answer": "Yes — and it will stay that way. Pillo for patients is free with no hidden fees or time limits."
+      },
+      {
+        "question": "Do I need to create an account and remember a password?",
+        "answer": "No. An account is created automatically on first launch — no email, no password. The app simply works."
+      },
+      {
+        "question": "What if I don't respond to a reminder?",
+        "answer": "It's up to you. During setup you decide — whether Pillo should remind you once, or keep coming back every few minutes until the dose is checked off."
+      },
+      {
+        "question": "Can I use Pillo without a caregiver?",
+        "answer": "Of course. Pillo works standalone — connecting with a caregiver is an option, not a requirement."
+      },
+      {
+        "question": "What if I change my phone or reinstall the app?",
+        "answer": "If you use the app alone, the account is tied to the device and cannot be transferred. If you have a connected caregiver — they can help you restore access."
+      }
+    ],
+    "footer": {
+      "headline": "Pillo is almost ready",
+      "sub": "Leave your email — we'll notify you first when the app is available.",
+      "cta": "Download Pillo"
+    }
+  },
+  "caregiver": {
+    "headline": "You no longer need to check — you just know",
+    "subheadline": "Pillo tracks your loved one's medications and alerts you when something needs your attention. Peace of mind you feel — not just claim.",
+    "ctaPrimary": "Try for free",
+    "ctaSecondary": "How does it work?",
+    "trustNote": "7 days free · Cancel anytime · iOS and Android",
+    "howItWorks": {
+      "title": "How it works",
+      "subtitle": "Monitor your loved ones' health from anywhere",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Create an account",
+          "description": "Via Google, Apple or email — your choice. The whole process takes literally two minutes, and your data is secure from the first step."
+        },
+        {
+          "number": "02",
+          "title": "Connect with your loved one",
+          "description": "Generate a short code and send it via SMS or WhatsApp. Your loved one enters it in their app — and you're connected."
+        },
+        {
+          "number": "03",
+          "title": "Act only when needed",
+          "description": "Day to day — silence. When your loved one misses a dose — you get a notification. Nothing else requires your attention."
+        }
+      ]
+    },
+    "features": [
+      {
+        "title": "Notified only when something happens",
+        "description": "We don't flood you with updates. We'll reach out when a medication wasn't taken and the response time has passed. Then — and only then."
+      },
+      {
+        "title": "The whole week at a glance",
+        "description": "See what every day looked like — taken on time, late, missed. No calling, no asking. You simply know."
+      },
+      {
+        "title": "Full history for doctor visits",
+        "description": "When you take your loved one to the doctor, you have a precise picture of the last few weeks. No guessing, no 'I think I took it'."
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "I live far from my parents and for a long time I lived with background anxiety. Now I just know. It makes a huge difference.",
+        "author": "Anna Nowicka",
+        "role": "Daughter, Wrocław"
+      },
+      {
+        "quote": "I care for twelve seniors. Before, I had to keep everything in my head — now Pillo does it for me.",
+        "author": "Maria Kowalska",
+        "role": "Home care nurse"
+      },
+      {
+        "quote": "Dad sometimes forgot and was embarrassed to admit it. Now I see it myself and can respond — without making a big deal of it.",
+        "author": "Piotr Wiśniewski",
+        "role": "Son, Gdańsk"
+      }
+    ],
+    "faq": [
+      {
+        "question": "How much does the subscription cost?",
+        "answer": "29.90 PLN per month or 9.99 PLN per week — your choice. You can start with the weekly option if you want to try it first."
+      },
+      {
+        "question": "How many people can I monitor?",
+        "answer": "In the current version there is no limit — you can connect with as many people as you need."
+      },
+      {
+        "question": "Does my loved one need to create a separate account?",
+        "answer": "They download the same Pillo app and go through a quick setup — no email, no password. Then you send them your code, they enter it and you're connected. That's it."
+      },
+      {
+        "question": "Will I get a notification for every dose?",
+        "answer": "Only if you want to. You can choose: a notification when a dose is taken, only when something is missed, or just a daily summary — with no interruptions during the day."
+      },
+      {
+        "question": "What exactly do I see as a caregiver?",
+        "answer": "You see everything — your loved one's full medication cabinet, every interaction with the app, weekly statistics and activity history. If something was missed, late or changed — it's in your view."
+      }
+    ],
+    "footer": {
+      "headline": "Peace of mind — coming soon",
+      "sub": "Leave your email — we'll notify you when Pillo for caregivers is ready.",
+      "cta": "Try Pillo"
+    }
+  }
+}

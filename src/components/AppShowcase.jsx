@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Pill, Bell, Calendar, Users, BarChart2, ShieldCheck, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-const features = [
-  { Icon: Pill, title: 'Leki', description: 'Pełna lista leków z dawkowaniem' },
-  { Icon: Bell, title: 'Przypomnienia', description: 'Powiadomienia o każdej dawce' },
-  { Icon: Calendar, title: 'Harmonogram', description: 'Tygodniowy plan przyjmowania' },
-  { Icon: Users, title: 'Opiekunowie', description: 'Połączenie z bliskimi' },
-  { Icon: BarChart2, title: 'Raporty', description: 'Statystyki zażywania leków' },
-  { Icon: ShieldCheck, title: 'Bezpieczeństwo', description: 'Szyfrowane dane medyczne' }
-];
+const ICONS = [Pill, Bell, Calendar, Users, BarChart2, ShieldCheck];
 
 const AppShowcase = ({ activeRole = 'patient' }) => {
   const isCaregiver = activeRole === 'caregiver';
   const scrollRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const { t } = useTranslation();
+
+  const featureList = t('showcase.featureList', { returnObjects: true });
+  const features = Array.isArray(featureList)
+    ? featureList.map((f, i) => ({ ...f, Icon: ICONS[i] }))
+    : [];
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -43,10 +43,10 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
           isCaregiver ? 'bg-[#3F8F6B]/20' : 'bg-primary/5'
         }`} aria-hidden="true" />
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -56,51 +56,51 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
           <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 transition-colors duration-500 ${
             isCaregiver ? 'bg-[#3F8F6B]/20 text-[#5DB38D]' : 'bg-primary/10 text-primary'
           }`}>
-            Funkcje aplikacji
+            {t('showcase.badge')}
           </span>
           <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-[family-name:var(--font-family-heading)] transition-colors duration-500 ${
             isCaregiver ? 'text-white' : 'text-text-primary'
           }`}>
-            Wszystko pod kontrolą
+            {t('showcase.heading')}
           </h2>
           <p className={`text-lg transition-colors duration-500 ${
             isCaregiver ? 'text-white/70' : 'text-text-secondary'
           }`}>
-            Intuicyjny interfejs zaprojektowany z myślą o osobach starszych i ich opiekunach.
+            {t('showcase.description')}
           </p>
         </motion.div>
-        
+
         {/* Carousel */}
         <div className="relative">
           {/* Navigation Buttons */}
           <motion.button
             onClick={() => scroll('left')}
             className={`hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 rounded-full shadow-lg items-center justify-center transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-              isCaregiver 
-                ? 'bg-[#243D34] text-white hover:bg-[#2A4539] focus-visible:ring-[#3F8F6B]' 
+              isCaregiver
+                ? 'bg-[#243D34] text-white hover:bg-[#2A4539] focus-visible:ring-[#3F8F6B]'
                 : 'bg-surface text-primary hover:bg-surface-alt focus-visible:ring-primary'
             }`}
-            aria-label="Przewiń w lewo"
+            aria-label={t('showcase.scrollLeft')}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <ChevronLeft size={20} aria-hidden="true" />
           </motion.button>
-          
+
           <motion.button
             onClick={() => scroll('right')}
             className={`hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 rounded-full shadow-lg items-center justify-center transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-              isCaregiver 
-                ? 'bg-[#243D34] text-white hover:bg-[#2A4539] focus-visible:ring-[#3F8F6B]' 
+              isCaregiver
+                ? 'bg-[#243D34] text-white hover:bg-[#2A4539] focus-visible:ring-[#3F8F6B]'
                 : 'bg-surface text-primary hover:bg-surface-alt focus-visible:ring-primary'
             }`}
-            aria-label="Przewiń w prawo"
+            aria-label={t('showcase.scrollRight')}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <ChevronRight size={20} aria-hidden="true" />
           </motion.button>
-          
+
           {/* Cards Container */}
           <div
             ref={scrollRef}
@@ -119,12 +119,12 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 <div className={`rounded-3xl p-8 h-full border transition-all duration-500 ${
-                  isCaregiver 
-                    ? 'bg-[#243D34]/80 border-[#3F8F6B]/30 hover:border-[#3F8F6B]/50 hover:bg-[#243D34]' 
+                  isCaregiver
+                    ? 'bg-[#243D34]/80 border-[#3F8F6B]/30 hover:border-[#3F8F6B]/50 hover:bg-[#243D34]'
                     : 'bg-surface-alt border-divider/50 hover:border-primary-light/30 hover:shadow-lg hover:shadow-primary/5'
                 }`}>
                   {/* Icon */}
-                  <motion.div 
+                  <motion.div
                     className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 ${
                       isCaregiver ? 'bg-[#3F8F6B]/20' : 'bg-primary/10'
                     }`}
@@ -134,7 +134,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
                       isCaregiver ? 'text-[#5DB38D]' : 'text-primary'
                     }`} aria-hidden="true" />
                   </motion.div>
-                  
+
                   {/* Content */}
                   <h3 className={`text-xl font-bold mb-2 font-[family-name:var(--font-family-heading)] transition-colors duration-500 ${
                     isCaregiver ? 'text-white' : 'text-text-primary'
@@ -148,7 +148,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
               </motion.div>
             ))}
           </div>
-          
+
           {/* Pagination Dots */}
           <div className="flex items-center justify-center gap-2 mt-6">
             {features.map((_, index) => (
@@ -160,11 +160,11 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
                   }
                 }}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  index === activeIndex 
-                    ? (isCaregiver ? 'bg-[#3F8F6B] w-6' : 'bg-primary w-6') 
+                  index === activeIndex
+                    ? (isCaregiver ? 'bg-[#3F8F6B] w-6' : 'bg-primary w-6')
                     : 'bg-divider hover:bg-primary-light'
                 }`}
-                aria-label={`Przejdź do slajdu ${index + 1}`}
+                aria-label={t('showcase.goToSlide', { n: index + 1 })}
                 aria-current={index === activeIndex ? 'true' : 'false'}
               />
             ))}

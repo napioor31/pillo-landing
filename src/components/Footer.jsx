@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { logo } from '../assets/images';
+import { useWaitlistForm } from '../hooks/useWaitlistForm';
 
 const Footer = ({ activeRole = 'patient', footer = {} }) => {
   const isCaregiver = activeRole === 'caregiver';
-  const [email, setEmail] = useState('');
+  const { t } = useTranslation();
+  const { email, setEmail, status, errorMsg, handleSubmit, handleKeyDown } = useWaitlistForm();
 
   return (
     <footer id="download" className={`w-full py-20 relative overflow-hidden transition-colors duration-700 ${
@@ -36,25 +38,41 @@ const Footer = ({ activeRole = 'patient', footer = {} }) => {
 
           {/* Email Signup Form */}
           <div className="flex flex-col items-center gap-3">
-            <div className="flex flex-col sm:flex-row gap-2 w-full max-w-2xl">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="twój@email.pl"
-                className="flex-1 min-w-0 px-5 py-3.5 rounded-full text-base bg-white/10 text-white placeholder-white/40 border-2 border-white/20 outline-none focus:border-white/40 focus:ring-2 focus:ring-white/10 transition-all duration-300"
-              />
-              <button
-                type="button"
-                className="px-5 py-3.5 rounded-full font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap shrink-0 bg-white text-[#243D34] hover:bg-white/90 shadow-lg shadow-black/20 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#243D34]"
-              >
-                Powiadom mnie o premierze
-                <ArrowRight size={18} aria-hidden="true" />
-              </button>
-            </div>
-            <p className="text-surface/50 text-sm">
-              Bezpłatne · Bez spamu · Powiadomimy gdy aplikacja będzie gotowa
-            </p>
+            {status === 'success' ? (
+              <p className="text-base font-medium text-white">
+                {t('waitlist.success')}
+              </p>
+            ) : (
+              <>
+                <div className="flex flex-col sm:flex-row gap-2 w-full max-w-2xl">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    placeholder={t('waitlist.emailPlaceholder')}
+                    disabled={status === 'submitting'}
+                    className="flex-1 min-w-0 px-5 py-3.5 rounded-full text-base bg-white/10 text-white placeholder-white/40 border-2 border-white/20 outline-none focus:border-white/40 focus:ring-2 focus:ring-white/10 transition-all duration-300 disabled:opacity-60"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleSubmit}
+                    disabled={status === 'submitting'}
+                    className="px-5 py-3.5 rounded-full font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap shrink-0 bg-white text-[#243D34] hover:bg-white/90 shadow-lg shadow-black/20 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#243D34] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  >
+                    {status === 'submitting' ? t('waitlist.submitting') : t('waitlist.cta')}
+                    {status !== 'submitting' && <ArrowRight size={18} aria-hidden="true" />}
+                  </button>
+                </div>
+                {status === 'error' ? (
+                  <p className="text-red-400 text-sm">{errorMsg}</p>
+                ) : (
+                  <p className="text-surface/50 text-sm">
+                    {t('waitlist.trust')}
+                  </p>
+                )}
+              </>
+            )}
           </div>
         </motion.div>
 
@@ -76,14 +94,14 @@ const Footer = ({ activeRole = 'patient', footer = {} }) => {
 
             {/* Links */}
             <nav className="flex flex-wrap items-center justify-center gap-6">
-              <Link to="/polityka-prywatnosci" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">Polityka prywatności</Link>
-              <Link to="/regulamin" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">Regulamin</Link>
-              <Link to="/kontakt" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">Kontakt</Link>
+              <Link to="/polityka-prywatnosci" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">{t('footer.privacyPolicy')}</Link>
+              <Link to="/regulamin" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">{t('footer.terms')}</Link>
+              <Link to="/kontakt" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">{t('footer.contact')}</Link>
             </nav>
 
             {/* Copyright */}
             <p className="text-surface/60 text-sm flex-1 text-center md:text-right">
-              © 2026 Pillo. Wszystkie prawa zastrzeżone.
+              {t('footer.copyright', { year: 2026 })}
             </p>
           </div>
         </div>

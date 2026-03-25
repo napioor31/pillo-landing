@@ -1,14 +1,18 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { ArrowRight, ShieldCheck, Star } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Navbar from './Navbar';
-import { heroPhone } from '../assets/images';
+import { getHeroPhone } from '../assets/images';
+import { useWaitlistForm } from '../hooks/useWaitlistForm';
 
 const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) => {
   const isCaregiver = activeRole === 'caregiver';
   const containerRef = useRef(null);
   const [containerHeight, setContainerHeight] = useState(null);
-  const [email, setEmail] = useState('');
+  const { t, i18n } = useTranslation();
+  const heroImage = getHeroPhone(activeRole, i18n.language);
+  const { email, setEmail, status, errorMsg, handleSubmit, handleKeyDown } = useWaitlistForm();
 
   const measureHalf = useCallback(() => {
     const img = containerRef.current?.querySelector('img');
@@ -69,7 +73,7 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
           aria-hidden="true"
         >
           <img
-            src={heroPhone[activeRole].src}
+            src={heroImage.src}
             alt=""
             width={390}
             height={844}
@@ -120,37 +124,55 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
 
                   {/* Email signup form */}
                   <div className="mb-5">
-                    <div className="flex flex-col sm:flex-row gap-2 max-w-xl">
-                      <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="twój@email.pl"
-                        className={`flex-1 min-w-0 px-5 py-3.5 rounded-full text-base border-2 outline-none focus:ring-2 focus:ring-offset-0 transition-all duration-300 ${
-                          isCaregiver
-                            ? 'bg-white/10 text-white placeholder-white/40 border-white/20 focus:border-white/40 focus:ring-white/10'
-                            : 'bg-white text-text-primary placeholder-text-secondary/50 border-divider focus:border-primary/40 focus:ring-primary/10'
-                        }`}
-                      />
-                      <motion.button
-                        type="button"
-                        whileHover={{ y: -2 }}
-                        whileTap={{ scale: 0.98 }}
-                        className={`px-5 py-3.5 rounded-full font-semibold text-base transition-all duration-500 flex items-center justify-center gap-2 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-                          isCaregiver
-                            ? 'bg-white text-[#1B2E27] hover:bg-white/90 shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]'
-                            : 'bg-primary text-surface hover:bg-primary-dark shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 focus-visible:ring-primary'
-                        }`}
-                      >
-                        Powiadom mnie o premierze
-                        <ArrowRight size={18} aria-hidden="true" />
-                      </motion.button>
-                    </div>
-                    <p className={`mt-2.5 text-sm transition-colors duration-500 ${
-                      isCaregiver ? 'text-white/40' : 'text-text-secondary/70'
-                    }`}>
-                      Bezpłatne · Bez spamu · Powiadomimy gdy aplikacja będzie gotowa
-                    </p>
+                    {status === 'success' ? (
+                      <p className={`text-base font-medium transition-colors duration-500 ${
+                        isCaregiver ? 'text-white' : 'text-primary'
+                      }`}>
+                        {t('waitlist.success')}
+                      </p>
+                    ) : (
+                      <>
+                        <div className="flex flex-col sm:flex-row gap-2 max-w-xl">
+                          <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            onKeyDown={handleKeyDown}
+                            placeholder={t('waitlist.emailPlaceholder')}
+                            disabled={status === 'submitting'}
+                            className={`flex-1 min-w-0 px-5 py-3.5 rounded-full text-base border-2 outline-none focus:ring-2 focus:ring-offset-0 transition-all duration-300 disabled:opacity-60 ${
+                              isCaregiver
+                                ? 'bg-white/10 text-white placeholder-white/40 border-white/20 focus:border-white/40 focus:ring-white/10'
+                                : 'bg-white text-text-primary placeholder-text-secondary/50 border-divider focus:border-primary/40 focus:ring-primary/10'
+                            }`}
+                          />
+                          <motion.button
+                            type="button"
+                            onClick={handleSubmit}
+                            disabled={status === 'submitting'}
+                            whileHover={status !== 'submitting' ? { y: -2 } : {}}
+                            whileTap={status !== 'submitting' ? { scale: 0.98 } : {}}
+                            className={`px-5 py-3.5 rounded-full font-semibold text-base transition-all duration-500 flex items-center justify-center gap-2 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed ${
+                              isCaregiver
+                                ? 'bg-white text-[#1B2E27] hover:bg-white/90 shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]'
+                                : 'bg-primary text-surface hover:bg-primary-dark shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 focus-visible:ring-primary'
+                            }`}
+                          >
+                            {status === 'submitting' ? t('waitlist.submitting') : t('waitlist.cta')}
+                            {status !== 'submitting' && <ArrowRight size={18} aria-hidden="true" />}
+                          </motion.button>
+                        </div>
+                        {status === 'error' ? (
+                          <p className="mt-2.5 text-sm text-red-500">{errorMsg}</p>
+                        ) : (
+                          <p className={`mt-2.5 text-sm transition-colors duration-500 ${
+                            isCaregiver ? 'text-white/40' : 'text-text-secondary/70'
+                          }`}>
+                            {t('waitlist.trust')}
+                          </p>
+                        )}
+                      </>
+                    )}
                   </div>
 
                 </motion.div>
@@ -169,10 +191,10 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
                   }`} aria-hidden="true" />
                   <span className={`text-sm transition-colors duration-500 ${
                     isCaregiver ? 'text-white/60' : 'text-text-secondary'
-                  }`}>Bezpieczne dane</span>
+                  }`}>{t('hero.secureBadge')}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="flex" aria-label="Ocena 4.9 na 5 gwiazdek">
+                  <div className="flex" aria-label={t('hero.ratingAriaLabel')}>
                     {[...Array(5)].map((_, i) => (
                       <motion.div
                         key={i}
@@ -189,7 +211,7 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
                   </div>
                   <span className={`text-sm transition-colors duration-500 ${
                     isCaregiver ? 'text-white/60' : 'text-text-secondary'
-                  }`}>4.9/5 ocena</span>
+                  }`}>{t('hero.ratingBadge')}</span>
                 </div>
               </motion.div>
             </div>
@@ -222,8 +244,8 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
                   transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 >
                   <img
-                    src={heroPhone[activeRole].src}
-                    alt={heroPhone[activeRole].alt}
+                    src={heroImage.src}
+                    alt={heroImage.alt}
                     width={390}
                     height={844}
                     fetchpriority="high"

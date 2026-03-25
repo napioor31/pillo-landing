@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, MessageCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
   const isCaregiver = activeRole === 'caregiver';
   const [openIndex, setOpenIndex] = useState(null);
+  const { t } = useTranslation();
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -32,17 +34,17 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
           <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 transition-colors duration-500 ${
             isCaregiver ? 'bg-[#3F8F6B]/20 text-[#5DB38D]' : 'bg-primary/10 text-primary'
           }`}>
-            FAQ
+            {t('faq.badge')}
           </span>
           <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-[family-name:var(--font-family-heading)] transition-colors duration-500 ${
             isCaregiver ? 'text-white' : 'text-text-primary'
           }`}>
-            Najczęściej zadawane pytania
+            {t('faq.heading')}
           </h2>
           <p className={`text-lg max-w-2xl mx-auto transition-colors duration-500 ${
             isCaregiver ? 'text-white/70' : 'text-text-secondary'
           }`}>
-            Masz wątpliwości? Sprawdź odpowiedzi na najczęstsze pytania lub skontaktuj się z nami.
+            {t('faq.subheading')}
           </p>
         </motion.div>
 
@@ -113,7 +115,7 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
         >
           <p className={`mb-4 transition-colors duration-500 ${
             isCaregiver ? 'text-white/70' : 'text-text-secondary'
-          }`}>Nie znalazłeś odpowiedzi na swoje pytanie?</p>
+          }`}>{t('faq.contactPrompt')}</p>
           <Link
             to="/kontakt"
             className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 ${
@@ -123,7 +125,7 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
             }`}
           >
             <MessageCircle size={16} aria-hidden="true" />
-            Skontaktuj się z nami
+            {t('faq.contactCta')}
           </Link>
         </motion.div>
       </div>

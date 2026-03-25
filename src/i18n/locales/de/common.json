@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "notifyMe": "Benachrichtigen",
+    "back": "Zurück",
+    "backToSite": "Zurück zur Website"
+  },
+  "roles": {
+    "patientShort": "Patient",
+    "patientFull": "Ich bin Patient",
+    "caregiverShort": "Betreuer",
+    "caregiverFull": "Ich bin Betreuer",
+    "ariaLabel": "Benutzerperspektive auswählen"
+  },
+  "waitlist": {
+    "cta": "Beim Launch benachrichtigen",
+    "submitting": "Sende…",
+    "success": "Gespeichert! Wir benachrichtigen Sie beim Launch.",
+    "trust": "Kostenlos · Kein Spam · Wir benachrichtigen Sie wenn die App bereit ist",
+    "emailPlaceholder": "ihre@email.de",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "genericError": "Etwas ist schiefgelaufen.",
+    "retryError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+  },
+  "hero": {
+    "secureBadge": "Sichere Daten",
+    "ratingBadge": "4,9/5 Bewertung",
+    "ratingAriaLabel": "Bewertung 4,9 von 5 Sternen"
+  },
+  "stats": {
+    "activeUsers": "Aktive Nutzer",
+    "avgRating": "Durchschnittsbewertung",
+    "dataSecurity": "Datensicherheit",
+    "downloads": "Downloads"
+  },
+  "features": {
+    "badge": "Funktionen",
+    "heading": "Alles, was Sie brauchen",
+    "headingSub": "in einer App",
+    "descPatient": "Pillo wurde mit Blick auf Sie entwickelt. Jede Funktion wurde so gestaltet, dass Ihr tägliches Gesundheitsmanagement einfacher wird.",
+    "descCaregiver": "Ein umfassendes Tool zur Überwachung der Gesundheit Ihrer Angehörigen. Alle Funktionen an einem Ort."
+  },
+  "showcase": {
+    "badge": "App-Funktionen",
+    "heading": "Alles im Griff",
+    "description": "Eine intuitive Benutzeroberfläche, die für ältere Menschen und ihre Betreuer entwickelt wurde.",
+    "scrollLeft": "Nach links scrollen",
+    "scrollRight": "Nach rechts scrollen",
+    "goToSlide": "Zu Folie {{n}} gehen",
+    "featureList": [
+      { "title": "Medikamente", "description": "Vollständige Medikamentenliste mit Dosierungen" },
+      { "title": "Erinnerungen", "description": "Benachrichtigungen für jede Dosis" },
+      { "title": "Zeitplan", "description": "Wöchentlicher Einnahmeplan" },
+      { "title": "Betreuer", "description": "Mit Angehörigen verbinden" },
+      { "title": "Berichte", "description": "Einnahme-Statistiken" },
+      { "title": "Sicherheit", "description": "Verschlüsselte medizinische Daten" }
+    ]
+  },
+  "testimonials": {
+    "badge": "Bewertungen",
+    "heading": "Was unsere Nutzer sagen"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "heading": "Häufig gestellte Fragen",
+    "subheading": "Haben Sie Fragen? Sehen Sie sich unsere FAQ an oder kontaktieren Sie uns.",
+    "contactPrompt": "Keine passende Antwort gefunden?",
+    "contactCta": "Kontaktieren Sie uns"
+  },
+  "partners": {
+    "trustedBy": "Vertrauen uns"
+  },
+  "footer": {
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "contact": "Kontakt",
+    "copyright": "© {{year}} Pillo. Alle Rechte vorbehalten."
+  },
+  "lang": {
+    "switcherAriaLabel": "Wybierz język / Select language"
+  }
+}

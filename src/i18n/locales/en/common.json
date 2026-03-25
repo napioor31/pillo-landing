@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "notifyMe": "Notify me",
+    "back": "Back",
+    "backToSite": "Back to site"
+  },
+  "roles": {
+    "patientShort": "Patient",
+    "patientFull": "I'm a patient",
+    "caregiverShort": "Caregiver",
+    "caregiverFull": "I'm a caregiver",
+    "ariaLabel": "Select user perspective"
+  },
+  "waitlist": {
+    "cta": "Notify me at launch",
+    "submitting": "Sending…",
+    "success": "Saved! We'll notify you when the app launches.",
+    "trust": "Free · No spam · We'll notify you when the app is ready",
+    "emailPlaceholder": "your@email.com",
+    "invalidEmail": "Please enter a valid email address.",
+    "genericError": "Something went wrong.",
+    "retryError": "Something went wrong. Please try again."
+  },
+  "hero": {
+    "secureBadge": "Secure data",
+    "ratingBadge": "4.9/5 rating",
+    "ratingAriaLabel": "Rating 4.9 out of 5 stars"
+  },
+  "stats": {
+    "activeUsers": "Active users",
+    "avgRating": "Average rating",
+    "dataSecurity": "Data security",
+    "downloads": "Downloads"
+  },
+  "features": {
+    "badge": "Features",
+    "heading": "Everything you need",
+    "headingSub": "in one app",
+    "descPatient": "Pillo was built with you in mind. Every feature was designed to make your daily health management easier.",
+    "descCaregiver": "A comprehensive tool for monitoring your loved ones' health. All features available in one place."
+  },
+  "showcase": {
+    "badge": "App features",
+    "heading": "Everything under control",
+    "description": "An intuitive interface designed with older adults and their caregivers in mind.",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right",
+    "goToSlide": "Go to slide {{n}}",
+    "featureList": [
+      { "title": "Medications", "description": "Full medication list with dosages" },
+      { "title": "Reminders", "description": "Notifications for every dose" },
+      { "title": "Schedule", "description": "Weekly intake plan" },
+      { "title": "Caregivers", "description": "Connect with loved ones" },
+      { "title": "Reports", "description": "Medication adherence statistics" },
+      { "title": "Security", "description": "Encrypted medical data" }
+    ]
+  },
+  "testimonials": {
+    "badge": "Reviews",
+    "heading": "What our users say"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "heading": "Frequently asked questions",
+    "subheading": "Have questions? Check our FAQ or get in touch with us.",
+    "contactPrompt": "Didn't find the answer you were looking for?",
+    "contactCta": "Contact us"
+  },
+  "partners": {
+    "trustedBy": "Trusted by"
+  },
+  "footer": {
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact",
+    "copyright": "© {{year}} Pillo. All rights reserved."
+  },
+  "lang": {
+    "switcherAriaLabel": "Wybierz język / Select language"
+  }
+}

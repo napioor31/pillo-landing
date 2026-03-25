@@ -8,16 +8,22 @@
  */
 
 // ==================== HERO SECTION ====================
-// Telefon w sekcji hero (prawa strona) - zależne od roli
+// Telefon w sekcji hero (prawa strona) - zależne od roli i języka
 export const heroPhone = {
   patient: {
-    src: '/images/hero/hero_patient.webp',
-    alt: 'Aplikacja Pillo na telefonie - widok pacjenta'
+    en: { src: '/images/hero/hero_patient - en.png', alt: 'Pillo app on phone - patient view' },
+    pl: { src: '/images/hero/hero_patient - pl.png', alt: 'Aplikacja Pillo na telefonie - widok pacjenta' },
   },
   caregiver: {
-    src: '/images/hero/hero_caregiver.webp',
-    alt: 'Aplikacja Pillo na telefonie - widok opiekuna'
+    en: { src: '/images/hero/hero_caregiver - en.png', alt: 'Pillo app on phone - caregiver view' },
+    pl: { src: '/images/hero/hero_caregiver - pl.png', alt: 'Aplikacja Pillo na telefonie - widok opiekuna' },
   }
+};
+
+// Returns the correct hero image for role + language (EN and DE both use 'en' variant)
+export const getHeroPhone = (role, lang) => {
+  const langKey = lang === 'pl' ? 'pl' : 'en';
+  return heroPhone[role][langKey];
 };
 
 // ==================== APP SHOWCASE (Karuzela) ====================

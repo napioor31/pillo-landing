@@ -1,0 +1,174 @@
+{
+  "patient": {
+    "headline": "Sie müssen nicht mehr alles im Kopf behalten",
+    "subheadline": "Pillo verwaltet Ihre Medikamente — erinnert Sie an jede Dosis zur richtigen Zeit. Sie kümmern sich um den Rest.",
+    "ctaPrimary": "Kostenlos herunterladen",
+    "ctaSecondary": "Wie funktioniert es?",
+    "trustNote": "Kostenlos · Kein Konto erforderlich · iOS und Android",
+    "howItWorks": {
+      "title": "So funktioniert es",
+      "subtitle": "Drei einfache Schritte zu besserer Gesundheitskontrolle",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Pillo herunterladen",
+          "description": "Kein Konto, keine E-Mail erforderlich. Laden Sie die App herunter, öffnen Sie sie — und schon können Sie loslegen. Keine Hindernisse."
+        },
+        {
+          "number": "02",
+          "title": "Medikamente eingeben",
+          "description": "Geben Sie den Namen und die Einnahmezeiten an. Wenn Sie Hilfe beim Einrichten brauchen — ein Angehöriger kann Ihnen helfen."
+        },
+        {
+          "number": "03",
+          "title": "Pillo übernimmt den Rest",
+          "description": "Zu jeder geplanten Zeit erhalten Sie eine Erinnerung. Ein Tippen und fertig."
+        }
+      ]
+    },
+    "features": [
+      {
+        "title": "Übersichtlich und leicht lesbar",
+        "description": "Große Schrift, klare Schaltflächen — alles auf einen Blick sichtbar. So gestaltet, dass Sie nie raten müssen."
+      },
+      {
+        "title": "Erinnert Sie, wenn Sie vergessen zu antworten",
+        "description": "Wenn Sie nicht sofort reagieren, erinnert Pillo Sie noch einmal. Ohne Drängen — es ist einfach da."
+      },
+      {
+        "title": "Nur das Notwendige",
+        "description": "Keine unnötigen Funktionen. Nur Ihre Medikamente und Ihr Tagesplan — an einem Ort."
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "Meine Tochter hat es installiert und nach einer Woche wusste ich schon, wo ich tippen muss. Ich dachte nicht, dass es so einfach sein würde.",
+        "author": "Jadwiga Kowalska",
+        "role": "73 Jahre, Warschau"
+      },
+      {
+        "quote": "Ich habe andere Apps ausprobiert, aber sie waren zu kompliziert. Diese funktioniert so, wie sie soll — ohne unnötige Schritte.",
+        "author": "Stanisław Nowak",
+        "role": "68 Jahre, Krakau"
+      },
+      {
+        "quote": "Endlich ein Ort für alle meine Medikamente. Nichts geht verloren, nichts entgeht mir.",
+        "author": "Henryk Wiśniewski",
+        "role": "71 Jahre, Danzig"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Ist Pillo kostenlos?",
+        "answer": "Ja — und das bleibt so. Pillo für Patienten ist kostenlos ohne versteckte Gebühren oder zeitliche Beschränkungen."
+      },
+      {
+        "question": "Muss ich ein Konto erstellen und ein Passwort merken?",
+        "answer": "Nein. Ein Konto wird beim ersten Start automatisch erstellt — ohne E-Mail, ohne Passwort. Die App funktioniert einfach."
+      },
+      {
+        "question": "Was passiert, wenn ich nicht auf eine Erinnerung reagiere?",
+        "answer": "Das liegt bei Ihnen. Beim Einrichten entscheiden Sie — ob Pillo einmal erinnern soll oder alle paar Minuten wiederkommen soll, bis die Dosis abgehakt ist."
+      },
+      {
+        "question": "Kann ich Pillo ohne Betreuer verwenden?",
+        "answer": "Natürlich. Pillo funktioniert eigenständig — die Verbindung mit einem Betreuer ist eine Option, keine Voraussetzung."
+      },
+      {
+        "question": "Was passiert, wenn ich mein Telefon wechsle oder die App neu installiere?",
+        "answer": "Wenn Sie die App allein nutzen, ist das Konto an das Gerät gebunden und kann nicht übertragen werden. Wenn Sie einen verbundenen Betreuer haben — er kann Ihnen helfen, den Zugang wiederherzustellen."
+      }
+    ],
+    "footer": {
+      "headline": "Pillo ist fast fertig",
+      "sub": "Hinterlassen Sie Ihre E-Mail — wir benachrichtigen Sie als Erste, wenn die App verfügbar ist.",
+      "cta": "Pillo herunterladen"
+    }
+  },
+  "caregiver": {
+    "headline": "Sie müssen nicht mehr nachfragen — Sie wissen es einfach",
+    "subheadline": "Pillo verfolgt die Medikamente Ihrer Angehörigen und benachrichtigt Sie, wenn etwas Ihre Aufmerksamkeit erfordert. Seelenfrieden, den Sie fühlen — nicht nur behaupten.",
+    "ctaPrimary": "Kostenlos ausprobieren",
+    "ctaSecondary": "Wie funktioniert es?",
+    "trustNote": "7 Tage kostenlos · Jederzeit kündbar · iOS und Android",
+    "howItWorks": {
+      "title": "So funktioniert es",
+      "subtitle": "Überwachen Sie die Gesundheit Ihrer Angehörigen von überall",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Konto erstellen",
+          "description": "Über Google, Apple oder E-Mail — Ihre Wahl. Der gesamte Vorgang dauert buchstäblich zwei Minuten, und Ihre Daten sind vom ersten Schritt an sicher."
+        },
+        {
+          "number": "02",
+          "title": "Mit Ihrem Angehörigen verbinden",
+          "description": "Generieren Sie einen kurzen Code und senden Sie ihn per SMS oder WhatsApp. Ihr Angehöriger gibt ihn in seiner App ein — und Sie sind verbunden."
+        },
+        {
+          "number": "03",
+          "title": "Nur handeln, wenn nötig",
+          "description": "Im Alltag — Stille. Wenn Ihr Angehöriger eine Dosis verpasst — erhalten Sie eine Benachrichtigung. Nichts anderes erfordert Ihre Aufmerksamkeit."
+        }
+      ]
+    },
+    "features": [
+      {
+        "title": "Benachrichtigung nur wenn etwas passiert",
+        "description": "Wir überhäufen Sie nicht mit Updates. Wir melden uns, wenn ein Medikament nicht eingenommen wurde und die Reaktionszeit abläuft. Dann — und nur dann."
+      },
+      {
+        "title": "Die ganze Woche auf einen Blick",
+        "description": "Sehen Sie, wie jeder Tag aussah — pünktlich eingenommen, verspätet, verpasst. Kein Anrufen, kein Fragen. Sie wissen es einfach."
+      },
+      {
+        "title": "Vollständige Geschichte für Arztbesuche",
+        "description": "Wenn Sie mit Ihrem Angehörigen zum Arzt gehen, haben Sie ein genaues Bild der letzten Wochen. Kein Raten, kein 'Ich glaube, ich habe es genommen'."
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "Ich wohne weit von meinen Eltern entfernt und lebte lange mit Hintergrundangst. Jetzt weiß ich es einfach. Das ist ein riesiger Unterschied.",
+        "author": "Anna Nowicka",
+        "role": "Tochter, Breslau"
+      },
+      {
+        "quote": "Ich betreue zwölf Senioren. Früher musste ich alles im Kopf behalten — jetzt macht Pillo das für mich.",
+        "author": "Maria Kowalska",
+        "role": "Gemeindeschwester"
+      },
+      {
+        "quote": "Papa vergaß manchmal und schämte sich zuzugeben. Jetzt sehe ich es selbst und kann reagieren — ohne ein großes Thema daraus zu machen.",
+        "author": "Piotr Wiśniewski",
+        "role": "Sohn, Danzig"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Was kostet das Abonnement?",
+        "answer": "29,90 PLN pro Monat oder 9,99 PLN pro Woche — Ihre Wahl. Sie können mit der wöchentlichen Option beginnen, wenn Sie es zuerst ausprobieren möchten."
+      },
+      {
+        "question": "Wie viele Personen kann ich überwachen?",
+        "answer": "In der aktuellen Version gibt es kein Limit — Sie können sich mit so vielen Personen verbinden, wie Sie brauchen."
+      },
+      {
+        "question": "Muss mein Angehöriger ein separates Konto erstellen?",
+        "answer": "Er lädt dieselbe Pillo-App herunter und durchläuft eine kurze Einrichtung — ohne E-Mail, ohne Passwort. Dann senden Sie ihm Ihren Code, er gibt ihn ein und Sie sind verbunden. Das war's."
+      },
+      {
+        "question": "Erhalte ich eine Benachrichtigung für jede Dosis?",
+        "answer": "Nur wenn Sie möchten. Sie können wählen: Benachrichtigung wenn eine Dosis eingenommen wird, nur wenn etwas verpasst wird, oder nur eine tägliche Zusammenfassung — ohne Unterbrechungen tagsüber."
+      },
+      {
+        "question": "Was genau sehe ich als Betreuer?",
+        "answer": "Sie sehen alles — den vollständigen Medikamentenschrank Ihres Angehörigen, jede Interaktion mit der App, wöchentliche Statistiken und Aktivitätshistorie. Wenn etwas verpasst, verspätet oder geändert wurde — es ist in Ihrer Ansicht."
+      }
+    ],
+    "footer": {
+      "headline": "Seelenfrieden — kommt bald",
+      "sub": "Hinterlassen Sie Ihre E-Mail — wir benachrichtigen Sie, wenn Pillo für Betreuer bereit ist.",
+      "cta": "Pillo ausprobieren"
+    }
+  }
+}

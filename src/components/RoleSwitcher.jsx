@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion';
 import { User, Users } from 'lucide-react';
-
-const roles = [
-  { key: 'patient',   Icon: User,  labelShort: 'Pacjent',  labelFull: 'Jestem pacjentem' },
-  { key: 'caregiver', Icon: Users, labelShort: 'Opiekun', labelFull: 'Jestem opiekunem' },
-];
+import { useTranslation } from 'react-i18next';
 
 const RoleSwitcher = ({ activeRole, onRoleChange, isDark = false }) => {
+  const { t } = useTranslation();
+
+  const roles = [
+    { key: 'patient',   Icon: User,  labelShort: t('roles.patientShort'),  labelFull: t('roles.patientFull') },
+    { key: 'caregiver', Icon: Users, labelShort: t('roles.caregiverShort'), labelFull: t('roles.caregiverFull') },
+  ];
+
   return (
     <motion.div
       className={`flex items-center rounded-full p-1.5 border shadow-sm transition-colors duration-500 ${
@@ -15,7 +18,7 @@ const RoleSwitcher = ({ activeRole, onRoleChange, isDark = false }) => {
           : 'bg-surface-alt border-divider'
       }`}
       role="group"
-      aria-label="Wybierz perspektywę użytkownika"
+      aria-label={t('roles.ariaLabel')}
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}

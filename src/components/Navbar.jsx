@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Bell } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import RoleSwitcher from './RoleSwitcher';
 import { logo } from '../assets/images';
 
 const Navbar = ({ activeRole, onRoleChange, isDark = false }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +23,7 @@ const Navbar = ({ activeRole, onRoleChange, isDark = false }) => {
         ? `shadow-sm ${isDark ? 'glass-effect-caregiver' : 'glass-effect'}`
         : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between relative">
         {/* Logo */}
         <a href="#" className={`flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:rounded-lg ${
           isDark ? 'focus-visible:ring-[#3F8F6B]' : 'focus-visible:ring-primary'
@@ -38,13 +40,15 @@ const Navbar = ({ activeRole, onRoleChange, isDark = false }) => {
           }`}>Pillo</span>
         </a>
 
-        {/* Role Switcher */}
-        <RoleSwitcher activeRole={activeRole} onRoleChange={onRoleChange} isDark={isDark && !isScrolled || isScrolled} />
+        {/* Role Switcher — absolutely centered so it stays in the middle regardless of sibling widths */}
+        <div className="absolute left-1/2 -translate-x-1/2">
+          <RoleSwitcher activeRole={activeRole} onRoleChange={onRoleChange} isDark={isDark && !isScrolled || isScrolled} />
+        </div>
 
         {/* CTA Button */}
         <Link
           to="/download"
-          className={`hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+          className={`hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
             isScrolled
               ? 'bg-primary text-surface hover:bg-primary-dark focus-visible:ring-primary focus-visible:ring-offset-white'
               : isDark
@@ -53,7 +57,7 @@ const Navbar = ({ activeRole, onRoleChange, isDark = false }) => {
           }`}
         >
           <Bell size={16} aria-hidden="true" />
-          Powiadom mnie
+          {t('nav.notifyMe')}
         </Link>
       </div>
     </nav>

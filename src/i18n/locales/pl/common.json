@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "notifyMe": "Powiadom mnie",
+    "back": "Wróć",
+    "backToSite": "Wróć na stronę"
+  },
+  "roles": {
+    "patientShort": "Pacjent",
+    "patientFull": "Jestem pacjentem",
+    "caregiverShort": "Opiekun",
+    "caregiverFull": "Jestem opiekunem",
+    "ariaLabel": "Wybierz perspektywę użytkownika"
+  },
+  "waitlist": {
+    "cta": "Powiadom mnie o premierze",
+    "submitting": "Wysyłam…",
+    "success": "Zapisano! Powiadomimy Cię o premierze.",
+    "trust": "Bezpłatne · Bez spamu · Powiadomimy gdy aplikacja będzie gotowa",
+    "emailPlaceholder": "twój@email.pl",
+    "invalidEmail": "Podaj poprawny adres e-mail.",
+    "genericError": "Coś poszło nie tak.",
+    "retryError": "Coś poszło nie tak. Spróbuj ponownie."
+  },
+  "hero": {
+    "secureBadge": "Bezpieczne dane",
+    "ratingBadge": "4.9/5 ocena",
+    "ratingAriaLabel": "Ocena 4.9 na 5 gwiazdek"
+  },
+  "stats": {
+    "activeUsers": "Aktywnych użytkowników",
+    "avgRating": "Średnia ocena",
+    "dataSecurity": "Bezpieczeństwo danych",
+    "downloads": "Pobrań"
+  },
+  "features": {
+    "badge": "Funkcje",
+    "heading": "Wszystko, czego potrzebujesz",
+    "headingSub": "w jednej aplikacji",
+    "descPatient": "Pillo powstało z myślą o Tobie. Każda funkcja została zaprojektowana, aby ułatwić Ci codzienne zarządzanie zdrowiem.",
+    "descCaregiver": "Kompleksowe narzędzie do monitorowania zdrowia bliskich. Wszystkie funkcje dostępne w jednym miejscu."
+  },
+  "showcase": {
+    "badge": "Funkcje aplikacji",
+    "heading": "Wszystko pod kontrolą",
+    "description": "Intuicyjny interfejs zaprojektowany z myślą o osobach starszych i ich opiekunach.",
+    "scrollLeft": "Przewiń w lewo",
+    "scrollRight": "Przewiń w prawo",
+    "goToSlide": "Przejdź do slajdu {{n}}",
+    "featureList": [
+      { "title": "Leki", "description": "Pełna lista leków z dawkowaniem" },
+      { "title": "Przypomnienia", "description": "Powiadomienia o każdej dawce" },
+      { "title": "Harmonogram", "description": "Tygodniowy plan przyjmowania" },
+      { "title": "Opiekunowie", "description": "Połączenie z bliskimi" },
+      { "title": "Raporty", "description": "Statystyki zażywania leków" },
+      { "title": "Bezpieczeństwo", "description": "Szyfrowane dane medyczne" }
+    ]
+  },
+  "testimonials": {
+    "badge": "Opinie",
+    "heading": "Co mówią o nas użytkownicy"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "heading": "Najczęściej zadawane pytania",
+    "subheading": "Masz wątpliwości? Sprawdź odpowiedzi na najczęstsze pytania lub skontaktuj się z nami.",
+    "contactPrompt": "Nie znalazłeś odpowiedzi na swoje pytanie?",
+    "contactCta": "Skontaktuj się z nami"
+  },
+  "partners": {
+    "trustedBy": "Zaufali nam"
+  },
+  "footer": {
+    "privacyPolicy": "Polityka prywatności",
+    "terms": "Regulamin",
+    "contact": "Kontakt",
+    "copyright": "© {{year}} Pillo. Wszystkie prawa zastrzeżone."
+  },
+  "lang": {
+    "switcherAriaLabel": "Wybierz język / Select language"
+  }
+}

@@ -1,4 +1,5 @@
 import { Bell, CheckCircle, Type, Volume2, Users, ShieldCheck, BarChart3, History, BellRing, MessageCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const iconMap = {
   Bell,
@@ -15,6 +16,7 @@ const iconMap = {
 
 const FeaturesSection = ({ activeRole, features }) => {
   const isCaregiver = activeRole === 'caregiver';
+  const { t } = useTranslation();
 
   return (
     <section id="features" className={`w-full py-14 sm:py-24 relative overflow-hidden transition-colors duration-700 ${
@@ -36,23 +38,20 @@ const FeaturesSection = ({ activeRole, features }) => {
           <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 transition-colors duration-500 ${
             isCaregiver ? 'bg-[#3F8F6B]/10 text-[#3F8F6B]' : 'bg-primary/10 text-primary'
           }`}>
-            Funkcje
+            {t('features.badge')}
           </span>
           <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-[family-name:var(--font-family-heading)] transition-colors duration-500 ${
             isCaregiver ? 'text-white' : 'text-text-primary'
           }`}>
-            Wszystko, czego potrzebujesz
+            {t('features.heading')}
             <span className={`block transition-colors duration-500 ${
               isCaregiver ? 'text-[#3F8F6B]' : 'text-primary'
-            }`}>w jednej aplikacji</span>
+            }`}>{t('features.headingSub')}</span>
           </h2>
           <p className={`text-lg transition-colors duration-500 ${
             isCaregiver ? 'text-white/70' : 'text-text-secondary'
           }`}>
-            {activeRole === 'patient'
-              ? 'Pillo powstało z myślą o Tobie. Każda funkcja została zaprojektowana, aby ułatwić Ci codzienne zarządzanie zdrowiem.'
-              : 'Kompleksowe narzędzie do monitorowania zdrowia bliskich. Wszystkie funkcje dostępne w jednym miejscu.'
-            }
+            {activeRole === 'patient' ? t('features.descPatient') : t('features.descCaregiver')}
           </p>
         </div>
 

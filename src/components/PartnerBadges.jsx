@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Apple, Heart, ShieldCheck, Smartphone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const partners = [
   { Icon: Apple, name: 'Apple Health' },
@@ -10,6 +11,7 @@ const partners = [
 
 const PartnerBadges = ({ activeRole = 'patient' }) => {
   const isCaregiver = activeRole === 'caregiver';
+  const { t } = useTranslation();
 
   return (
     <section className={`w-full py-12 border-y transition-colors duration-700 ${
@@ -18,7 +20,7 @@ const PartnerBadges = ({ activeRole = 'patient' }) => {
         : 'bg-surface-alt border-divider/50'
     }`}>
       <div className="max-w-7xl mx-auto px-6">
-        <p className={`text-center text-sm mb-8 transition-colors duration-500 text-text-secondary`}>Zaufali nam</p>
+        <p className={`text-center text-sm mb-8 transition-colors duration-500 text-text-secondary`}>{t('partners.trustedBy')}</p>
 
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
           {partners.map((partner, index) => (

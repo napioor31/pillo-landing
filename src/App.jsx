@@ -1,7 +1,8 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import { roleContent } from './data/content';
+import { useTranslation } from 'react-i18next';
+import { getRoleContent } from './data/content';
 import HeroSection from './components/HeroSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import FeaturesSection from './components/FeaturesSection';
@@ -9,6 +10,7 @@ import TestimonialsSection from './components/TestimonialsSection';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 const Regulamin = lazy(() => import('./pages/Regulamin'));
 const PolitykaPrywatnosci = lazy(() => import('./pages/PolitykaPrywatnosci'));
@@ -17,7 +19,8 @@ const Contact = lazy(() => import('./pages/Contact'));
 
 function LandingPage({ loaderDone }) {
   const [activeRole, setActiveRole] = useState('patient');
-  const currentContent = roleContent[activeRole];
+  const { t, i18n } = useTranslation('landing');
+  const currentContent = getRoleContent(activeRole, t, i18n.language);
 
   return (
     <main className="min-h-screen bg-surface">
@@ -71,6 +74,7 @@ function App() {
     <BrowserRouter>
       <SpeedInsights />
       <ScrollToTop />
+      <LanguageSwitcher />
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<LandingPage loaderDone={loaderDone} />} />
