@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { logo, storeBadges } from '../assets/images';
 
 const APP_STORE_URL = 'https://apps.apple.com';
@@ -15,6 +16,7 @@ function detectPlatform() {
 }
 
 export default function Download() {
+  const { t } = useTranslation('common');
   const [platform, setPlatform] = useState('desktop');
   const [redirecting, setRedirecting] = useState(false);
 
@@ -24,10 +26,14 @@ export default function Download() {
     if (p === 'ios' || p === 'android') {
       setRedirecting(true);
       const url = p === 'ios' ? APP_STORE_URL : GOOGLE_PLAY_URL;
-      const t = setTimeout(() => { window.location.href = url; }, 1800);
-      return () => clearTimeout(t);
+      const timer = setTimeout(() => { window.location.href = url; }, 1800);
+      return () => clearTimeout(timer);
     }
   }, []);
+
+  const redirectDesc = platform === 'ios'
+    ? t('download.descRedirectIos')
+    : t('download.descRedirectAndroid');
 
   return (
     <div className="h-screen overflow-hidden flex flex-col bg-surface relative">
@@ -64,7 +70,7 @@ export default function Download() {
             className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors text-sm font-medium"
           >
             <ArrowLeft size={16} aria-hidden="true" />
-            Wróć na stronę
+            {t('nav.backToSite')}
           </Link>
         </div>
       </nav>
@@ -80,7 +86,7 @@ export default function Download() {
             transition={{ duration: 0.4 }}
             className="text-[#5DB38D] text-sm font-semibold uppercase tracking-widest mb-2"
           >
-            Dostępne bezpłatnie
+            {t('download.available')}
           </motion.p>
 
           <motion.h1
@@ -89,8 +95,8 @@ export default function Download() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-[1.1] mb-3 font-[family-name:var(--font-family-heading)]"
           >
-            Zadbaj o siebie<br />
-            <span className="text-primary/55">każdego dnia</span>
+            {t('download.headline')}<br />
+            <span className="text-primary/55">{t('download.headlineSub')}</span>
           </motion.h1>
 
           <motion.p
@@ -99,9 +105,7 @@ export default function Download() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-text-secondary text-lg leading-relaxed max-w-lg mx-auto"
           >
-            {redirecting
-              ? `Za chwilę przekierujemy Cię do ${platform === 'ios' ? 'App Store' : 'Google Play'}…`
-              : 'Inteligentne przypomnienia o lekach i spokój ducha — dla Ciebie i Twoich bliskich.'}
+            {redirecting ? redirectDesc : t('download.descDefault')}
           </motion.p>
 
           {redirecting && (
@@ -129,21 +133,21 @@ export default function Download() {
               href={GOOGLE_PLAY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Pobierz z Google Play"
+              aria-label={t('download.googlePlayAria')}
               className={`block transition-all duration-300 hover:scale-105 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${platform === 'android' ? 'ring-2 ring-accent-gold ring-offset-2' : ''
                 }`}
             >
-              <img src={storeBadges.googlePlay} alt="Pobierz w Google Play" className="w-44 h-auto" />
+              <img src={storeBadges.googlePlay} alt={t('download.googlePlayAlt')} className="w-44 h-auto" />
             </a>
             <a
               href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Pobierz z App Store"
+              aria-label={t('download.appStoreAria')}
               className={`block transition-all duration-300 hover:scale-105 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${platform === 'ios' ? 'ring-2 ring-accent-gold ring-offset-2' : ''
                 }`}
             >
-              <img src={storeBadges.appStore} alt="Pobierz w App Store" className="w-36 h-auto" />
+              <img src={storeBadges.appStore} alt={t('download.appStoreAlt')} className="w-36 h-auto" />
             </a>
           </motion.div>
 
@@ -151,7 +155,7 @@ export default function Download() {
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}
             className="text-text-secondary/50 text-sm mt-3"
           >
-            Bezpłatne · Bez konta · iOS i Android
+            {t('download.badges')}
           </motion.p>
         </div>
 
@@ -164,7 +168,7 @@ export default function Download() {
         >
           <img
             src="/images/download -pl.png"
-            alt="Aplikacja Pillo na telefonie"
+            alt={t('download.phoneAlt')}
             draggable="false"
             className="w-auto object-contain object-bottom pointer-events-none select-none"
             style={{ height: 'calc(100vh - 220px)' }}
@@ -176,13 +180,13 @@ export default function Download() {
       {/* Footer */}
       <footer className="relative z-20 shrink-0 border-t border-divider/40 py-4 px-6 bg-surface/60 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
-          <p className="text-text-secondary/50">© 2026 Pillo. Wszystkie prawa zastrzeżone.</p>
+          <p className="text-text-secondary/50">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
           <div className="flex gap-6">
             <Link to="/polityka-prywatnosci" className="text-text-secondary hover:text-primary transition-colors">
-              Polityka prywatności
+              {t('footer.privacyPolicy')}
             </Link>
             <Link to="/regulamin" className="text-text-secondary hover:text-primary transition-colors">
-              Regulamin
+              {t('footer.terms')}
             </Link>
           </div>
         </div>

@@ -14,7 +14,8 @@ const LanguageSwitcher = () => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef(null);
 
-  const currentLang = LANGS.find(l => l.code === i18n.language) ?? LANGS[0];
+  const activeLangCode = i18n.resolvedLanguage ?? i18n.language?.split('-')[0];
+  const currentLang = LANGS.find(l => l.code === activeLangCode) ?? LANGS[0];
 
   useEffect(() => {
     if (!open) return;
@@ -48,7 +49,7 @@ const LanguageSwitcher = () => {
             className="bg-[#243D34] border border-[#3F8F6B]/30 rounded-2xl overflow-hidden shadow-xl min-w-[140px]"
           >
             {LANGS.map(lang => {
-              const isActive = lang.code === i18n.language;
+              const isActive = lang.code === activeLangCode;
               return (
                 <li
                   key={lang.code}

@@ -77,5 +77,48 @@
   },
   "lang": {
     "switcherAriaLabel": "Wybierz język / Select language"
+  },
+  "contact": {
+    "subtitle": "Write to us",
+    "title": "Contact",
+    "description": "Have a question or want to get in touch?",
+    "responseTime": "We typically reply within 24 hours.",
+    "nameLbl": "Full name",
+    "namePlaceholder": "John Smith",
+    "emailLbl": "Email address",
+    "emailPlaceholder": "john@example.com",
+    "topicLbl": "Topic",
+    "topicPlaceholder": "Select a topic (optional)",
+    "topics": ["General question", "Technical issue", "Partnership / Collaboration", "Press & media", "Other"],
+    "messageLbl": "Message",
+    "messagePlaceholder": "Write your message…",
+    "submitting": "Sending…",
+    "submit": "Send message",
+    "privacy": "Your data is used solely to reply to your message.",
+    "successTitle": "Message sent!",
+    "successDesc": "Thank you for reaching out. We'll get back to you as soon as possible.",
+    "successReset": "Send another message",
+    "genericError": "Something went wrong. Please try again.",
+    "newMessage": "New message"
+  },
+  "legal": {
+    "translationNotice": "This is a translated version. The original binding document is in Polish.",
+    "viewOriginal": "View original (Polish)",
+    "viewingOriginal": "You are viewing the original Polish version.",
+    "backToTranslation": "Back to English"
+  },
+  "download": {
+    "available": "Available for free",
+    "headline": "Take care of yourself",
+    "headlineSub": "every day",
+    "descDefault": "Smart medication reminders and peace of mind — for you and your loved ones.",
+    "descRedirectIos": "You'll be redirected to the App Store shortly…",
+    "descRedirectAndroid": "You'll be redirected to Google Play shortly…",
+    "badges": "Free · No account · iOS & Android",
+    "googlePlayAria": "Download from Google Play",
+    "appStoreAria": "Download from App Store",
+    "googlePlayAlt": "Get it on Google Play",
+    "appStoreAlt": "Download on the App Store",
+    "phoneAlt": "Pillo app on phone"
   }
 }

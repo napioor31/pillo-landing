@@ -1,0 +1,210 @@
+{
+  "layout": {
+    "title": "Polityka Prywatności",
+    "subtitle": "Aplikacja Pillo",
+    "date": "Data ostatniej aktualizacji: 16 marca 2026 r."
+  },
+  "thirdParty": {
+    "purposeLabel": "Cel",
+    "dataLabel": "Udostępniane dane",
+    "policyLink": "Polityka prywatności"
+  },
+  "s1": {
+    "title": "Wprowadzenie",
+    "p1": "Niniejsza Polityka Prywatności określa zasady gromadzenia, wykorzystywania oraz udostępniania danych osobowych w związku z korzystaniem z aplikacji mobilnej Pillo („Aplikacja”). Administratorem danych osobowych jest Albert Napiórkowski („Administrator”, „my”, „nas”, „nasz”).",
+    "p2": "Pillo jest aplikacją mobilną służącą do zarządzania przypomnieniami o przyjmowaniu leków. Aplikacja obsługuje dwie odrębne role użytkowników: Pacjenta, który korzysta z przypomnień o lekach, oraz Opiekuna, który monitoruje przestrzeganie harmonogramu lekowego przez Pacjenta. Administrator dokłada wszelkich starań, aby chronić prywatność Użytkowników oraz zapewnić pełną przejrzystość stosowanych praktyk dotyczących przetwarzania danych osobowych."
+  },
+  "s2": {
+    "title": "Informacje, które gromadzimy",
+    "sub1": {
+      "title": "Konto Pacjenta – dane anonimowe",
+      "p1": "Konto Pacjenta jest anonimowe z założenia – rejestracja nie wymaga podania adresu e-mail ani żadnego innego identyfikatora osobistego. Supabase generuje dla Pacjenta anonimową sesję, która nie pozwala na powiązanie danych z tożsamością Pacjenta. W ramach konfiguracji Aplikacji Pacjent może podać:",
+      "items1": [
+        "Imię lub pseudonim (opcjonalne) – wyłącznie do spersonalizowanego przywitania w Aplikacji.",
+        "Preferencje dostępności (opcjonalne): wybrany rozmiar czcionki oraz włączenie funkcji odczytu ekranu (text-to-speech).",
+        "Odpowiedzi na pytania onboardingowe (opcjonalne): dotyczące częstotliwości zapominania o lekach, preferowanego sposobu obsługi przypomnień i poziomu monitorowania."
+      ],
+      "p2": "Na serwerze Supabase przechowywane są następujące dane Pacjenta niezbędne do świadczenia usługi:",
+      "items2": [
+        "Dane leków: nazwa leku, forma, dawkowanie, harmonogram (dni tygodnia i godziny przyjmowania).",
+        "Historia dawek: statusy dawek (przyjęta, pominięta, odłożona, opóźniona) wraz ze znacznikami czasu.",
+        "Dane o zapasach leku (opcjonalne): łączna ilość w opakowaniu, próg niskiego stanu, data ważności.",
+        "Notatki do leków (opcjonalne): tekst dodany przez Pacjenta do konkretnego przypomnienia.",
+        "Anonimowy identyfikator sesji: generowany automatycznie przez Supabase, bez możliwości powiązania z tożsamością Pacjenta."
+      ],
+      "noteTitle": "Uwaga dotycząca odzyskiwania konta:",
+      "noteText": "Pacjent niepołączony z Opiekunem nie może odzyskać swojego konta po utracie urządzenia – jest to świadoma decyzja projektowa mająca na celu eliminację bariery rejestracji. Pacjent połączony z Opiekunem może ponownie powiązać konto po ponownej instalacji Aplikacji za pomocą kodu zaproszenia."
+    },
+    "sub2": {
+      "title": "Konto Opiekuna – dane zarejestrowanego użytkownika",
+      "p1": "Opiekun tworzy pełne konto wymagające weryfikacji tożsamości. Gromadzimy następujące dane Opiekuna:",
+      "items": [
+        "Dane logowania: adres e-mail oraz hasło lub dane logowania przez Google / Apple (w zależności od wybranej metody rejestracji).",
+        "Odpowiedzi na pytania onboardingowe (opcjonalne): relacja z Pacjentem, preferowana intensywność alertów, dostępność Opiekuna.",
+        "Dane dotyczące subskrypcji Premium: status subskrypcji oraz identyfikator zakupu, obsługiwane przez RevenueCat."
+      ]
+    },
+    "sub3": {
+      "title": "Dane zbierane automatycznie",
+      "items": [
+        "Informacje o urządzeniu: platforma (iOS/Android), wersja systemu operacyjnego, wersja Aplikacji.",
+        "Analityka użytkowania: sposób interakcji z Aplikacją, gromadzone za pośrednictwem narzędzia PostHog.",
+        "Dane o błędach i wydajności: informacje techniczne dotyczące awarii i błędów Aplikacji, gromadzone za pośrednictwem narzędzia Sentry.",
+        "Dane zakupowe: informacje o subskrypcji i transakcjach przetwarzane za pośrednictwem RevenueCat oraz systemów płatności Apple/Google.",
+        "Opinie i zgłoszenia: treść wiadomości przesłanych przez Użytkownika za pośrednictwem narzędzia UserJot (opcjonalne zgłoszenia w Aplikacji)."
+      ]
+    }
+  },
+  "s3": {
+    "title": "Cele przetwarzania danych",
+    "p1": "Zgromadzone dane wykorzystujemy w następujących celach:",
+    "items": [
+      "Świadczenie usług: dostarczanie przypomnień o lekach zgodnie z harmonogramem Pacjenta.",
+      "Monitorowanie adherencji: udostępnianie Opiekunowi w czasie rzeczywistym informacji o przestrzeganiu harmonogramu lekowego przez Pacjenta (wyłącznie za zgodą Pacjenta, wyrażoną przez połączenie kont).",
+      "Powiadomienia push: wysyłanie przypomnień do Pacjenta oraz alertów o niepotwierdzonych lub pominiętych dawkach do Opiekuna.",
+      "Synchronizacja w czasie rzeczywistym: aktualizacja statusu dawek w panelu Opiekuna za pomocą połączenia WebSocket (Supabase Realtime).",
+      "Zarządzanie subskrypcją: obsługa i weryfikacja subskrypcji Premium Opiekuna.",
+      "Doskonalenie Aplikacji: analiza wzorców użytkowania w celu poprawy funkcjonalności i doświadczenia użytkownika.",
+      "Monitorowanie błędów: identyfikacja i usuwanie problemów technicznych.",
+      "Obsługa klienta: odpowiadanie na zgłoszenia i opinie przesłane przez Użytkowników."
+    ]
+  },
+  "s4": {
+    "title": "Podstawy prawne przetwarzania danych",
+    "p1": "Przetwarzanie danych osobowych odbywa się na następujących podstawach prawnych zgodnie z art. 6 ust. 1 RODO:",
+    "items": [
+      "Wykonanie umowy (art. 6 ust. 1 lit. b RODO): przetwarzanie danych niezbędnych do świadczenia usług Aplikacji – danych leków i historii dawek Pacjenta oraz danych konta i panelu Opiekuna.",
+      "Zgoda (art. 6 ust. 1 lit. a RODO): analityka produktowa (PostHog), powiadomienia push (za zgodą systemową iOS/Android), udostępnianie danych Pacjenta Opiekunowi (poprzez świadome połączenie kont kodem zaproszenia).",
+      "Prawnie uzasadniony interes Administratora (art. 6 ust. 1 lit. f RODO): monitorowanie błędów (Sentry), zapewnienie bezpieczeństwa Aplikacji, zbieranie opinii Użytkowników (UserJot)."
+    ]
+  },
+  "s5": {
+    "title": "Dane przekazywane między Pacjentem a Opiekunem",
+    "p1": "Połączenie Pacjenta z Opiekunem jest w pełni dobrowolne. Opiekun generuje unikalny kod zaproszenia i przekazuje go Pacjentowi kanałem zewnętrznym (np. SMS, WhatsApp). Wprowadzenie i zatwierdzenie kodu przez Pacjenta stanowi wyrażoną dobrowolnie zgodę na udostępnienie Opiekunowi następujących danych:",
+    "items": [
+      "lista leków: nazwa, forma, dawkowanie, harmonogram, notatki, stan zapasów,",
+      "historia dawek: statusy i znaczniki czasu wszystkich zdarzeń (dawka przyjęta, pominięta, odłożona, opóźniona),",
+      "statusy przypomnień w czasie rzeczywistym (za pomocą połączenia WebSocket)."
+    ],
+    "p2": "Opiekun ma wyłącznie dostęp do odczytu danych leków – nie może dodawać, edytować ani usuwać przypomnień Pacjenta. Pacjent może w każdej chwili rozłączyć konto Opiekuna z poziomu ustawień Aplikacji. Po rozłączeniu Opiekun traci dostęp do danych Pacjenta."
+  },
+  "s6": {
+    "title": "Usługi podmiotów trzecich",
+    "p1": "W ramach działania Aplikacji korzystamy z następujących usług podmiotów trzecich:",
+    "supabase": {
+      "purpose": "Baza danych backendowa (PostgreSQL), uwierzytelnianie, synchronizacja w czasie rzeczywistym.",
+      "data": "Dane konta Opiekuna, dane leków i historii dawek Pacjenta, anonimowe sesje Pacjenta."
+    },
+    "revenuecat": {
+      "purpose": "Zarządzanie subskrypcjami i przetwarzanie płatności.",
+      "data": "Identyfikator Użytkownika, status subskrypcji, informacje o zakupach."
+    },
+    "sentry": {
+      "purpose": "Śledzenie błędów i monitorowanie wydajności.",
+      "data": "Dzienniki błędów, informacje o urządzeniu, adres IP, kontekst techniczny zdarzenia."
+    },
+    "posthog": {
+      "purpose": "Analityka produktowa.",
+      "data": "Wzorce użytkowania, interakcje Użytkownika, informacje o urządzeniu."
+    },
+    "userjot": {
+      "purpose": "Zbieranie opinii i zgłoszeń od Użytkowników bezpośrednio w Aplikacji.",
+      "data": "Treść przesłanej opinii oraz opcjonalne dane kontaktowe podane dobrowolnie przez Użytkownika."
+    },
+    "expo": {
+      "purpose": "Dostarczanie powiadomień push do Pacjenta i Opiekuna.",
+      "data": "Token urządzenia (push token), anonimowy identyfikator sesji."
+    },
+    "appleGoogle": {
+      "purpose": "Przetwarzanie płatności za subskrypcje.",
+      "data": "Dane płatności i historia zakupów (obsługiwane bezpośrednio przez Apple/Google)."
+    }
+  },
+  "s7": {
+    "title": "Okres przechowywania danych",
+    "items": [
+      "Dane konta Opiekuna: przechowywane przez cały okres korzystania z Aplikacji. Po usunięciu konta dane są kasowane niezwłocznie, z zastrzeżeniem obowiązków wynikających z przepisów prawa.",
+      "Dane Pacjenta (leki, historia dawek): przechowywane na serwerze przez cały okres aktywności anonimowej sesji. Użytkownik może złożyć wniosek o usunięcie danych w każdej chwili zgodnie z pkt 9 niniejszej Polityki.",
+      "Dane analityczne (PostHog) i dane o błędach (Sentry): przechowywane zgodnie z politykami dostawców (zazwyczaj od 90 dni do 2 lat)."
+    ]
+  },
+  "s8": {
+    "title": "Bezpieczeństwo danych",
+    "p1": "Stosujemy odpowiednie środki techniczne i organizacyjne w celu ochrony danych osobowych Użytkowników, w tym:",
+    "items": [
+      "szyfrowane połączenia (HTTPS/TLS) dla całej transmisji danych,",
+      "bezpieczne przechowywanie danych na serwerach Supabase,",
+      "szyfrowanie haseł Opiekuna (obsługiwane przez Supabase Auth),",
+      "izolację danych – Opiekun widzi wyłącznie dane Pacjentów, z którymi jest połączony,",
+      "regularne przeglądy i aktualizacje zabezpieczeń."
+    ],
+    "p2": "Żadna metoda transmisji danych przez Internet ani elektronicznego przechowywania danych nie jest w 100% bezpieczna. W związku z tym nie możemy zagwarantować absolutnego bezpieczeństwa danych."
+  },
+  "s9": {
+    "title": "Prawa Użytkownika na podstawie RODO",
+    "p1": "Zgodnie z RODO Użytkownikowi przysługują następujące prawa:",
+    "items": [
+      "Prawo dostępu (art. 15 RODO): uzyskanie potwierdzenia, czy przetwarzane są dane osobowe Użytkownika, oraz dostępu do tych danych.",
+      "Prawo do sprostowania (art. 16 RODO): żądanie niezwłocznego sprostowania nieprawidłowych lub uzupełnienia niekompletnych danych.",
+      "Prawo do usunięcia (art. 17 RODO): żądanie usunięcia danych osobowych („prawo do bycia zapomnianym”).",
+      "Prawo do ograniczenia przetwarzania (art. 18 RODO): żądanie ograniczenia przetwarzania danych w określonych przypadkach.",
+      "Prawo do przeniesienia danych (art. 20 RODO): otrzymanie danych w ustrukturyzowanym, powszechnie używanym formacie nadającym się do odczytu maszynowego.",
+      "Prawo do sprzeciwu (art. 21 RODO): sprzeciw wobec przetwarzania danych opartego na prawnie uzasadnionym interesie Administratora.",
+      "Prawo do cofnięcia zgody: cofnięcie udzielonej zgody w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania dokonanego przed cofnięciem.",
+      "Prawo do skargi: wniesienie skargi do Prezesa Urzędu Ochrony Danych Osobowych (UODO), jeśli Użytkownik uzna, że przetwarzanie narusza przepisy RODO."
+    ],
+    "p2": "W celu skorzystania z powyższych praw należy skontaktować się z Administratorem za pośrednictwem danych wskazanych w pkt 14 niniejszej Polityki."
+  },
+  "s10": {
+    "title": "Organ nadzorczy",
+    "name": "Prezes Urzędu Ochrony Danych Osobowych (UODO)",
+    "websiteLabel": "Strona internetowa:",
+    "websiteUrl": "uodo.gov.pl",
+    "address": "Adres: ul. Stawki 2, 00-193 Warszawa",
+    "phone": "Telefon: +48 22 531 03 00"
+  },
+  "s11": {
+    "title": "Ochrona prywatności dzieci",
+    "p1": "Aplikacja nie jest przeznaczona dla osób poniżej 16. roku życia (zgodnie z art. 8 RODO oraz art. 7 ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych). Nie gromadzimy świadomie danych osobowych osób niepełnoletnich. Jeśli uważasz, że zebraliśmy dane od dziecka, prosimy o niezwłoczny kontakt z Administratorem."
+  },
+  "s12": {
+    "title": "Powiadomienia push",
+    "p1": "Aplikacja korzysta z powiadomień push dostarczanych za pośrednictwem Expo Notifications w dwóch celach:",
+    "items1": [
+      "Pacjent: przypomnienia o lekach zgodnie z ustalonym harmonogramem dawkowania.",
+      "Opiekun: alerty o niepotwierdzonych lub pominiętych dawkach Pacjenta."
+    ],
+    "p2": "Powiadomienia te:",
+    "items2": [
+      "są wysyłane na podstawie harmonogramów leków ustalonych przez Pacjenta,",
+      "są w pełni opcjonalne – Użytkownik może wyłączyć je w ustawieniach Aplikacji lub systemu operacyjnego,",
+      "nie są wykorzystywane do przesyłania treści marketingowych ani reklam."
+    ]
+  },
+  "s13": {
+    "title": "Zmiany w Polityce Prywatności",
+    "p1": "Administrator zastrzega sobie prawo do aktualizacji niniejszej Polityki Prywatności. O wszelkich istotnych zmianach Użytkownik zostanie poinformowany poprzez:",
+    "items": [
+      "opublikowanie nowej wersji Polityki Prywatności w Aplikacji,",
+      "aktualizację daty w nagłówku dokumentu,",
+      "wysłanie powiadomienia push lub wiadomości e-mail (jeśli jest to wymagane przepisami prawa)."
+    ],
+    "p2": "Dalsze korzystanie z Aplikacji po wejściu zmian w życie oznacza akceptację zmienionej Polityki Prywatności."
+  },
+  "s14": {
+    "title": "Dane kontaktowe Administratora",
+    "emailLabel": "E-mail:",
+    "controllerLabel": "Administrator danych:",
+    "appLabel": "Aplikacja:",
+    "addressLabel": "Adres:",
+    "email": "support@trypillo.pl",
+    "controller": "Albert Napiórkowski",
+    "app": "Pillo",
+    "address": "ul. Drewnowska 13 m. 12, 91-002 Łódź, Polska",
+    "p1": "W przypadku wniosków dotyczących RODO prosimy o umieszczenie w temacie wiadomości adnotacji „Wniosek RODO” oraz wskazanie prawa, z którego Użytkownik zamierza skorzystać. Odpowiedź zostanie udzielona w ciągu jednego miesiąca od dnia otrzymania wniosku, zgodnie z wymogami RODO."
+  },
+  "s15": {
+    "title": "Postanowienia końcowe",
+    "p1": "Korzystając z Aplikacji Pillo, Użytkownik potwierdza, że zapoznał się z niniejszą Polityką Prywatności. Polityka prywatności podlega prawu polskiemu i unijnemu. W sprawach nieuregulowanych niniejszą Polityką zastosowanie mają przepisy RODO oraz polskiej ustawy o ochronie danych osobowych z dnia 10 maja 2018 r."
+  }
+}

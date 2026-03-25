@@ -2,25 +2,21 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Send, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { logo } from '../assets/images';
 
 const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
-
-const TOPICS = [
-  'Pytanie ogólne',
-  'Problem techniczny',
-  'Współpraca / Partnerstwo',
-  'Prasa i media',
-  'Inne',
-];
 
 const inputClass =
   'w-full px-4 py-3 rounded-xl border border-divider bg-surface text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all duration-200 text-base';
 
 export default function Contact() {
+  const { t } = useTranslation('common');
   const [form, setForm] = useState({ name: '', email: '', topic: '', message: '', botcheck: '' });
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
   const [errorMsg, setErrorMsg] = useState('');
+
+  const TOPICS = t('contact.topics', { returnObjects: true });
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -44,7 +40,7 @@ export default function Contact() {
           access_key: WEB3FORMS_KEY,
           name: form.name,
           email: form.email,
-          subject: `[Pillo] ${form.topic || 'Nowa wiadomość'}`,
+          subject: `[Pillo] ${form.topic || t('contact.newMessage')}`,
           message: form.message,
         }),
       });
@@ -55,11 +51,11 @@ export default function Contact() {
         setStatus('success');
         setForm({ name: '', email: '', topic: '', message: '', botcheck: '' });
       } else {
-        throw new Error(data.message || 'Nieznany błąd');
+        throw new Error(data.message || t('contact.genericError'));
       }
     } catch (err) {
       setStatus('error');
-      setErrorMsg(err.message || 'Coś poszło nie tak. Spróbuj ponownie.');
+      setErrorMsg(err.message || t('contact.genericError'));
     }
   }
 
@@ -88,7 +84,7 @@ export default function Contact() {
             className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors text-sm font-medium"
           >
             <ArrowLeft size={16} aria-hidden="true" />
-            Wróć na stronę
+            {t('nav.backToSite')}
           </Link>
         </div>
       </nav>
@@ -105,14 +101,14 @@ export default function Contact() {
             className="text-center mb-10"
           >
             <p className="text-[#5DB38D] text-sm font-semibold uppercase tracking-widest mb-3">
-              Napisz do nas
+              {t('contact.subtitle')}
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold text-primary leading-tight mb-4 font-[family-name:var(--font-family-heading)]">
-              Kontakt
+              {t('contact.title')}
             </h1>
             <p className="text-text-secondary text-lg leading-relaxed">
-              Masz pytanie lub chcesz się z nami skontaktować?<br />
-              Odpisujemy zwykle w ciągu 24&nbsp;godzin.
+              {t('contact.description')}<br />
+              {t('contact.responseTime')}
             </p>
           </motion.div>
 
@@ -136,16 +132,16 @@ export default function Contact() {
                     <CheckCircle size={32} className="text-success" />
                   </div>
                   <h2 className="text-2xl font-bold text-primary font-[family-name:var(--font-family-heading)]">
-                    Wiadomość wysłana!
+                    {t('contact.successTitle')}
                   </h2>
                   <p className="text-text-secondary">
-                    Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.
+                    {t('contact.successDesc')}
                   </p>
                   <button
                     onClick={() => setStatus('idle')}
                     className="mt-2 text-sm text-primary underline underline-offset-2 hover:text-primary-dark transition-colors"
                   >
-                    Wyślij kolejną wiadomość
+                    {t('contact.successReset')}
                   </button>
                 </motion.div>
               ) : (
@@ -172,7 +168,7 @@ export default function Contact() {
                   {/* Name */}
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="name" className="text-sm font-medium text-text-primary">
-                      Imię i nazwisko <span className="text-error" aria-hidden="true">*</span>
+                      {t('contact.nameLbl')} <span className="text-error" aria-hidden="true">*</span>
                     </label>
                     <input
                       id="name"
@@ -180,7 +176,7 @@ export default function Contact() {
                       type="text"
                       autoComplete="name"
                       required
-                      placeholder="Jan Kowalski"
+                      placeholder={t('contact.namePlaceholder')}
                       value={form.name}
                       onChange={handleChange}
                       className={inputClass}
@@ -190,7 +186,7 @@ export default function Contact() {
                   {/* Email */}
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="email" className="text-sm font-medium text-text-primary">
-                      Adres e-mail <span className="text-error" aria-hidden="true">*</span>
+                      {t('contact.emailLbl')} <span className="text-error" aria-hidden="true">*</span>
                     </label>
                     <input
                       id="email"
@@ -198,7 +194,7 @@ export default function Contact() {
                       type="email"
                       autoComplete="email"
                       required
-                      placeholder="jan@przykład.pl"
+                      placeholder={t('contact.emailPlaceholder')}
                       value={form.email}
                       onChange={handleChange}
                       className={inputClass}
@@ -208,7 +204,7 @@ export default function Contact() {
                   {/* Topic */}
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="topic" className="text-sm font-medium text-text-primary">
-                      Temat
+                      {t('contact.topicLbl')}
                     </label>
                     <select
                       id="topic"
@@ -217,9 +213,9 @@ export default function Contact() {
                       onChange={handleChange}
                       className={`${inputClass} appearance-none cursor-pointer`}
                     >
-                      <option value="">Wybierz temat (opcjonalnie)</option>
-                      {TOPICS.map(t => (
-                        <option key={t} value={t}>{t}</option>
+                      <option value="">{t('contact.topicPlaceholder')}</option>
+                      {Array.isArray(TOPICS) && TOPICS.map(topic => (
+                        <option key={topic} value={topic}>{topic}</option>
                       ))}
                     </select>
                   </div>
@@ -227,14 +223,14 @@ export default function Contact() {
                   {/* Message */}
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="message" className="text-sm font-medium text-text-primary">
-                      Wiadomość <span className="text-error" aria-hidden="true">*</span>
+                      {t('contact.messageLbl')} <span className="text-error" aria-hidden="true">*</span>
                     </label>
                     <textarea
                       id="message"
                       name="message"
                       required
                       rows={5}
-                      placeholder="Napisz swoją wiadomość…"
+                      placeholder={t('contact.messagePlaceholder')}
                       value={form.message}
                       onChange={handleChange}
                       className={`${inputClass} resize-none`}
@@ -266,18 +262,18 @@ export default function Contact() {
                     {status === 'submitting' ? (
                       <>
                         <Loader size={18} className="animate-spin" aria-hidden="true" />
-                        Wysyłanie…
+                        {t('contact.submitting')}
                       </>
                     ) : (
                       <>
                         <Send size={18} aria-hidden="true" />
-                        Wyślij wiadomość
+                        {t('contact.submit')}
                       </>
                     )}
                   </button>
 
                   <p className="text-text-secondary/50 text-xs text-center">
-                    Twoje dane są używane wyłącznie w celu odpowiedzi na wiadomość.
+                    {t('contact.privacy')}
                   </p>
                 </motion.form>
               )}
@@ -289,13 +285,13 @@ export default function Contact() {
       {/* Footer */}
       <footer className="relative z-20 shrink-0 border-t border-divider/40 py-4 px-6 bg-surface/60 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
-          <p className="text-text-secondary/50">© 2026 Pillo. Wszystkie prawa zastrzeżone.</p>
+          <p className="text-text-secondary/50">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
           <div className="flex gap-6">
             <Link to="/polityka-prywatnosci" className="text-text-secondary hover:text-primary transition-colors">
-              Polityka prywatności
+              {t('footer.privacyPolicy')}
             </Link>
             <Link to="/regulamin" className="text-text-secondary hover:text-primary transition-colors">
-              Regulamin
+              {t('footer.terms')}
             </Link>
           </div>
         </div>

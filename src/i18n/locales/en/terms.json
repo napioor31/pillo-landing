@@ -1,0 +1,250 @@
+{
+  "layout": {
+    "title": "Terms of Service",
+    "subtitle": "Pillo App",
+    "date": "Last updated: March 16, 2026"
+  },
+  "s1": {
+    "title": "Acceptance of Terms",
+    "p1": "These Terms of Service (\"Terms\") constitute a legally binding agreement between you and Albert Napiórkowski operating under the name Pillo (\"Controller\", \"we\", \"us\", \"our\") regarding the use of the Pillo mobile application (\"Application\"). By downloading, installing, launching or using the Application, you accept these Terms. If you do not accept these Terms, do not use the Application."
+  },
+  "s2": {
+    "title": "Description of Service",
+    "p1": "Pillo is a mobile application for managing medication reminders. The Application supports two user roles:",
+    "items": [
+      "Patient (free, anonymous account): configuring medication reminders, handling push notifications, tracking dose statuses, managing medication stock, optional connection with a Caregiver.",
+      "Caregiver (paid subscription): real-time monitoring of the Patient's medication schedule adherence, access to adherence dashboard, dose history, missed dose alerts."
+    ],
+    "p2": "The Application is not a medical device and does not constitute medical advice. The full medical disclaimer is contained in Section 8 of these Terms."
+  },
+  "s3": {
+    "title": "Age Requirements",
+    "p1": "The Application is intended for persons aged 16 and over – in accordance with Art. 8 GDPR and Art. 7 of the Act of 10 May 2018 on the Protection of Personal Data. By using the Application, you declare that you meet this age requirement. We do not knowingly collect data from persons under the age of 16."
+  },
+  "s4": {
+    "title": "Licence and Restrictions",
+    "sub1": {
+      "title": "Grant of Licence",
+      "p1": "Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, non-sublicensable and revocable licence to download, install and use the Application on devices you own or control, solely for personal and non-commercial purposes."
+    },
+    "sub2": {
+      "title": "Restrictions",
+      "p1": "You agree that you will NOT:",
+      "items": [
+        "modify, reverse engineer, decompile, disassemble or create derivative works of the Application,",
+        "remove, alter or obscure any proprietary notices contained in the Application,",
+        "use the Application for any illegal, harmful or unauthorised purposes,",
+        "attempt to gain unauthorised access to any part of the Application or its systems,",
+        "use automated scripts, bots or similar tools to access the Application,",
+        "disrupt or interrupt the operation of the Application or its servers,",
+        "reproduce, distribute, publicly display or create derivative works based on the Application,",
+        "sell, rent, lease, sublicence or transfer rights to use the Application,",
+        "use the Application in a manner harmful to minors,",
+        "impersonate any person or entity,",
+        "transmit viruses, malware or other harmful code,",
+        "violate applicable laws, regulations or third-party rights."
+      ]
+    }
+  },
+  "s5": {
+    "title": "User Accounts",
+    "sub1": {
+      "title": "Patient Account",
+      "p1": "The Patient account is anonymous – it does not require an email address or any other personal identifier. The Patient is responsible for all activities carried out under their account. Loss of device by a Patient not connected to a Caregiver results in permanent loss of access to account data – this is a deliberate design decision aimed at eliminating registration barriers. For more information on account recovery, see the Privacy Policy."
+    },
+    "sub2": {
+      "title": "Caregiver Account",
+      "p1": "The Caregiver creates a full account with email address verification. The Caregiver is responsible for maintaining the confidentiality of their login credentials and for all activities carried out under their account. If you suspect unauthorised access to your account, please notify the Controller immediately."
+    },
+    "sub3": {
+      "title": "User Data",
+      "p1": "You retain full rights to data you enter into the Application (such as medication data and notes). By using the Application, you grant us a licence to store and process this data in accordance with the Privacy Policy. We process data in accordance with applicable data protection legislation, including the GDPR."
+    },
+    "sub4": {
+      "title": "Accuracy of Information",
+      "p1": "You agree to provide accurate, current and complete information during the Application setup process."
+    }
+  },
+  "s6": {
+    "title": "Premium Subscriptions",
+    "sub1": {
+      "title": "Subscription Terms",
+      "p1": "Access to Caregiver features requires a paid subscription (\"Caregiver Access\"). Subscriptions are managed by Apple App Store or Google Play Store and are subject to their respective terms."
+    },
+    "sub2": {
+      "title": "Payments",
+      "items": [
+        "Subscription fees are charged to your Apple App Store or Google Play Store account.",
+        "Payment is processed upon purchase confirmation.",
+        "Subscriptions renew automatically unless you disable auto-renewal at least 24 hours before the end of the current period.",
+        "The renewal charge is applied within 24 hours before the end of the current period.",
+        "You can manage and cancel your subscription in your App Store or Play Store account settings."
+      ]
+    },
+    "sub3": {
+      "title": "Refunds",
+      "p1": "Refunds are handled in accordance with the refund policy of Apple App Store or Google Play Store. As a consumer in the EU, you may have the right to withdraw from the contract within 14 days of purchase, subject to exceptions for digital content under Directive (EU) 2019/770."
+    },
+    "sub4": {
+      "title": "Price Changes",
+      "p1": "We reserve the right to change subscription prices at any time. Existing subscribers will be notified of any price increase at least 30 days before it takes effect. Price changes do not apply to the current subscription period purchased before the change."
+    }
+  },
+  "s7": {
+    "title": "Intellectual Property Rights",
+    "sub1": {
+      "title": "Ownership",
+      "p1": "The Application, including all content, features, software, designs, text, graphics, logos and underlying technology, is the property of the Controller and is protected by copyright, trademark, patent, trade secret and other intellectual property laws."
+    },
+    "sub2": {
+      "title": "User-Generated Content",
+      "p1": "You retain full ownership of custom content you create within the Application (such as medication notes). You grant us a non-exclusive licence to store and display this content solely for the purpose of providing the service."
+    },
+    "sub3": {
+      "title": "Trademarks",
+      "p1": "'Pillo' and associated logos are trademarks of the Controller. You may not use these trademarks without prior written consent."
+    }
+  },
+  "s8": {
+    "title": "Medical Disclaimer",
+    "sub1": {
+      "title": "No Medical Advice",
+      "p1": "The Application is not intended to provide medical or therapeutic advice. Reminders and content delivered by the Application are for organisational purposes only and do not substitute professional medical advice, diagnosis or treatment. The Application is a medication adherence support tool, not a medical device."
+    },
+    "sub2": {
+      "title": "Consult a Professional",
+      "p1": "Always seek the advice of qualified healthcare professionals regarding your medications and health. Never disregard professional medical advice or delay seeking it because of content in this Application."
+    },
+    "sub3": {
+      "title": "Emergencies",
+      "p1": "In the event of a life- or health-threatening situation related to medications, contact emergency services immediately:",
+      "items": [
+        "Poland: 112 (emergency number) or 999 (Ambulance)",
+        "Other EU countries: 112 (European emergency number)",
+        "United States: 911"
+      ],
+      "p2": "The Application is not designed for crisis intervention or life-threatening situations."
+    }
+  },
+  "s9": {
+    "title": "Disclaimer of Warranties",
+    "p1": "To the maximum extent permitted by law (subject to mandatory consumer protection legislation for EU consumers), the Application is provided 'as is' and 'as available' without warranties of any kind, express or implied, including but not limited to:",
+    "items": [
+      "implied warranties of merchantability, fitness for a particular purpose and non-infringement,",
+      "warranties regarding the accuracy, reliability or completeness of content,",
+      "warranties that the Application will operate uninterrupted, securely or error-free,",
+      "warranties regarding results obtained from use of the Application."
+    ],
+    "euNote": "Note for EU consumers: If you are a consumer in the EU, the above disclaimer does not affect your statutory rights under applicable consumer protection laws, including the right to conformity of digital content and services under Directive (EU) 2019/770."
+  },
+  "s10": {
+    "title": "Limitation of Liability",
+    "sub1": {
+      "title": "Note for EU Consumers",
+      "p1": "These provisions do not exclude or limit our liability for death or personal injury caused by our negligence, for fraud or misrepresentation, for any liability that cannot be excluded or limited under applicable consumer protection laws, or for breach of mandatory compliance requirements under EU law."
+    },
+    "sub2": {
+      "title": "Exclusion of Damages",
+      "p1": "Subject to Section 10.1, to the maximum extent permitted by law, we are not liable for any indirect, incidental, special, consequential, punitive or exemplary damages, including but not limited to loss of profits, data, reputation, business interruption or other intangible losses, even if we have been informed of the possibility of such damages."
+    },
+    "sub3": {
+      "title": "Maximum Liability",
+      "p1": "Subject to Section 10.1, our total liability to you for all claims arising from these Terms or your use of the Application shall not exceed the greater of: (a) the amount paid by you in the twelve (12) months preceding the claim, or (b) one hundred euros (EUR 100.00)."
+    }
+  },
+  "s11": {
+    "title": "Third-Party Services",
+    "p1": "The Application integrates with and uses third-party services: Supabase, RevenueCat, Sentry, PostHog, UserJot and Expo Notifications. We are not responsible for:",
+    "items": [
+      "the availability, accuracy or content of third-party services,",
+      "the privacy practices or terms of those third parties,",
+      "any damages or losses caused by third-party services."
+    ],
+    "p2": "Use of third-party services is subject to their own terms and privacy policies, described in detail in the Privacy Policy."
+  },
+  "s12": {
+    "title": "Patient–Caregiver Connection",
+    "p1": "Linking the Patient account with the Caregiver account is voluntary and initiated by the Patient by entering an invitation code. The Patient consents to sharing medication data and dose history with the Caregiver. The Patient can disconnect at any time from the Application settings. The Caregiver has read-only access – they cannot modify the Patient's reminders. Detailed data flow rules are contained in the Privacy Policy."
+  },
+  "s13": {
+    "title": "Changes to the Application and Terms",
+    "sub1": {
+      "title": "Changes to the Application",
+      "p1": "We reserve the right to modify, suspend or discontinue the Application (or any part of it) at any time, with or without prior notice. We are not liable to you or any third party for any modification, suspension or discontinuation of the Application."
+    },
+    "sub2": {
+      "title": "Changes to the Terms",
+      "p1": "We may update these Terms from time to time. The date in the document header indicates when the Terms were last updated. You will be notified of significant changes via the Application or by email (if the Caregiver has provided an address). Continued use of the Application after changes take effect constitutes acceptance of the amended Terms."
+    }
+  },
+  "s14": {
+    "title": "Termination",
+    "sub1": {
+      "title": "Termination by You",
+      "p1": "You may stop using the Application and uninstall it from your devices at any time. Uninstalling the Application does not automatically cancel paid subscriptions – you must cancel the subscription yourself in your App Store or Play Store settings."
+    },
+    "sub2": {
+      "title": "Termination by Us",
+      "p1": "We may immediately, without prior notice, suspend or terminate your access to the Application for any reason, in particular in the event of a breach of these Terms."
+    },
+    "sub3": {
+      "title": "Effects of Termination",
+      "p1": "Upon termination:",
+      "items": [
+        "all licences granted to you terminate immediately,",
+        "cease using the Application and uninstall it from your devices,",
+        "provisions that by their nature should survive termination remain in effect, including provisions on ownership, disclaimer of warranties and limitation of liability."
+      ]
+    }
+  },
+  "s15": {
+    "title": "Geographic Availability",
+    "p1": "The Application is controlled and operated from Poland and is intended primarily for users in the European Union. We do not guarantee that the Application is appropriate or available in all locations. Access to the Application from territories where its content is illegal is prohibited. Users outside the European Union use the Application at their own risk and are responsible for compliance with local laws."
+  },
+  "s16": {
+    "title": "Accessibility",
+    "p1": "We strive to make the Application accessible to all users. The Application offers font size adjustment (Small / Medium / Large) and a screen reader function (text-to-speech). If you have difficulty using any part of the Application, please contact us and we will work together to find a solution."
+  },
+  "s17": {
+    "title": "Feedback and Reports",
+    "p1": "We welcome feedback, comments and suggestions for improving the Application. By submitting feedback, you acknowledge that we may use it without restriction or compensation, and you grant us a perpetual, irrevocable, worldwide, royalty-free licence to use, modify and incorporate such feedback into our products and services."
+  },
+  "s18": {
+    "title": "Apple and Google Specific Terms",
+    "sub1": {
+      "title": "App Store Terms (Apple)",
+      "p1": "If you use the Application via Apple's App Store, you acknowledge that:",
+      "items": [
+        "these Terms apply solely between you and the Developer, not Apple,",
+        "Apple has no obligation to provide maintenance or support services,",
+        "Apple is not responsible for addressing any claims relating to the Application,",
+        "Apple is a third-party beneficiary of these Terms and may enforce them."
+      ]
+    },
+    "sub2": {
+      "title": "Google Play Terms",
+      "p1": "If you use the Application via Google Play, you accept the Google Play Terms of Service."
+    }
+  },
+  "s19": {
+    "title": "Governing Law and Jurisdiction",
+    "p1": "These Terms are governed by and construed in accordance with Polish law. EU consumers also benefit from the protection afforded by the mandatory provisions of the law of the EU member state of their habitual residence. Any disputes shall be resolved by Polish courts, subject to the rights of EU consumers to bring claims before courts in their country of residence."
+  },
+  "s20": {
+    "title": "Contact Details",
+    "emailLabel": "Email:",
+    "controllerLabel": "Controller:",
+    "appLabel": "Application:",
+    "locationLabel": "Location:",
+    "email": "support@trypillo.pl",
+    "controller": "Albert Napiórkowski",
+    "app": "Pillo",
+    "location": "Poland",
+    "p1": "EU consumers exercising their statutory rights are requested to clearly indicate the nature of their request in the subject line."
+  },
+  "s21": {
+    "title": "Final Provisions",
+    "p1": "By using the Application, you confirm that you have read these Terms, understand them and agree to be bound by them. If you do not accept these Terms, you may not use the Application.",
+    "p2": "These Terms are governed by Polish and EU law. For matters not regulated herein, the provisions of the Civil Code, the Act on the Provision of Electronic Services and the GDPR shall apply."
+  }
+}

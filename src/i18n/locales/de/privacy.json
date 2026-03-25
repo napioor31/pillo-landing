@@ -1,0 +1,210 @@
+{
+  "layout": {
+    "title": "Datenschutzerklärung",
+    "subtitle": "Pillo App",
+    "date": "Zuletzt aktualisiert: 16. März 2026"
+  },
+  "thirdParty": {
+    "purposeLabel": "Zweck",
+    "dataLabel": "Weitergegebene Daten",
+    "policyLink": "Datenschutzrichtlinie"
+  },
+  "s1": {
+    "title": "Einleitung",
+    "p1": "Diese Datenschutzerklärung legt die Grundsätze für die Erhebung, Nutzung und Weitergabe personenbezogener Daten im Zusammenhang mit der Nutzung der mobilen Anwendung Pillo („Anwendung”) fest. Verantwortlicher für die personenbezogenen Daten ist Albert Napiórkowski („Verantwortlicher”, „wir”, „uns”, „unser”).",
+    "p2": "Pillo ist eine mobile Anwendung zur Verwaltung von Medikamentenerinnerungen. Die Anwendung unterstützt zwei unterschiedliche Nutzerrollen: einen Patienten, der Medikamentenerinnerungen nutzt, und einen Betreuer, der die Einhaltung des Medikamentenplans des Patienten überwacht. Der Verantwortliche unternimmt alle Anstrengungen, um die Privatsphäre der Nutzer zu schützen und vollständige Transparenz bei der Verarbeitung personenbezogener Daten zu gewährleisten."
+  },
+  "s2": {
+    "title": "Informationen, die wir erheben",
+    "sub1": {
+      "title": "Patientenkonto – Anonyme Daten",
+      "p1": "Das Patientenkonto ist von Natur aus anonym – für die Registrierung ist keine E-Mail-Adresse oder ein anderes persönliches Identifikationsmerkmal erforderlich. Supabase erstellt für den Patienten eine anonyme Sitzung, die nicht mit der Identität des Patienten verknüpft werden kann. Bei der Einrichtung der Anwendung kann der Patient angeben:",
+      "items1": [
+        "Vorname oder Spitzname (optional) – ausschließlich für eine personalisierte Begrüßung in der Anwendung.",
+        "Barrierefreiheitseinstellungen (optional): ausgewählte Schriftgröße und aktivierter Bildschirmlesedienst (Text-to-Speech).",
+        "Antworten auf Onboarding-Fragen (optional): zur Häufigkeit des Vergessens von Medikamenten, zur bevorzugten Handhabung von Erinnerungen und zum Überwachungsgrad."
+      ],
+      "p2": "Auf Supabase-Servern werden folgende Patientendaten gespeichert, die zur Erbringung des Dienstes erforderlich sind:",
+      "items2": [
+        "Medikamentendaten: Medikamentenname, Form, Dosierung, Zeitplan (Wochentage und Einnahmezeiten).",
+        "Dosierungsverlauf: Dosisstatus (eingenommen, übersprungen, aufgeschoben, verzögert) mit Zeitstempeln.",
+        "Medikamentenbestandsdaten (optional): Gesamtmenge in der Packung, Niedrigbestand-Schwellenwert, Ablaufdatum.",
+        "Medikamentennotizen (optional): vom Patienten zu einer bestimmten Erinnerung hinzugefügter Text.",
+        "Anonymer Sitzungsbezeichner: automatisch von Supabase generiert, nicht mit der Identität des Patienten verknüpfbar."
+      ],
+      "noteTitle": "Hinweis zur Kontowiederherstellung:",
+      "noteText": "Ein Patient, der nicht mit einem Betreuer verbunden ist, kann sein Konto nach dem Verlust seines Geräts nicht wiederherstellen – dies ist eine bewusste Designentscheidung, um Registrierungshürden zu eliminieren. Ein mit einem Betreuer verbundener Patient kann sein Konto nach der Neuinstallation der Anwendung mithilfe eines Einladungscodes neu verknüpfen."
+    },
+    "sub2": {
+      "title": "Betreuerkonto – Registrierter Nutzer",
+      "p1": "Der Betreuer erstellt ein vollständiges Konto, das eine Identitätsüberprüfung erfordert. Wir erheben folgende Betreuerdaten:",
+      "items": [
+        "Anmeldedaten: E-Mail-Adresse und Passwort oder Google/Apple-Anmeldedaten (je nach gewählter Registrierungsmethode).",
+        "Antworten auf Onboarding-Fragen (optional): Beziehung zum Patienten, bevorzugte Benachrichtigungsintensität, Verfügbarkeit des Betreuers.",
+        "Premium-Abonnementdaten: Abonnementstatus und Kauf-ID, verwaltet von RevenueCat."
+      ]
+    },
+    "sub3": {
+      "title": "Automatisch erhobene Daten",
+      "items": [
+        "Geräteinformationen: Plattform (iOS/Android), Betriebssystemversion, Anwendungsversion.",
+        "Nutzungsanalysen: Art der Interaktion mit der Anwendung, erhoben über PostHog.",
+        "Fehler- und Leistungsdaten: technische Informationen über Abstürze und Fehler der Anwendung, erhoben über Sentry.",
+        "Kaufdaten: Abonnement- und Transaktionsinformationen, die über RevenueCat und die Zahlungssysteme von Apple/Google verarbeitet werden.",
+        "Feedback und Berichte: Inhalt der vom Nutzer über UserJot übermittelten Nachrichten (optionale In-App-Einreichungen)."
+      ]
+    }
+  },
+  "s3": {
+    "title": "Zwecke der Datenverarbeitung",
+    "p1": "Wir verwenden die erhobenen Daten für folgende Zwecke:",
+    "items": [
+      "Dienstleistungserbringung: Lieferung von Medikamentenerinnerungen gemäß dem Zeitplan des Patienten.",
+      "Adherenz-Überwachung: Bereitstellung von Echtzeit-Informationen für den Betreuer über die Einhaltung des Medikamentenplans des Patienten (nur mit Zustimmung des Patienten, die durch die Kontoverbindung erteilt wird).",
+      "Push-Benachrichtigungen: Senden von Erinnerungen an den Patienten und Warnmeldungen über unbestätigte oder verpasste Dosen an den Betreuer.",
+      "Echtzeit-Synchronisation: Aktualisierung des Dosisstatus im Dashboard des Betreuers über eine WebSocket-Verbindung (Supabase Realtime).",
+      "Abonnementverwaltung: Verarbeitung und Überprüfung des Premium-Abonnements des Betreuers.",
+      "Anwendungsverbesserung: Analyse von Nutzungsmustern zur Verbesserung der Funktionalität und des Nutzererlebnisses.",
+      "Fehlerüberwachung: Identifizierung und Behebung technischer Probleme.",
+      "Kundensupport: Beantwortung von Anfragen und Feedback der Nutzer."
+    ]
+  },
+  "s4": {
+    "title": "Rechtsgrundlagen für die Datenverarbeitung",
+    "p1": "Die Verarbeitung personenbezogener Daten erfolgt auf folgenden Rechtsgrundlagen gemäß Art. 6 Abs. 1 DSGVO:",
+    "items": [
+      "Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO): Verarbeitung von Daten, die zur Erbringung der Dienste der Anwendung erforderlich sind – Medikamentendaten und Dosierungsverlauf des Patienten sowie Konto- und Dashboard-Daten des Betreuers.",
+      "Einwilligung (Art. 6 Abs. 1 lit. a DSGVO): Produktanalysen (PostHog), Push-Benachrichtigungen (mit iOS/Android-Systemeinwilligung), Weitergabe von Patientendaten an den Betreuer (durch bewusste Kontoverbindung per Einladungscode).",
+      "Berechtigte Interessen des Verantwortlichen (Art. 6 Abs. 1 lit. f DSGVO): Fehlerüberwachung (Sentry), Sicherstellung der Anwendungssicherheit, Nutzerfeedback-Sammlung (UserJot)."
+    ]
+  },
+  "s5": {
+    "title": "Zwischen Patient und Betreuer ausgetauschte Daten",
+    "p1": "Die Verbindung zwischen Patient und Betreuer ist vollständig freiwillig. Der Betreuer generiert einen eindeutigen Einladungscode und übermittelt ihn dem Patienten über einen externen Kanal (z. B. SMS, WhatsApp). Die Eingabe und Bestätigung des Codes durch den Patienten stellt die freiwillig erteilte Einwilligung zur Weitergabe folgender Daten an den Betreuer dar:",
+    "items": [
+      "Medikamentenliste: Name, Form, Dosierung, Zeitplan, Notizen, Bestand,",
+      "Dosierungsverlauf: Status und Zeitstempel aller Ereignisse (Dosis eingenommen, übersprungen, aufgeschoben, verzögert),",
+      "Echtzeit-Erinnerungsstatus (über WebSocket-Verbindung)."
+    ],
+    "p2": "Der Betreuer hat ausschließlich Lesezugriff auf die Medikamentendaten – er kann die Erinnerungen des Patienten nicht hinzufügen, bearbeiten oder löschen. Der Patient kann die Verbindung mit dem Betreuer jederzeit in den Einstellungen der Anwendung trennen. Nach dem Trennen verliert der Betreuer den Zugriff auf die Patientendaten."
+  },
+  "s6": {
+    "title": "Dienste Dritter",
+    "p1": "Im Rahmen des Betriebs der Anwendung nutzen wir folgende Dienste Dritter:",
+    "supabase": {
+      "purpose": "Backend-Datenbank (PostgreSQL), Authentifizierung, Echtzeit-Synchronisation.",
+      "data": "Betreuerkontodaten, Medikamentendaten und Dosierungsverlauf des Patienten, anonyme Patientensitzungen."
+    },
+    "revenuecat": {
+      "purpose": "Abonnementverwaltung und Zahlungsabwicklung.",
+      "data": "Nutzer-ID, Abonnementstatus, Kaufinformationen."
+    },
+    "sentry": {
+      "purpose": "Fehlerverfolgung und Leistungsüberwachung.",
+      "data": "Fehlerprotokolle, Geräteinformationen, IP-Adresse, technischer Ereigniskontext."
+    },
+    "posthog": {
+      "purpose": "Produktanalysen.",
+      "data": "Nutzungsmuster, Nutzerinteraktionen, Geräteinformationen."
+    },
+    "userjot": {
+      "purpose": "Sammlung von Nutzerfeedback und Berichten direkt in der Anwendung.",
+      "data": "Inhalt des eingereichten Feedbacks und optionale, freiwillig angegebene Kontaktdaten des Nutzers."
+    },
+    "expo": {
+      "purpose": "Zustellung von Push-Benachrichtigungen an den Patienten und Betreuer.",
+      "data": "Geräte-Token (Push-Token), anonymer Sitzungsbezeichner."
+    },
+    "appleGoogle": {
+      "purpose": "Verarbeitung von Abonnementzahlungen.",
+      "data": "Zahlungsdaten und Kaufverlauf (direkt von Apple/Google verarbeitet)."
+    }
+  },
+  "s7": {
+    "title": "Datenspeicherungsdauer",
+    "items": [
+      "Betreuerkontodaten: werden für die gesamte Nutzungsdauer der Anwendung gespeichert. Nach der Kontolöschung werden die Daten unverzüglich gelöscht, vorbehaltlich gesetzlicher Pflichten.",
+      "Patientendaten (Medikamente, Dosierungsverlauf): werden auf dem Server für die gesamte Dauer der aktiven anonymen Sitzung gespeichert. Der Nutzer kann jederzeit gemäß Abschnitt 9 dieser Erklärung eine Datenlöschung beantragen.",
+      "Analysedaten (PostHog) und Fehlerdaten (Sentry): werden gemäß den Richtlinien der Anbieter gespeichert (in der Regel 90 Tage bis 2 Jahre)."
+    ]
+  },
+  "s8": {
+    "title": "Datensicherheit",
+    "p1": "Wir wenden geeignete technische und organisatorische Maßnahmen zum Schutz der personenbezogenen Daten der Nutzer an, darunter:",
+    "items": [
+      "verschlüsselte Verbindungen (HTTPS/TLS) für die gesamte Datenübertragung,",
+      "sichere Datenspeicherung auf Supabase-Servern,",
+      "Verschlüsselung der Betreuer-Passwörter (verwaltet von Supabase Auth),",
+      "Datenisolierung – der Betreuer sieht nur die Daten der Patienten, mit denen er verbunden ist,",
+      "regelmäßige Sicherheitsüberprüfungen und -aktualisierungen."
+    ],
+    "p2": "Keine Methode der Datenübertragung über das Internet oder der elektronischen Datenspeicherung ist 100 % sicher. Daher können wir keine absolute Datensicherheit garantieren."
+  },
+  "s9": {
+    "title": "Rechte der Nutzer nach der DSGVO",
+    "p1": "Gemäß der DSGVO stehen dem Nutzer folgende Rechte zu:",
+    "items": [
+      "Auskunftsrecht (Art. 15 DSGVO): Bestätigung zu erhalten, ob personenbezogene Daten des Nutzers verarbeitet werden, und Zugang zu diesen Daten.",
+      "Berichtigungsrecht (Art. 16 DSGVO): Verlangen nach unverzüglicher Berichtigung unrichtiger oder Vervollständigung unvollständiger Daten.",
+      "Recht auf Löschung (Art. 17 DSGVO): Verlangen nach Löschung personenbezogener Daten („Recht auf Vergessenwerden”).",
+      "Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO): Verlangen nach Einschränkung der Verarbeitung in bestimmten Fällen.",
+      "Recht auf Datenübertragbarkeit (Art. 20 DSGVO): Erhalt von Daten in einem strukturierten, gängigen und maschinenlesbaren Format.",
+      "Widerspruchsrecht (Art. 21 DSGVO): Widerspruch gegen die auf berechtigten Interessen des Verantwortlichen beruhende Verarbeitung.",
+      "Recht auf Widerruf der Einwilligung: jederzeit ohne Auswirkung auf die Rechtmäßigkeit der vor dem Widerruf erfolgten Verarbeitung.",
+      "Beschwerderecht: Einreichung einer Beschwerde beim Präsidenten des Datenschutzamts (UODO), wenn der Nutzer der Ansicht ist, dass die Verarbeitung gegen die DSGVO verstößt."
+    ],
+    "p2": "Um die oben genannten Rechte auszuüben, wenden Sie sich bitte über die in Abschnitt 14 dieser Erklärung angegebenen Kontaktdaten an den Verantwortlichen."
+  },
+  "s10": {
+    "title": "Aufsichtsbehörde",
+    "name": "Präsident des Datenschutzamts (UODO)",
+    "websiteLabel": "Website:",
+    "websiteUrl": "uodo.gov.pl",
+    "address": "Adresse: ul. Stawki 2, 00-193 Warschau",
+    "phone": "Telefon: +48 22 531 03 00"
+  },
+  "s11": {
+    "title": "Datenschutz für Kinder",
+    "p1": "Die Anwendung ist nicht für Personen unter 16 Jahren bestimmt (gemäß Art. 8 DSGVO und Art. 7 des polnischen Gesetzes vom 10. Mai 2018 zum Schutz personenbezogener Daten). Wir erheben wissentlich keine personenbezogenen Daten von Minderjährigen. Wenn Sie glauben, dass wir Daten von einem Kind erhoben haben, wenden Sie sich bitte unverzüglich an den Verantwortlichen."
+  },
+  "s12": {
+    "title": "Push-Benachrichtigungen",
+    "p1": "Die Anwendung verwendet Push-Benachrichtigungen, die über Expo Notifications für zwei Zwecke zugestellt werden:",
+    "items1": [
+      "Patient: Medikamentenerinnerungen gemäß dem festgelegten Dosierungsplan.",
+      "Betreuer: Warnmeldungen über unbestätigte oder verpasste Dosen des Patienten."
+    ],
+    "p2": "Diese Benachrichtigungen:",
+    "items2": [
+      "werden auf der Grundlage vom Patienten erstellter Medikamentenpläne gesendet,",
+      "sind vollständig optional – der Nutzer kann sie in den Einstellungen der Anwendung oder des Betriebssystems deaktivieren,",
+      "werden nicht zur Übermittlung von Marketinginhalten oder Werbung verwendet."
+    ]
+  },
+  "s13": {
+    "title": "Änderungen dieser Datenschutzerklärung",
+    "p1": "Der Verantwortliche behält sich das Recht vor, diese Datenschutzerklärung zu aktualisieren. Über wesentliche Änderungen wird der Nutzer informiert durch:",
+    "items": [
+      "Veröffentlichung einer neuen Version der Datenschutzerklärung in der Anwendung,",
+      "Aktualisierung des Datums in der Dokumentkopfzeile,",
+      "Senden einer Push-Benachrichtigung oder E-Mail (sofern gesetzlich vorgeschrieben)."
+    ],
+    "p2": "Die fortgesetzte Nutzung der Anwendung nach Inkrafttreten der Änderungen gilt als Zustimmung zur geänderten Datenschutzerklärung."
+  },
+  "s14": {
+    "title": "Kontaktdaten des Verantwortlichen",
+    "emailLabel": "E-Mail:",
+    "controllerLabel": "Datenschutzverantwortlicher:",
+    "appLabel": "Anwendung:",
+    "addressLabel": "Adresse:",
+    "email": "support@trypillo.pl",
+    "controller": "Albert Napiórkowski",
+    "app": "Pillo",
+    "address": "ul. Drewnowska 13 m. 12, 91-002 Łódź, Polen",
+    "p1": "Für DSGVO-Anfragen geben Sie bitte „DSGVO-Anfrage” in der Betreffzeile an und nennen Sie das Recht, das Sie ausüben möchten. Eine Antwort wird innerhalb eines Monats nach Eingang des Antrags erteilt, gemäß den DSGVO-Anforderungen."
+  },
+  "s15": {
+    "title": "Schlussbestimmungen",
+    "p1": "Durch die Nutzung der Pillo-Anwendung bestätigt der Nutzer, dass er diese Datenschutzerklärung gelesen hat. Die Datenschutzerklärung unterliegt polnischem und EU-Recht. In Angelegenheiten, die in dieser Erklärung nicht geregelt sind, gelten die DSGVO und das polnische Gesetz zum Schutz personenbezogener Daten vom 10. Mai 2018."
+  }
+}

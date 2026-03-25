@@ -1,0 +1,210 @@
+{
+  "layout": {
+    "title": "Privacy Policy",
+    "subtitle": "Pillo App",
+    "date": "Last updated: March 16, 2026"
+  },
+  "thirdParty": {
+    "purposeLabel": "Purpose",
+    "dataLabel": "Data shared",
+    "policyLink": "Privacy Policy"
+  },
+  "s1": {
+    "title": "Introduction",
+    "p1": "This Privacy Policy sets out the rules for collecting, using and sharing personal data in connection with the use of the Pillo mobile application (\"Application\"). The controller of personal data is Albert Napiórkowski (\"Controller\", \"we\", \"us\", \"our\").",
+    "p2": "Pillo is a mobile application for managing medication reminders. The Application supports two distinct user roles: a Patient, who uses medication reminders, and a Caregiver, who monitors the Patient's medication schedule adherence. The Controller makes every effort to protect Users' privacy and ensure full transparency regarding personal data processing practices."
+  },
+  "s2": {
+    "title": "Information We Collect",
+    "sub1": {
+      "title": "Patient Account – Anonymous Data",
+      "p1": "The Patient account is anonymous by design – registration does not require an email address or any other personal identifier. Supabase generates an anonymous session for the Patient that cannot be linked to the Patient's identity. During Application setup, the Patient may provide:",
+      "items1": [
+        "First name or nickname (optional) – solely for a personalised greeting within the Application.",
+        "Accessibility preferences (optional): selected font size and screen reader (text-to-speech) enabled.",
+        "Onboarding answers (optional): regarding frequency of forgetting medications, preferred reminder handling, and monitoring level."
+      ],
+      "p2": "The following Patient data required to provide the service are stored on Supabase servers:",
+      "items2": [
+        "Medication data: medication name, form, dosage, schedule (days of the week and intake times).",
+        "Dose history: dose statuses (taken, skipped, snoozed, delayed) with timestamps.",
+        "Medication stock data (optional): total quantity in pack, low-stock threshold, expiry date.",
+        "Medication notes (optional): text added by the Patient to a specific reminder.",
+        "Anonymous session identifier: generated automatically by Supabase, not linkable to the Patient's identity."
+      ],
+      "noteTitle": "Account recovery note:",
+      "noteText": "A Patient not connected to a Caregiver cannot recover their account after losing their device – this is a deliberate design decision aimed at eliminating registration barriers. A Patient connected to a Caregiver can re-link their account after reinstalling the Application using an invitation code."
+    },
+    "sub2": {
+      "title": "Caregiver Account – Registered User Data",
+      "p1": "The Caregiver creates a full account requiring identity verification. We collect the following Caregiver data:",
+      "items": [
+        "Login data: email address and password, or Google / Apple login credentials (depending on the chosen registration method).",
+        "Onboarding answers (optional): relationship to the Patient, preferred alert intensity, Caregiver availability.",
+        "Premium subscription data: subscription status and purchase identifier, managed by RevenueCat."
+      ]
+    },
+    "sub3": {
+      "title": "Automatically Collected Data",
+      "items": [
+        "Device information: platform (iOS/Android), operating system version, Application version.",
+        "Usage analytics: how you interact with the Application, collected via PostHog.",
+        "Error and performance data: technical information about Application crashes and errors, collected via Sentry.",
+        "Purchase data: subscription and transaction information processed via RevenueCat and Apple/Google payment systems.",
+        "Feedback and reports: content of messages submitted by the User via UserJot (optional in-app submissions)."
+      ]
+    }
+  },
+  "s3": {
+    "title": "How We Use Your Data",
+    "p1": "We use the collected data for the following purposes:",
+    "items": [
+      "Service provision: delivering medication reminders in accordance with the Patient's schedule.",
+      "Adherence monitoring: providing the Caregiver with real-time information on the Patient's medication schedule adherence (only with the Patient's consent, given by linking accounts).",
+      "Push notifications: sending reminders to the Patient and alerts about unconfirmed or missed doses to the Caregiver.",
+      "Real-time synchronisation: updating dose status in the Caregiver's dashboard via WebSocket connection (Supabase Realtime).",
+      "Subscription management: processing and verifying the Caregiver's Premium subscription.",
+      "Application improvement: analysing usage patterns to enhance functionality and user experience.",
+      "Error monitoring: identifying and resolving technical issues.",
+      "Customer support: responding to reports and feedback submitted by Users."
+    ]
+  },
+  "s4": {
+    "title": "Legal Basis for Processing",
+    "p1": "Processing of personal data is carried out on the following legal bases in accordance with Article 6(1) GDPR:",
+    "items": [
+      "Performance of a contract (Art. 6(1)(b) GDPR): processing data necessary to provide the Application's services – the Patient's medication data and dose history, and the Caregiver's account and dashboard data.",
+      "Consent (Art. 6(1)(a) GDPR): product analytics (PostHog), push notifications (with iOS/Android system consent), sharing Patient data with the Caregiver (through deliberate account linking via invitation code).",
+      "Legitimate interests of the Controller (Art. 6(1)(f) GDPR): error monitoring (Sentry), ensuring Application security, collecting User feedback (UserJot)."
+    ]
+  },
+  "s5": {
+    "title": "Data Shared Between Patient and Caregiver",
+    "p1": "The Patient–Caregiver connection is entirely voluntary. The Caregiver generates a unique invitation code and passes it to the Patient via an external channel (e.g. SMS, WhatsApp). The Patient entering and confirming the code constitutes freely given consent to share the following data with the Caregiver:",
+    "items": [
+      "medication list: name, form, dosage, schedule, notes, stock levels,",
+      "dose history: statuses and timestamps of all events (dose taken, skipped, snoozed, delayed),",
+      "real-time reminder statuses (via WebSocket connection)."
+    ],
+    "p2": "The Caregiver has read-only access to medication data – they cannot add, edit or delete the Patient's reminders. The Patient can disconnect the Caregiver account at any time from the Application settings. After disconnection, the Caregiver loses access to the Patient's data."
+  },
+  "s6": {
+    "title": "Third-Party Services",
+    "p1": "We use the following third-party services in the operation of the Application:",
+    "supabase": {
+      "purpose": "Backend database (PostgreSQL), authentication, real-time synchronisation.",
+      "data": "Caregiver account data, Patient medication and dose history data, anonymous Patient sessions."
+    },
+    "revenuecat": {
+      "purpose": "Subscription management and payment processing.",
+      "data": "User identifier, subscription status, purchase information."
+    },
+    "sentry": {
+      "purpose": "Error tracking and performance monitoring.",
+      "data": "Error logs, device information, IP address, technical event context."
+    },
+    "posthog": {
+      "purpose": "Product analytics.",
+      "data": "Usage patterns, user interactions, device information."
+    },
+    "userjot": {
+      "purpose": "Collecting feedback and reports from Users directly within the Application.",
+      "data": "Content of submitted feedback and optional contact details voluntarily provided by the User."
+    },
+    "expo": {
+      "purpose": "Delivering push notifications to the Patient and Caregiver.",
+      "data": "Device token (push token), anonymous session identifier."
+    },
+    "appleGoogle": {
+      "purpose": "Processing subscription payments.",
+      "data": "Payment data and purchase history (processed directly by Apple/Google)."
+    }
+  },
+  "s7": {
+    "title": "Data Retention",
+    "items": [
+      "Caregiver account data: retained for the entire duration of Application use. Upon account deletion, data is erased immediately, subject to legal obligations.",
+      "Patient data (medications, dose history): stored on the server for the entire period the anonymous session is active. The User may request data deletion at any time in accordance with Section 9 of this Policy.",
+      "Analytics data (PostHog) and error data (Sentry): retained in accordance with providers' policies (typically 90 days to 2 years)."
+    ]
+  },
+  "s8": {
+    "title": "Data Security",
+    "p1": "We apply appropriate technical and organisational measures to protect Users' personal data, including:",
+    "items": [
+      "encrypted connections (HTTPS/TLS) for all data transmission,",
+      "secure data storage on Supabase servers,",
+      "Caregiver password encryption (handled by Supabase Auth),",
+      "data isolation – the Caregiver only sees data from Patients they are connected to,",
+      "regular security reviews and updates."
+    ],
+    "p2": "No method of Internet data transmission or electronic data storage is 100% secure. Therefore, we cannot guarantee absolute data security."
+  },
+  "s9": {
+    "title": "Your Rights Under GDPR",
+    "p1": "Under the GDPR, Users have the following rights:",
+    "items": [
+      "Right of access (Art. 15 GDPR): obtaining confirmation of whether personal data about you are being processed and access to such data.",
+      "Right to rectification (Art. 16 GDPR): requesting immediate correction of inaccurate or completion of incomplete data.",
+      "Right to erasure (Art. 17 GDPR): requesting the deletion of personal data ('right to be forgotten').",
+      "Right to restriction of processing (Art. 18 GDPR): requesting restriction of processing in certain cases.",
+      "Right to data portability (Art. 20 GDPR): receiving data in a structured, commonly used and machine-readable format.",
+      "Right to object (Art. 21 GDPR): objecting to processing based on the Controller's legitimate interests.",
+      "Right to withdraw consent: withdrawing previously given consent at any time, without affecting the lawfulness of processing carried out before withdrawal.",
+      "Right to lodge a complaint: lodging a complaint with the President of the Personal Data Protection Office (UODO) if you consider that processing violates the GDPR."
+    ],
+    "p2": "To exercise the above rights, please contact the Controller using the details provided in Section 14 of this Policy."
+  },
+  "s10": {
+    "title": "Supervisory Authority",
+    "name": "President of the Personal Data Protection Office (UODO)",
+    "websiteLabel": "Website:",
+    "websiteUrl": "uodo.gov.pl",
+    "address": "Address: ul. Stawki 2, 00-193 Warsaw",
+    "phone": "Phone: +48 22 531 03 00"
+  },
+  "s11": {
+    "title": "Children's Privacy",
+    "p1": "The Application is not intended for persons under the age of 16 (in accordance with Art. 8 GDPR and Art. 7 of the Act of 10 May 2018 on the Protection of Personal Data). We do not knowingly collect personal data from minors. If you believe we have collected data from a child, please contact the Controller immediately."
+  },
+  "s12": {
+    "title": "Push Notifications",
+    "p1": "The Application uses push notifications delivered via Expo Notifications for two purposes:",
+    "items1": [
+      "Patient: medication reminders according to the established dosage schedule.",
+      "Caregiver: alerts about unconfirmed or missed Patient doses."
+    ],
+    "p2": "These notifications:",
+    "items2": [
+      "are sent based on medication schedules established by the Patient,",
+      "are entirely optional – the User can disable them in the Application or operating system settings,",
+      "are not used to send marketing content or advertisements."
+    ]
+  },
+  "s13": {
+    "title": "Changes to This Privacy Policy",
+    "p1": "The Controller reserves the right to update this Privacy Policy. Users will be notified of any significant changes through:",
+    "items": [
+      "publication of a new version of the Privacy Policy in the Application,",
+      "updating the date in the document header,",
+      "sending a push notification or email (where required by law)."
+    ],
+    "p2": "Continued use of the Application after changes take effect constitutes acceptance of the amended Privacy Policy."
+  },
+  "s14": {
+    "title": "Controller Contact Details",
+    "emailLabel": "Email:",
+    "controllerLabel": "Data Controller:",
+    "appLabel": "Application:",
+    "addressLabel": "Address:",
+    "email": "support@trypillo.pl",
+    "controller": "Albert Napiórkowski",
+    "app": "Pillo",
+    "address": "ul. Drewnowska 13 m. 12, 91-002 Łódź, Poland",
+    "p1": "For GDPR requests, please include 'GDPR Request' in the subject line and specify the right you wish to exercise. A response will be provided within one month of receipt of the request, in accordance with GDPR requirements."
+  },
+  "s15": {
+    "title": "Final Provisions",
+    "p1": "By using the Pillo Application, the User confirms they have read this Privacy Policy. The Privacy Policy is governed by Polish and EU law. For matters not regulated herein, the provisions of the GDPR and the Polish Act on the Protection of Personal Data of 10 May 2018 shall apply."
+  }
+}

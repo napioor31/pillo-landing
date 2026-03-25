@@ -77,5 +77,48 @@
   },
   "lang": {
     "switcherAriaLabel": "Wybierz język / Select language"
+  },
+  "contact": {
+    "subtitle": "Schreiben Sie uns",
+    "title": "Kontakt",
+    "description": "Haben Sie eine Frage oder möchten Sie Kontakt aufnehmen?",
+    "responseTime": "Wir antworten in der Regel innerhalb von 24 Stunden.",
+    "nameLbl": "Vollständiger Name",
+    "namePlaceholder": "Max Mustermann",
+    "emailLbl": "E-Mail-Adresse",
+    "emailPlaceholder": "max@beispiel.de",
+    "topicLbl": "Thema",
+    "topicPlaceholder": "Thema auswählen (optional)",
+    "topics": ["Allgemeine Frage", "Technisches Problem", "Zusammenarbeit / Partnerschaft", "Presse & Medien", "Sonstiges"],
+    "messageLbl": "Nachricht",
+    "messagePlaceholder": "Schreiben Sie Ihre Nachricht…",
+    "submitting": "Sende…",
+    "submit": "Nachricht senden",
+    "privacy": "Ihre Daten werden ausschließlich zur Beantwortung Ihrer Nachricht verwendet.",
+    "successTitle": "Nachricht gesendet!",
+    "successDesc": "Vielen Dank für Ihre Nachricht. Wir werden uns so schnell wie möglich bei Ihnen melden.",
+    "successReset": "Weitere Nachricht senden",
+    "genericError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "newMessage": "Neue Nachricht"
+  },
+  "legal": {
+    "translationNotice": "Dies ist eine übersetzte Version. Das original verbindliche Dokument ist auf Polnisch.",
+    "viewOriginal": "Original ansehen (Polnisch)",
+    "viewingOriginal": "Sie sehen die polnische Originalversion.",
+    "backToTranslation": "Zurück zu Deutsch"
+  },
+  "download": {
+    "available": "Kostenlos verfügbar",
+    "headline": "Kümmern Sie sich um sich",
+    "headlineSub": "jeden Tag",
+    "descDefault": "Intelligente Medikamentenerinnerungen und Seelenfrieden — für Sie und Ihre Liebsten.",
+    "descRedirectIos": "Sie werden gleich zum App Store weitergeleitet…",
+    "descRedirectAndroid": "Sie werden gleich zu Google Play weitergeleitet…",
+    "badges": "Kostenlos · Kein Konto · iOS & Android",
+    "googlePlayAria": "Von Google Play herunterladen",
+    "appStoreAria": "Vom App Store herunterladen",
+    "googlePlayAlt": "Jetzt bei Google Play",
+    "appStoreAlt": "Im App Store laden",
+    "phoneAlt": "Pillo App auf dem Telefon"
   }
 }

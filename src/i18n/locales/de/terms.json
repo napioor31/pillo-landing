@@ -1,0 +1,250 @@
+{
+  "layout": {
+    "title": "Nutzungsbedingungen",
+    "subtitle": "Pillo App",
+    "date": "Zuletzt aktualisiert: 16. März 2026"
+  },
+  "s1": {
+    "title": "Annahme der Bedingungen",
+    "p1": "Diese Nutzungsbedingungen („Bedingungen”) stellen einen rechtlich bindenden Vertrag zwischen Ihnen und Albert Napiórkowski, der unter dem Namen Pillo tätig ist („Verantwortlicher”, „wir”, „uns”, „unser”), bezüglich der Nutzung der mobilen Anwendung Pillo („Anwendung”) dar. Durch das Herunterladen, Installieren, Starten oder Nutzen der Anwendung stimmen Sie diesen Bedingungen zu. Wenn Sie diese Bedingungen nicht akzeptieren, nutzen Sie die Anwendung nicht."
+  },
+  "s2": {
+    "title": "Beschreibung des Dienstes",
+    "p1": "Pillo ist eine mobile Anwendung zur Verwaltung von Medikamentenerinnerungen. Die Anwendung unterstützt zwei Nutzerrollen:",
+    "items": [
+      "Patient (kostenloses, anonymes Konto): Konfiguration von Medikamentenerinnerungen, Handhabung von Push-Benachrichtigungen, Verfolgung von Dosisstatus, Verwaltung von Medikamentenbeständen, optionale Verbindung mit einem Betreuer.",
+      "Betreuer (kostenpflichtiges Abonnement): Echtzeit-Überwachung der Einhaltung des Medikamentenplans des Patienten, Zugang zum Adherenz-Dashboard, Dosierungsverlauf, Warnmeldungen bei verpassten Dosen."
+    ],
+    "p2": "Die Anwendung ist kein Medizinprodukt und stellt keine medizinische Beratung dar. Den vollständigen medizinischen Haftungsausschluss finden Sie in Abschnitt 8 dieser Bedingungen."
+  },
+  "s3": {
+    "title": "Altersanforderungen",
+    "p1": "Die Anwendung ist für Personen ab 16 Jahren bestimmt – gemäß Art. 8 DSGVO und Art. 7 des polnischen Gesetzes vom 10. Mai 2018 zum Schutz personenbezogener Daten. Durch die Nutzung der Anwendung erklären Sie, dass Sie diese Altersanforderung erfüllen. Wir erheben wissentlich keine Daten von Personen unter 16 Jahren."
+  },
+  "s4": {
+    "title": "Lizenz und Einschränkungen",
+    "sub1": {
+      "title": "Lizenzerteilung",
+      "p1": "Vorbehaltlich Ihrer Einhaltung dieser Bedingungen gewähren wir Ihnen eine eingeschränkte, nicht-exklusive, nicht übertragbare, nicht unterlizenzierbare und widerrufliche Lizenz zum Herunterladen, Installieren und Nutzen der Anwendung auf Geräten, die Sie besitzen oder kontrollieren, ausschließlich für persönliche und nicht-kommerzielle Zwecke."
+    },
+    "sub2": {
+      "title": "Einschränkungen",
+      "p1": "Sie stimmen zu, dass Sie NICHT werden:",
+      "items": [
+        "die Anwendung modifizieren, rückentwickeln, dekompilieren, disassemblieren oder abgeleitete Werke erstellen,",
+        "Eigentumshinweise in der Anwendung entfernen, verändern oder verdecken,",
+        "die Anwendung für illegale, schädliche oder unbefugte Zwecke nutzen,",
+        "versuchen, unbefugten Zugang zu Teilen der Anwendung oder deren Systemen zu erlangen,",
+        "automatisierte Skripte, Bots oder ähnliche Tools für den Zugang zur Anwendung nutzen,",
+        "den Betrieb der Anwendung oder deren Server stören oder unterbrechen,",
+        "die Anwendung reproduzieren, verteilen, öffentlich anzeigen oder davon abgeleitete Werke erstellen,",
+        "Nutzungsrechte an der Anwendung verkaufen, vermieten, verpachten, unterlizenzieren oder übertragen,",
+        "die Anwendung in einer für Minderjährige schädlichen Weise nutzen,",
+        "sich als eine andere Person oder Organisation ausgeben,",
+        "Viren, Malware oder anderen schädlichen Code übertragen,",
+        "geltende Gesetze, Vorschriften oder Rechte Dritter verletzen."
+      ]
+    }
+  },
+  "s5": {
+    "title": "Nutzerkonten",
+    "sub1": {
+      "title": "Patientenkonto",
+      "p1": "Das Patientenkonto ist anonym – es erfordert keine E-Mail-Adresse oder ein anderes persönliches Identifikationsmerkmal. Der Patient ist für alle Aktivitäten verantwortlich, die unter seinem Konto durchgeführt werden. Der Verlust des Geräts durch einen Patienten, der nicht mit einem Betreuer verbunden ist, führt zum dauerhaften Verlust des Zugangs zu den Kontodaten – dies ist eine bewusste Designentscheidung, um Registrierungshürden zu eliminieren. Weitere Informationen zur Kontowiederherstellung finden Sie in der Datenschutzerklärung."
+    },
+    "sub2": {
+      "title": "Betreuerkonto",
+      "p1": "Der Betreuer erstellt ein vollständiges Konto mit E-Mail-Adresse-Verifizierung. Der Betreuer ist für die Vertraulichkeit seiner Anmeldedaten und für alle Aktivitäten verantwortlich, die unter seinem Konto durchgeführt werden. Bei Verdacht auf unbefugten Zugang zum Konto informieren Sie bitte unverzüglich den Verantwortlichen."
+    },
+    "sub3": {
+      "title": "Nutzerdaten",
+      "p1": "Sie behalten alle Rechte an den Daten, die Sie in die Anwendung eingeben (wie Medikamentendaten und Notizen). Durch die Nutzung der Anwendung erteilen Sie uns eine Lizenz zur Speicherung und Verarbeitung dieser Daten gemäß der Datenschutzerklärung. Wir verarbeiten Daten in Übereinstimmung mit den geltenden Datenschutzgesetzen, einschließlich der DSGVO."
+    },
+    "sub4": {
+      "title": "Richtigkeit der Angaben",
+      "p1": "Sie stimmen zu, während des Einrichtungsprozesses der Anwendung genaue, aktuelle und vollständige Angaben zu machen."
+    }
+  },
+  "s6": {
+    "title": "Premium-Abonnements",
+    "sub1": {
+      "title": "Abonnementbedingungen",
+      "p1": "Der Zugang zu Betreuerfunktionen erfordert ein kostenpflichtiges Abonnement („Betreuerzugang”). Abonnements werden über Apple App Store oder Google Play Store verwaltet und unterliegen deren jeweiligen Bedingungen."
+    },
+    "sub2": {
+      "title": "Zahlungen",
+      "items": [
+        "Abonnementgebühren werden von Ihrem Apple App Store- oder Google Play Store-Konto abgebucht.",
+        "Die Zahlung erfolgt nach Bestätigung des Kaufs.",
+        "Abonnements verlängern sich automatisch, es sei denn, Sie deaktivieren die automatische Verlängerung mindestens 24 Stunden vor Ablauf des aktuellen Zeitraums.",
+        "Die Verlängerungsgebühr wird innerhalb von 24 Stunden vor Ablauf des aktuellen Zeitraums erhoben.",
+        "Sie können Ihr Abonnement in den Einstellungen Ihres App Store- oder Play Store-Kontos verwalten und kündigen."
+      ]
+    },
+    "sub3": {
+      "title": "Rückerstattungen",
+      "p1": "Rückerstattungen werden gemäß der Rückerstattungsrichtlinie von Apple App Store oder Google Play Store abgewickelt. Als Verbraucher in der EU können Sie das Recht haben, innerhalb von 14 Tagen nach dem Kauf vom Vertrag zurückzutreten, vorbehaltlich der Ausnahmen für digitale Inhalte gemäß der Richtlinie (EU) 2019/770."
+    },
+    "sub4": {
+      "title": "Preisänderungen",
+      "p1": "Wir behalten uns das Recht vor, die Abonnementpreise jederzeit zu ändern. Bestehende Abonnenten werden über Preiserhöhungen mindestens 30 Tage vor deren Inkrafttreten informiert. Preisänderungen gelten nicht für den aktuellen Abonnementzeitraum, der vor der Änderung erworben wurde."
+    }
+  },
+  "s7": {
+    "title": "Geistige Eigentumsrechte",
+    "sub1": {
+      "title": "Eigentum",
+      "p1": "Die Anwendung, einschließlich aller Inhalte, Funktionen, Software, Designs, Texte, Grafiken, Logos und der zugrundeliegenden Technologie, ist Eigentum des Verantwortlichen und durch Urheberrecht, Markenrecht, Patentrecht, Geschäftsgeheimnisrecht und andere Gesetze zum Schutz des geistigen Eigentums geschützt."
+    },
+    "sub2": {
+      "title": "Nutzergenerierte Inhalte",
+      "p1": "Sie behalten alle Eigentumsrechte an benutzerdefinierten Inhalten, die Sie in der Anwendung erstellen (wie Medikamentennotizen). Sie erteilen uns eine nicht-exklusive Lizenz zur Speicherung und Anzeige dieser Inhalte ausschließlich zum Zweck der Dienstleistungserbringung."
+    },
+    "sub3": {
+      "title": "Marken",
+      "p1": "„Pillo” und zugehörige Logos sind Marken des Verantwortlichen. Sie dürfen diese Marken nicht ohne vorherige schriftliche Zustimmung verwenden."
+    }
+  },
+  "s8": {
+    "title": "Medizinischer Haftungsausschluss",
+    "sub1": {
+      "title": "Keine medizinische Beratung",
+      "p1": "Die Anwendung ist nicht für die Bereitstellung medizinischer oder therapeutischer Beratung bestimmt. Erinnerungen und von der Anwendung bereitgestellte Inhalte dienen ausschließlich organisatorischen Zwecken und ersetzen keine professionelle medizinische Beratung, Diagnose oder Behandlung. Die Anwendung ist ein Hilfsmittel zur Unterstützung der Medikamenten-Adhärenz, kein Medizinprodukt."
+    },
+    "sub2": {
+      "title": "Fachkundige Beratung einholen",
+      "p1": "Konsultieren Sie stets qualifizierte Gesundheitsfachleute in Bezug auf Ihre Medikamente und Ihren Gesundheitszustand. Ignorieren Sie niemals professionellen medizinischen Rat und verzögern Sie dessen Einholung nicht aufgrund von Inhalten in dieser Anwendung."
+    },
+    "sub3": {
+      "title": "Notfälle",
+      "p1": "Bei lebens- oder gesundheitsgefährdenden Situationen im Zusammenhang mit Medikamenten wenden Sie sich sofort an die Notfalldienste:",
+      "items": [
+        "Polen: 112 (Notruf) oder 999 (Rettungsdienst)",
+        "Andere EU-Länder: 112 (Europäischer Notruf)",
+        "Vereinigte Staaten: 911"
+      ],
+      "p2": "Die Anwendung ist nicht für Kriseninterventionen oder lebensbedrohliche Situationen ausgelegt."
+    }
+  },
+  "s9": {
+    "title": "Gewährleistungsausschluss",
+    "p1": "Im größtmöglichen gesetzlich zulässigen Umfang (vorbehaltlich zwingender Verbraucherschutzgesetze für EU-Verbraucher) wird die Anwendung „wie besehen” und „nach Verfügbarkeit” ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt, einschließlich, aber nicht beschränkt auf:",
+    "items": [
+      "stillschweigende Gewährleistungen der Marktgängigkeit, Eignung für einen bestimmten Zweck und Nichtverletzung von Rechten,",
+      "Gewährleistungen bezüglich der Genauigkeit, Zuverlässigkeit oder Vollständigkeit von Inhalten,",
+      "Gewährleistungen, dass die Anwendung unterbrechungsfrei, sicher oder fehlerfrei funktioniert,",
+      "Gewährleistungen bezüglich der Ergebnisse, die durch die Nutzung der Anwendung erzielt werden."
+    ],
+    "euNote": "Hinweis für EU-Verbraucher: Wenn Sie ein Verbraucher in der EU sind, berührt der obige Ausschluss nicht Ihre gesetzlichen Rechte aus den geltenden Verbraucherschutzgesetzen, einschließlich des Rechts auf Konformität digitaler Inhalte und Dienste gemäß der Richtlinie (EU) 2019/770."
+  },
+  "s10": {
+    "title": "Haftungsbeschränkung",
+    "sub1": {
+      "title": "Hinweis für EU-Verbraucher",
+      "p1": "Diese Bestimmungen schließen unsere Haftung für Tod oder Körperverletzung durch unsere Fahrlässigkeit, für Betrug oder arglistige Täuschung, für jegliche Haftung, die nach geltendem Verbraucherschutzrecht nicht ausgeschlossen oder eingeschränkt werden kann, sowie für die Verletzung obligatorischer EU-rechtlicher Konformitätsanforderungen nicht aus oder ein."
+    },
+    "sub2": {
+      "title": "Ausschluss von Schäden",
+      "p1": "Vorbehaltlich Abschnitt 10.1 haften wir im größtmöglichen gesetzlich zulässigen Umfang nicht für mittelbare, zufällige, besondere, Folge-, Straf- oder exemplarische Schäden, einschließlich, aber nicht beschränkt auf entgangene Gewinne, Datenverluste, Reputationsschäden, Betriebsunterbrechungen oder andere immaterielle Verluste, auch wenn wir auf die Möglichkeit solcher Schäden hingewiesen worden sind."
+    },
+    "sub3": {
+      "title": "Maximale Haftung",
+      "p1": "Vorbehaltlich Abschnitt 10.1 übersteigt unsere Gesamthaftung Ihnen gegenüber aus allen Ansprüchen, die sich aus diesen Bedingungen oder der Nutzung der Anwendung ergeben, nicht den höheren der folgenden Beträge: (a) den von Ihnen in den zwölf (12) Monaten vor dem Anspruch gezahlten Betrag oder (b) einhundert Euro (EUR 100,00)."
+    }
+  },
+  "s11": {
+    "title": "Dienste Dritter",
+    "p1": "Die Anwendung integriert und nutzt Dienste Dritter: Supabase, RevenueCat, Sentry, PostHog, UserJot und Expo Notifications. Wir sind nicht verantwortlich für:",
+    "items": [
+      "die Verfügbarkeit, Genauigkeit oder den Inhalt von Drittanbieterdiensten,",
+      "die Datenschutzpraktiken oder Bedingungen dieser Dritten,",
+      "Schäden oder Verluste, die durch Drittanbieterdienste verursacht werden."
+    ],
+    "p2": "Die Nutzung von Drittanbieterdiensten unterliegt deren eigenen Bedingungen und Datenschutzrichtlinien, die in der Datenschutzerklärung ausführlich beschrieben sind."
+  },
+  "s12": {
+    "title": "Patient-Betreuer-Verbindung",
+    "p1": "Die Verknüpfung des Patientenkontos mit dem Betreuerkonto ist freiwillig und wird vom Patienten durch Eingabe eines Einladungscodes initiiert. Der Patient willigt in die Weitergabe von Medikamentendaten und Dosierungsverlauf an den Betreuer ein. Der Patient kann die Verbindung jederzeit in den Einstellungen der Anwendung trennen. Der Betreuer hat ausschließlich Lesezugriff – er kann die Erinnerungen des Patienten nicht ändern. Detaillierte Datenflusregeln finden Sie in der Datenschutzerklärung."
+  },
+  "s13": {
+    "title": "Änderungen der Anwendung und Bedingungen",
+    "sub1": {
+      "title": "Änderungen der Anwendung",
+      "p1": "Wir behalten uns das Recht vor, die Anwendung (oder Teile davon) jederzeit mit oder ohne vorherige Ankündigung zu modifizieren, auszusetzen oder einzustellen. Wir haften Ihnen oder Dritten gegenüber nicht für Modifikationen, Aussetzungen oder die Einstellung der Anwendung."
+    },
+    "sub2": {
+      "title": "Änderungen der Bedingungen",
+      "p1": "Wir können diese Bedingungen von Zeit zu Zeit ändern. Das Datum in der Dokumentkopfzeile gibt an, wann die Bedingungen zuletzt aktualisiert wurden. Über wesentliche Änderungen werden Sie über die Anwendung oder per E-Mail informiert (falls der Betreuer eine Adresse angegeben hat). Die fortgesetzte Nutzung der Anwendung nach Inkrafttreten von Änderungen gilt als Akzeptanz der geänderten Bedingungen."
+    }
+  },
+  "s14": {
+    "title": "Kündigung",
+    "sub1": {
+      "title": "Kündigung durch Sie",
+      "p1": "Sie können die Nutzung der Anwendung jederzeit einstellen und sie von Ihren Geräten deinstallieren. Die Deinstallation der Anwendung führt nicht automatisch zur Kündigung bezahlter Abonnements – Sie müssen das Abonnement selbst in den Einstellungen des App Store oder Play Store kündigen."
+    },
+    "sub2": {
+      "title": "Kündigung durch uns",
+      "p1": "Wir können Ihren Zugang zur Anwendung sofort und ohne vorherige Ankündigung aus beliebigem Grund aussetzen oder beenden, insbesondere bei Verletzung dieser Bedingungen."
+    },
+    "sub3": {
+      "title": "Folgen der Kündigung",
+      "p1": "Nach der Kündigung:",
+      "items": [
+        "erlöschen alle Ihnen gewährten Lizenzen sofort,",
+        "stellen Sie die Nutzung der Anwendung ein und deinstallieren Sie sie von Ihren Geräten,",
+        "Bestimmungen, die ihrer Natur nach nach der Kündigung fortgelten sollten, bleiben in Kraft, einschließlich Bestimmungen zu Eigentum, Gewährleistungsausschluss und Haftungsbeschränkung."
+      ]
+    }
+  },
+  "s15": {
+    "title": "Geografische Verfügbarkeit",
+    "p1": "Die Anwendung wird von Polen aus betrieben und kontrolliert und richtet sich in erster Linie an Nutzer in der Europäischen Union. Wir garantieren nicht, dass die Anwendung an allen Standorten geeignet oder verfügbar ist. Der Zugang zur Anwendung von Gebieten aus, in denen deren Inhalte illegal sind, ist verboten. Nutzer außerhalb der Europäischen Union nutzen die Anwendung auf eigenes Risiko und sind für die Einhaltung lokaler Gesetze verantwortlich."
+  },
+  "s16": {
+    "title": "Barrierefreiheit",
+    "p1": "Wir streben an, die Anwendung für alle Nutzer zugänglich zu machen. Die Anwendung bietet Schriftgrößenanpassung (Klein / Mittel / Groß) und eine Bildschirmlesefunktion (Text-to-Speech). Wenn Sie Schwierigkeiten bei der Nutzung eines Teils der Anwendung haben, kontaktieren Sie uns, und wir werden gemeinsam eine Lösung finden."
+  },
+  "s17": {
+    "title": "Feedback und Berichte",
+    "p1": "Wir freuen uns über Feedback, Kommentare und Verbesserungsvorschläge zur Anwendung. Durch die Einreichung von Feedback erkennen Sie an, dass wir es ohne Einschränkungen oder Vergütung nutzen dürfen, und Sie erteilen uns eine unbefristete, unwiderrufliche, weltweite, kostenlose Lizenz zur Nutzung, Änderung und Einbeziehung solchen Feedbacks in unsere Produkte und Dienstleistungen."
+  },
+  "s18": {
+    "title": "Besondere Bedingungen für Apple und Google",
+    "sub1": {
+      "title": "App Store-Bedingungen (Apple)",
+      "p1": "Wenn Sie die Anwendung über den App Store von Apple nutzen, erkennen Sie an, dass:",
+      "items": [
+        "diese Bedingungen ausschließlich zwischen Ihnen und dem Entwickler gelten, nicht Apple,",
+        "Apple keine Pflicht zur Erbringung von Wartungs- oder Supportleistungen hat,",
+        "Apple nicht für die Bearbeitung von Ansprüchen im Zusammenhang mit der Anwendung verantwortlich ist,",
+        "Apple ein Drittbegünstigter dieser Bedingungen ist und diese durchsetzen kann."
+      ]
+    },
+    "sub2": {
+      "title": "Google Play-Bedingungen",
+      "p1": "Wenn Sie die Anwendung über Google Play nutzen, akzeptieren Sie die Google Play-Nutzungsbedingungen."
+    }
+  },
+  "s19": {
+    "title": "Anwendbares Recht und Gerichtsbarkeit",
+    "p1": "Diese Bedingungen unterliegen polnischem Recht und werden nach diesem ausgelegt. EU-Verbraucher genießen auch den Schutz, der durch die zwingenden Bestimmungen des Rechts des EU-Mitgliedstaats ihres gewöhnlichen Aufenthalts gewährt wird. Etwaige Streitigkeiten werden durch polnische Gerichte beigelegt, vorbehaltlich der Rechte der EU-Verbraucher, Ansprüche vor Gerichten in ihrem Wohnsitzland geltend zu machen."
+  },
+  "s20": {
+    "title": "Kontaktdaten",
+    "emailLabel": "E-Mail:",
+    "controllerLabel": "Verantwortlicher:",
+    "appLabel": "Anwendung:",
+    "locationLabel": "Standort:",
+    "email": "support@trypillo.pl",
+    "controller": "Albert Napiórkowski",
+    "app": "Pillo",
+    "location": "Polen",
+    "p1": "EU-Verbraucher, die ihre gesetzlichen Rechte ausüben, werden gebeten, die Art ihres Anliegens in der Betreffzeile deutlich anzugeben."
+  },
+  "s21": {
+    "title": "Schlussbestimmungen",
+    "p1": "Durch die Nutzung der Anwendung bestätigen Sie, dass Sie diese Bedingungen gelesen und verstanden haben und damit einverstanden sind. Wenn Sie diese Bedingungen nicht akzeptieren, dürfen Sie die Anwendung nicht nutzen.",
+    "p2": "Diese Bedingungen unterliegen polnischem und EU-Recht. In nicht geregelten Angelegenheiten gelten die Bestimmungen des Bürgerlichen Gesetzbuchs, des Gesetzes über die elektronische Erbringung von Dienstleistungen und der DSGVO."
+  }
+}

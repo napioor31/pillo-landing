@@ -77,5 +77,48 @@
   },
   "lang": {
     "switcherAriaLabel": "Wybierz język / Select language"
+  },
+  "contact": {
+    "subtitle": "Napisz do nas",
+    "title": "Kontakt",
+    "description": "Masz pytanie lub chcesz się z nami skontaktować?",
+    "responseTime": "Odpisujemy zwykle w ciągu 24 godzin.",
+    "nameLbl": "Imię i nazwisko",
+    "namePlaceholder": "Jan Kowalski",
+    "emailLbl": "Adres e-mail",
+    "emailPlaceholder": "jan@przykład.pl",
+    "topicLbl": "Temat",
+    "topicPlaceholder": "Wybierz temat (opcjonalnie)",
+    "topics": ["Pytanie ogólne", "Problem techniczny", "Współpraca / Partnerstwo", "Prasa i media", "Inne"],
+    "messageLbl": "Wiadomość",
+    "messagePlaceholder": "Napisz swoją wiadomość…",
+    "submitting": "Wysyłanie…",
+    "submit": "Wyślij wiadomość",
+    "privacy": "Twoje dane są używane wyłącznie w celu odpowiedzi na wiadomość.",
+    "successTitle": "Wiadomość wysłana!",
+    "successDesc": "Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.",
+    "successReset": "Wyślij kolejną wiadomość",
+    "genericError": "Coś poszło nie tak. Spróbuj ponownie.",
+    "newMessage": "Nowa wiadomość"
+  },
+  "legal": {
+    "translationNotice": "",
+    "viewOriginal": "Zobacz oryginał (polski)",
+    "viewingOriginal": "Wyświetlasz oryginalną wersję polską.",
+    "backToTranslation": "Wróć do polskiego"
+  },
+  "download": {
+    "available": "Dostępne bezpłatnie",
+    "headline": "Zadbaj o siebie",
+    "headlineSub": "każdego dnia",
+    "descDefault": "Inteligentne przypomnienia o lekach i spokój ducha — dla Ciebie i Twoich bliskich.",
+    "descRedirectIos": "Za chwilę przekierujemy Cię do App Store…",
+    "descRedirectAndroid": "Za chwilę przekierujemy Cię do Google Play…",
+    "badges": "Bezpłatne · Bez konta · iOS i Android",
+    "googlePlayAria": "Pobierz z Google Play",
+    "appStoreAria": "Pobierz z App Store",
+    "googlePlayAlt": "Pobierz w Google Play",
+    "appStoreAlt": "Pobierz w App Store",
+    "phoneAlt": "Aplikacja Pillo na telefonie"
   }
 }
