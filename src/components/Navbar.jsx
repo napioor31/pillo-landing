@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Download } from 'lucide-react';
+import { Bell } from 'lucide-react';
 import RoleSwitcher from './RoleSwitcher';
 import { logo } from '../assets/images';
 
@@ -52,8 +52,8 @@ const Navbar = ({ activeRole, onRoleChange, isDark = false }) => {
                 : 'bg-primary text-surface hover:bg-primary-dark focus-visible:ring-primary'
           }`}
         >
-          <Download size={16} aria-hidden="true" />
-          Pobierz
+          <Bell size={16} aria-hidden="true" />
+          Powiadom mnie
         </Link>
       </div>
     </nav>

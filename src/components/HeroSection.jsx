@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { Smartphone, ArrowRight, ShieldCheck, Star } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Star } from 'lucide-react';
 import Navbar from './Navbar';
 import { heroPhone } from '../assets/images';
 
@@ -9,6 +8,7 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
   const isCaregiver = activeRole === 'caregiver';
   const containerRef = useRef(null);
   const [containerHeight, setContainerHeight] = useState(null);
+  const [email, setEmail] = useState('');
 
   const measureHalf = useCallback(() => {
     const img = containerRef.current?.querySelector('img');
@@ -118,69 +118,41 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
                     {content.subheadline}
                   </p>
 
-                  {/* CTA Buttons - role colored */}
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                    <motion.div
-                      whileHover={{ y: -2 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Link
-                        to="/download"
-                        className={`group px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-500 flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+                  {/* Email signup form */}
+                  <div className="mb-5">
+                    <div className="flex flex-col sm:flex-row gap-2 max-w-xl">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="twój@email.pl"
+                        className={`flex-1 min-w-0 px-5 py-3.5 rounded-full text-base border-2 outline-none focus:ring-2 focus:ring-offset-0 transition-all duration-300 ${
+                          isCaregiver
+                            ? 'bg-white/10 text-white placeholder-white/40 border-white/20 focus:border-white/40 focus:ring-white/10'
+                            : 'bg-white text-text-primary placeholder-text-secondary/50 border-divider focus:border-primary/40 focus:ring-primary/10'
+                        }`}
+                      />
+                      <motion.button
+                        type="button"
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`px-5 py-3.5 rounded-full font-semibold text-base transition-all duration-500 flex items-center justify-center gap-2 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
                           isCaregiver
                             ? 'bg-white text-[#1B2E27] hover:bg-white/90 shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]'
                             : 'bg-primary text-surface hover:bg-primary-dark shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 focus-visible:ring-primary'
                         }`}
-                        aria-label="Pobierz aplikację Pillo za darmo"
                       >
-                        <Smartphone size={20} aria-hidden="true" />
-                        {content.ctaPrimary}
-                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                      </Link>
-                    </motion.div>
-                    <a
-                      href="#jak-to-dziala"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        const target = document.getElementById('jak-to-dziala');
-                        if (!target) return;
-                        const html = document.documentElement;
-                        html.style.scrollBehavior = 'auto';
-                        const start = window.scrollY;
-                        const navbarHeight = 72;
-                        const end = target.getBoundingClientRect().top + start - navbarHeight;
-                        const duration = 1400;
-                        const startTime = performance.now();
-                        const ease = (t) => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
-                        const step = (now) => {
-                          const elapsed = now - startTime;
-                          const progress = Math.min(elapsed / duration, 1);
-                          window.scrollTo(0, start + (end - start) * ease(progress));
-                          if (progress < 1) {
-                            requestAnimationFrame(step);
-                          } else {
-                            html.style.scrollBehavior = '';
-                          }
-                        };
-                        requestAnimationFrame(step);
-                      }}
-                      className={`px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-base sm:text-lg border-2 transition-all duration-500 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-                        isCaregiver
-                          ? 'bg-transparent text-white border-white/30 hover:border-white/60 hover:bg-white/10 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]'
-                          : 'bg-surface text-text-primary border-divider hover:border-primary-light hover:bg-surface focus-visible:ring-primary'
-                      }`}
-                      aria-label="Zobacz jak działa aplikacja"
-                    >
-                      {content.ctaSecondary}
-                    </a>
+                        Powiadom mnie o premierze
+                        <ArrowRight size={18} aria-hidden="true" />
+                      </motion.button>
+                    </div>
+                    <p className={`mt-2.5 text-sm transition-colors duration-500 ${
+                      isCaregiver ? 'text-white/40' : 'text-text-secondary/70'
+                    }`}>
+                      Bezpłatne · Bez spamu · Powiadomimy gdy aplikacja będzie gotowa
+                    </p>
                   </div>
 
-                  {/* Trust note */}
-                  <p className={`text-sm mb-8 transition-colors duration-500 ${
-                    isCaregiver ? 'text-white/50' : 'text-text-secondary'
-                  }`}>
-                    {content.trustNote}
-                  </p>
                 </motion.div>
               </AnimatePresence>
 

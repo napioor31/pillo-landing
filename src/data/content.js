@@ -96,8 +96,8 @@ export const roleContent = {
     ],
 
     footer: {
-      headline: "Twoje leki pod kontrolą — bez wysiłku",
-      sub: "Bezpłatnie, bez zakładania konta. Zacznij kiedy chcesz.",
+      headline: "Pillo jest już prawie gotowe",
+      sub: "Zostaw swój e-mail — poinformujemy Cię jako pierwszych, gdy aplikacja będzie dostępna.",
       cta: "Pobierz Pillo"
     }
   },
@@ -197,8 +197,8 @@ export const roleContent = {
     ],
 
     footer: {
-      headline: "Spokój, który czujesz — nie tylko deklarujesz",
-      sub: "29,90 zł miesięcznie. Anuluj w każdej chwili.",
+      headline: "Spokój, który czujesz — już wkrótce",
+      sub: "Zostaw swój e-mail — poinformujemy Cię gdy Pillo dla opiekunów będzie gotowe.",
       cta: "Wypróbuj Pillo"
     }
   }

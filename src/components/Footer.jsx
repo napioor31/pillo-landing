@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { logo } from '../assets/images';
 
 const Footer = ({ activeRole = 'patient', footer = {} }) => {
   const isCaregiver = activeRole === 'caregiver';
+  const [email, setEmail] = useState('');
 
   return (
     <footer id="download" className={`w-full py-20 relative overflow-hidden transition-colors duration-700 ${
@@ -31,51 +34,27 @@ const Footer = ({ activeRole = 'patient', footer = {} }) => {
             {footer.sub}
           </p>
 
-          {/* Download Buttons - Official Store Badges */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            {/* App Store Button */}
-            <a
-              href="https://apps.apple.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`block transition-transform duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded-xl w-36 ${
-                isCaregiver
-                  ? 'focus-visible:ring-accent-gold focus-visible:ring-offset-[#1B2E27]'
-                  : 'focus-visible:ring-accent-gold focus-visible:ring-offset-[#243D34]'
-              }`}
-              aria-label="Pobierz aplikację z App Store"
-            >
-              <img
-                src="/images/badges/app-store.svg"
-                alt="Pobierz w App Store"
-                loading="lazy"
-                width={144}
-                height={48}
-                className="w-full h-auto"
+          {/* Email Signup Form */}
+          <div className="flex flex-col items-center gap-3">
+            <div className="flex flex-col sm:flex-row gap-2 w-full max-w-2xl">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="twój@email.pl"
+                className="flex-1 min-w-0 px-5 py-3.5 rounded-full text-base bg-white/10 text-white placeholder-white/40 border-2 border-white/20 outline-none focus:border-white/40 focus:ring-2 focus:ring-white/10 transition-all duration-300"
               />
-            </a>
-
-            {/* Google Play Button */}
-            <a
-              href="https://play.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`block transition-transform duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded-xl w-44 ${
-                isCaregiver
-                  ? 'focus-visible:ring-accent-gold focus-visible:ring-offset-[#1B2E27]'
-                  : 'focus-visible:ring-accent-gold focus-visible:ring-offset-[#243D34]'
-              }`}
-              aria-label="Pobierz aplikację z Google Play"
-            >
-              <img
-                src="/images/badges/google-play.png"
-                alt="Pobierz w Google Play"
-                loading="lazy"
-                width={176}
-                height={52}
-                className="w-full h-auto"
-              />
-            </a>
+              <button
+                type="button"
+                className="px-5 py-3.5 rounded-full font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap shrink-0 bg-white text-[#243D34] hover:bg-white/90 shadow-lg shadow-black/20 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#243D34]"
+              >
+                Powiadom mnie o premierze
+                <ArrowRight size={18} aria-hidden="true" />
+              </button>
+            </div>
+            <p className="text-surface/50 text-sm">
+              Bezpłatne · Bez spamu · Powiadomimy gdy aplikacja będzie gotowa
+            </p>
           </div>
         </motion.div>
 
