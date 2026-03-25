@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { ArrowRight, ShieldCheck, Star } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Star, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Navbar from './Navbar';
 import { getHeroPhone } from '../assets/images';
@@ -125,11 +125,19 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
                   {/* Email signup form */}
                   <div className="mb-5">
                     {status === 'success' ? (
-                      <p className={`text-base font-medium transition-colors duration-500 ${
-                        isCaregiver ? 'text-white' : 'text-primary'
-                      }`}>
-                        {t('waitlist.success')}
-                      </p>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.92, y: 8 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                        className={`inline-flex items-center gap-3 px-5 py-3.5 rounded-2xl border ${
+                          isCaregiver
+                            ? 'bg-white/10 border-white/20 text-white'
+                            : 'bg-primary/8 border-primary/20 text-primary'
+                        }`}
+                      >
+                        <CheckCircle2 size={22} className="shrink-0" aria-hidden="true" />
+                        <span className="text-base font-semibold">{t('waitlist.success')}</span>
+                      </motion.div>
                     ) : (
                       <>
                         <div className="flex flex-col sm:flex-row gap-2 max-w-xl">
