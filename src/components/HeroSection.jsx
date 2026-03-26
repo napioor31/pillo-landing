@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { ArrowRight, ShieldCheck, Star, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Star, CheckCircle2, Info } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Navbar from './Navbar';
 import { getHeroPhone } from '../assets/images';
@@ -138,6 +139,20 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
                         <CheckCircle2 size={22} className="shrink-0" aria-hidden="true" />
                         <span className="text-base font-semibold">{t('waitlist.success')}</span>
                       </motion.div>
+                    ) : status === 'duplicate' ? (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.92, y: 8 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                        className={`inline-flex items-center gap-3 px-5 py-3.5 rounded-2xl border ${
+                          isCaregiver
+                            ? 'bg-white/10 border-white/20 text-white'
+                            : 'bg-accent-gold/10 border-accent-gold/30 text-text-primary'
+                        }`}
+                      >
+                        <Info size={22} className="shrink-0" aria-hidden="true" />
+                        <span className="text-base font-semibold">{t('waitlist.duplicate')}</span>
+                      </motion.div>
                     ) : (
                       <>
                         <div className="flex flex-col sm:flex-row gap-2 max-w-xl">
@@ -171,7 +186,17 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
                           </motion.button>
                         </div>
                         {status === 'error' ? (
-                          <p className="mt-2.5 text-sm text-red-500">{errorMsg}</p>
+                          <div className="mt-2.5">
+                            <p className="text-sm text-red-500">{errorMsg}</p>
+                            <Link
+                              to="/kontakt"
+                              className={`mt-1 inline-block text-sm underline underline-offset-2 transition-colors ${
+                                isCaregiver ? 'text-white/60 hover:text-white' : 'text-text-secondary hover:text-primary'
+                              }`}
+                            >
+                              {t('waitlist.errorContact')}
+                            </Link>
+                          </div>
                         ) : (
                           <p className={`mt-2.5 text-sm transition-colors duration-500 ${
                             isCaregiver ? 'text-white/40' : 'text-text-secondary/70'

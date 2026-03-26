@@ -19,7 +19,9 @@
     "emailPlaceholder": "your@email.com",
     "invalidEmail": "Please enter a valid email address.",
     "genericError": "Something went wrong.",
-    "retryError": "Something went wrong. Please try again."
+    "retryError": "Something went wrong. Please try again.",
+    "duplicate": "Looks like you're already on the list!",
+    "errorContact": "Contact us if the problem persists"
   },
   "hero": {
     "secureBadge": "Secure data",

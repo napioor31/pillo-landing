@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { useTranslation } from 'react-i18next';
 import { getRoleContent } from './data/content';
@@ -58,10 +58,16 @@ function App() {
       const loader = document.getElementById('page-loader');
       if (loader) {
         loader.classList.add('hidden');
-        loader.addEventListener('transitionend', () => {
+        let settled = false;
+        const done = () => {
+          if (settled) return;
+          settled = true;
           loader.remove();
           setLoaderDone(true);
-        }, { once: true });
+        };
+        loader.addEventListener('transitionend', done, { once: true });
+        // Fallback: if the CSS transition is skipped (reduced-motion, no styles), resolve anyway
+        setTimeout(done, 600);
       } else {
         setLoaderDone(true);
       }
@@ -75,13 +81,14 @@ function App() {
       <SpeedInsights />
       <ScrollToTop />
       <LanguageSwitcher />
-      <Suspense fallback={null}>
+      <Suspense fallback={<div className="min-h-screen bg-surface" aria-busy="true" />}>
         <Routes>
           <Route path="/" element={<LandingPage loaderDone={loaderDone} />} />
           <Route path="/regulamin" element={<Regulamin />} />
           <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosci />} />
           <Route path="/download" element={<Download />} />
           <Route path="/kontakt" element={<Contact />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

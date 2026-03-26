@@ -47,16 +47,3 @@ export function getRoleContent(role, t, lang = 'pl') {
   };
 }
 
-// Mapowanie ikon do nazw
-export const iconMap = {
-  Bell: 'Bell',
-  CheckCircle: 'CheckCircle',
-  Type: 'Type',
-  Volume2: 'Volume2',
-  Users: 'Users',
-  Shield: 'Shield',
-  BarChart3: 'BarChart3',
-  History: 'History',
-  BellRing: 'BellRing',
-  MessageCircle: 'MessageCircle',
-};

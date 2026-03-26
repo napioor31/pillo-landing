@@ -19,7 +19,9 @@
     "emailPlaceholder": "twój@email.pl",
     "invalidEmail": "Podaj poprawny adres e-mail.",
     "genericError": "Coś poszło nie tak.",
-    "retryError": "Coś poszło nie tak. Spróbuj ponownie."
+    "retryError": "Coś poszło nie tak. Spróbuj ponownie.",
+    "duplicate": "Wygląda na to, że już jesteś na liście!",
+    "errorContact": "Napisz do nas, jeśli problem się powtarza"
   },
   "hero": {
     "secureBadge": "Bezpieczne dane",

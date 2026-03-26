@@ -19,7 +19,9 @@
     "emailPlaceholder": "ihre@email.de",
     "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
     "genericError": "Etwas ist schiefgelaufen.",
-    "retryError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+    "retryError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "duplicate": "Sieht aus, als wären Sie bereits auf der Liste!",
+    "errorContact": "Kontaktieren Sie uns, wenn das Problem anhält"
   },
   "hero": {
     "secureBadge": "Sichere Daten",

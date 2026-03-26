@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import i18n from '../i18n/index.js';
 
+// Keep in sync with api/waitlist.js
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const FETCH_TIMEOUT_MS = 10_000;
 
 export function useWaitlistForm() {
   const [email, setEmail] = useState('');
-  const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
+  const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'duplicate' | 'error'
   const [errorMsg, setErrorMsg] = useState('');
 
   async function handleSubmit() {
@@ -18,13 +21,22 @@ export function useWaitlistForm() {
     setStatus('submitting');
     setErrorMsg('');
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
     try {
       const res = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
+        signal: controller.signal,
       });
       const data = await res.json();
+
+      if (res.status === 409) {
+        setStatus('duplicate');
+        return;
+      }
 
       if (!res.ok) {
         throw new Error(data.error || i18n.t('common:waitlist.genericError'));
@@ -35,6 +47,8 @@ export function useWaitlistForm() {
     } catch (err) {
       setStatus('error');
       setErrorMsg(err.message || i18n.t('common:waitlist.retryError'));
+    } finally {
+      clearTimeout(timeout);
     }
   }
 

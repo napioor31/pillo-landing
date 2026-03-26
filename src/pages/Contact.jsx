@@ -5,7 +5,7 @@ import { ArrowLeft, Send, CheckCircle, AlertCircle, Loader } from 'lucide-react'
 import { useTranslation } from 'react-i18next';
 import { logo } from '../assets/images';
 
-const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+const FETCH_TIMEOUT_MS = 10_000;
 
 const inputClass =
   'w-full px-4 py-3 rounded-xl border border-divider bg-surface text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all duration-200 text-base';
@@ -32,17 +32,20 @@ export default function Contact() {
     setStatus('submitting');
     setErrorMsg('');
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
           name: form.name,
           email: form.email,
-          subject: `[Pillo] ${form.topic || t('contact.newMessage')}`,
+          topic: form.topic,
           message: form.message,
         }),
+        signal: controller.signal,
       });
 
       const data = await res.json();
@@ -51,11 +54,13 @@ export default function Contact() {
         setStatus('success');
         setForm({ name: '', email: '', topic: '', message: '', botcheck: '' });
       } else {
-        throw new Error(data.message || t('contact.genericError'));
+        throw new Error(data.error || t('contact.genericError'));
       }
     } catch (err) {
       setStatus('error');
       setErrorMsg(err.message || t('contact.genericError'));
+    } finally {
+      clearTimeout(timeout);
     }
   }
 
