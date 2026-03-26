@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { logo, storeBadges } from '../assets/images';
+import SEO from '../components/SEO';
 
 const APP_STORE_URL = 'https://apps.apple.com';
 const GOOGLE_PLAY_URL = 'https://play.google.com';
@@ -16,7 +17,7 @@ function detectPlatform() {
 }
 
 export default function Download() {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
   const [platform, setPlatform] = useState('desktop');
   const [redirecting, setRedirecting] = useState(false);
 
@@ -37,6 +38,12 @@ export default function Download() {
 
   return (
     <div className="h-screen overflow-hidden flex flex-col bg-surface relative">
+      <SEO
+        title="Pobierz Pillo"
+        description="Pobierz aplikację Pillo na iOS lub Android. Bezpłatne zarządzanie lekami z przypomnieniami dla pacjentów i zdalnym monitoringiem dla opiekunów."
+        canonical="/download"
+        lang={i18n.language}
+      />
 
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">

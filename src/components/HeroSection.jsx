@@ -281,7 +281,7 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
                     alt={heroImage.alt}
                     width={390}
                     height={844}
-                    fetchpriority="high"
+                    fetchPriority="high"
                     className="relative z-10 max-h-[70vh] w-auto object-contain drop-shadow-2xl"
                   />
                 </motion.div>

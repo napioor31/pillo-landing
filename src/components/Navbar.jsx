@@ -36,8 +36,8 @@ const Navbar = ({ activeRole, onRoleChange, isDark = false }) => {
             }`}>Pillo</span>
         </a>
 
-        {/* Role Switcher — absolutely centered so it stays in the middle regardless of sibling widths */}
-        <div className="absolute left-1/2 -translate-x-1/2">
+        {/* Role Switcher — centered on sm+, right-aligned on mobile */}
+        <div className="sm:absolute sm:left-1/2 sm:-translate-x-1/2">
           <RoleSwitcher activeRole={activeRole} onRoleChange={onRoleChange} isDark={isDark && !isScrolled || isScrolled} />
         </div>
 

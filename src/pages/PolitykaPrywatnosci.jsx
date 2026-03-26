@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import LegalPageLayout from '../components/LegalPageLayout';
+import SEO from '../components/SEO';
 
 const Section = ({ number, title, children }) => (
   <section className="mb-10">
@@ -64,8 +65,16 @@ const PolitykaPrywatnosci = () => {
   const policyLinkText = t('thirdParty.policyLink');
 
   return (
-    <LegalPageLayout
-      title={t('layout.title')}
+    <>
+      <SEO
+        title="Polityka prywatności"
+        description="Polityka prywatności aplikacji Pillo. Dowiedz się, jak chronimy Twoje dane osobowe."
+        canonical="/polityka-prywatnosci"
+        noindex
+        lang={i18n.language}
+      />
+      <LegalPageLayout
+        title={t('layout.title')}
       subtitle={t('layout.subtitle')}
       date={t('layout.date')}
       showOriginal={showOriginal}
@@ -233,7 +242,8 @@ const PolitykaPrywatnosci = () => {
       <Section number="15" title={t('s15.title')}>
         <p>{t('s15.p1')}</p>
       </Section>
-    </LegalPageLayout>
+      </LegalPageLayout>
+    </>
   );
 };
 

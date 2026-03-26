@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { useTranslation } from 'react-i18next';
 import { getRoleContent } from './data/content';
+import SEO from './components/SEO';
+import JsonLd from './components/JsonLd';
+import { websiteSchema, organizationSchema, softwareAppSchema, faqSchema } from './data/schemas';
 import HeroSection from './components/HeroSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import FeaturesSection from './components/FeaturesSection';
@@ -24,6 +27,17 @@ function LandingPage({ loaderDone }) {
 
   return (
     <main className="min-h-screen bg-surface">
+      <SEO
+        isHomepage
+        title="Pillo — Aplikacja do zarządzania lekami"
+        description="Pillo pomaga pacjentom i opiekunom zarządzać lekami, ustawiać przypomnienia i śledzić harmonogram przyjmowania. Bezpłatne dla pacjentów, 29,90 zł/mies. dla opiekunów."
+        canonical="/"
+        lang={i18n.language}
+      />
+      <JsonLd schema={websiteSchema} id="schema-website" />
+      <JsonLd schema={organizationSchema} id="schema-organization" />
+      <JsonLd schema={softwareAppSchema} id="schema-app" />
+      <JsonLd schema={faqSchema} id="schema-faq" />
       <HeroSection
         activeRole={activeRole}
         onRoleChange={setActiveRole}

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Send, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { logo } from '../assets/images';
+import SEO from '../components/SEO';
 
 const FETCH_TIMEOUT_MS = 10_000;
 
@@ -11,7 +12,7 @@ const inputClass =
   'w-full px-4 py-3 rounded-xl border border-divider bg-surface text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all duration-200 text-base';
 
 export default function Contact() {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
   const [form, setForm] = useState({ name: '', email: '', topic: '', message: '', botcheck: '' });
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
   const [errorMsg, setErrorMsg] = useState('');
@@ -66,6 +67,12 @@ export default function Contact() {
 
   return (
     <div className="min-h-dvh flex flex-col bg-surface relative overflow-x-hidden">
+      <SEO
+        title="Kontakt"
+        description="Skontaktuj się z zespołem Pillo. Odpowiadamy na pytania dotyczące aplikacji do zarządzania lekami."
+        canonical="/kontakt"
+        lang={i18n.language}
+      />
 
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">

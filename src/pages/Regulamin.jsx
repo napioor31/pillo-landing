@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import LegalPageLayout from '../components/LegalPageLayout';
+import SEO from '../components/SEO';
 
 const Section = ({ number, title, children }) => (
   <section className="mb-10">
@@ -45,8 +46,16 @@ const Regulamin = () => {
   const t = showOriginal ? tPl : tCurrent;
 
   return (
-    <LegalPageLayout
-      title={t('layout.title')}
+    <>
+      <SEO
+        title="Regulamin"
+        description="Regulamin aplikacji Pillo — warunki korzystania z aplikacji do zarządzania lekami."
+        canonical="/regulamin"
+        noindex
+        lang={i18n.language}
+      />
+      <LegalPageLayout
+        title={t('layout.title')}
       subtitle={t('layout.subtitle')}
       date={t('layout.date')}
       showOriginal={showOriginal}
@@ -224,7 +233,8 @@ const Regulamin = () => {
         <p>{t('s21.p1')}</p>
         <p>{t('s21.p2')}</p>
       </Section>
-    </LegalPageLayout>
+      </LegalPageLayout>
+    </>
   );
 };
 
