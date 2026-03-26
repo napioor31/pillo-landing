@@ -48,7 +48,7 @@ export default async function handler(req, res) {
   const { error } = await resend.emails.send({
     from: 'Pillo Kontakt <kontakt@trypillo.pl>',
     to: 'support@trypillo.pl',
-    reply_to: email,
+    replyTo: email,
     subject,
     text: `Od: ${name} <${email}>\n\n${message}`,
     html: `<p><strong>Od:</strong> ${name} &lt;${email}&gt;</p><p><strong>Temat:</strong> ${topic || '—'}</p><hr/><p>${message.replace(/\n/g, '<br/>')}</p>`,
