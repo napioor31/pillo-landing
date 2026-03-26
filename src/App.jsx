@@ -98,10 +98,10 @@ function App() {
       <Suspense fallback={<div className="min-h-screen bg-surface" aria-busy="true" />}>
         <Routes>
           <Route path="/" element={<LandingPage loaderDone={loaderDone} />} />
-          <Route path="/regulamin" element={<Regulamin />} />
-          <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosci />} />
+          <Route path="/terms" element={<Regulamin />} />
+          <Route path="/privacy-policy" element={<PolitykaPrywatnosci />} />
           <Route path="/download" element={<Download />} />
-          <Route path="/kontakt" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>

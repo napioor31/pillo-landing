@@ -189,7 +189,7 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
                           <div className="mt-2.5">
                             <p className="text-sm text-red-500">{errorMsg}</p>
                             <Link
-                              to="/kontakt"
+                              to="/contact"
                               className={`mt-1 inline-block text-sm underline underline-offset-2 transition-colors ${
                                 isCaregiver ? 'text-white/60 hover:text-white' : 'text-text-secondary hover:text-primary'
                               }`}

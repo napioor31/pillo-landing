@@ -117,7 +117,7 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
             isCaregiver ? 'text-white/70' : 'text-text-secondary'
           }`}>{t('faq.contactPrompt')}</p>
           <Link
-            to="/kontakt"
+            to="/contact"
             className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 ${
               isCaregiver
                 ? 'bg-[#3F8F6B]/20 text-[#5DB38D] hover:bg-[#3F8F6B]/30 focus-visible:ring-[#3F8F6B]'

@@ -189,10 +189,10 @@ export default function Download() {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
           <p className="text-text-secondary/50">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
           <div className="flex gap-6">
-            <Link to="/polityka-prywatnosci" className="text-text-secondary hover:text-primary transition-colors">
+            <Link to="/privacy-policy" className="text-text-secondary hover:text-primary transition-colors">
               {t('footer.privacyPolicy')}
             </Link>
-            <Link to="/regulamin" className="text-text-secondary hover:text-primary transition-colors">
+            <Link to="/terms" className="text-text-secondary hover:text-primary transition-colors">
               {t('footer.terms')}
             </Link>
           </div>

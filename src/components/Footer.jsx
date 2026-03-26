@@ -94,9 +94,9 @@ const Footer = ({ activeRole = 'patient', footer = {} }) => {
 
             {/* Links */}
             <nav className="flex flex-wrap items-center justify-center gap-6">
-              <Link to="/polityka-prywatnosci" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">{t('footer.privacyPolicy')}</Link>
-              <Link to="/regulamin" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">{t('footer.terms')}</Link>
-              <Link to="/kontakt" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">{t('footer.contact')}</Link>
+              <Link to="/privacy-policy" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">{t('footer.privacyPolicy')}</Link>
+              <Link to="/terms" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">{t('footer.terms')}</Link>
+              <Link to="/contact" className="text-surface/80 hover:text-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:rounded">{t('footer.contact')}</Link>
             </nav>
 
             {/* Copyright */}

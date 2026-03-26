@@ -27,7 +27,7 @@ export const organizationSchema = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
-    url: `${BASE_URL}/kontakt`,
+    url: `${BASE_URL}/contact`,
   },
   sameAs: [],
 };

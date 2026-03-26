@@ -86,8 +86,8 @@ const LegalPageLayout = ({ title, subtitle, date, children, showOriginal, onTogg
         <div className="max-w-4xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-text-secondary text-sm">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
           <div className="flex gap-6 text-sm">
-            <Link to="/polityka-prywatnosci" className="text-text-secondary hover:text-primary transition-colors">{t('footer.privacyPolicy')}</Link>
-            <Link to="/regulamin" className="text-text-secondary hover:text-primary transition-colors">{t('footer.terms')}</Link>
+            <Link to="/privacy-policy" className="text-text-secondary hover:text-primary transition-colors">{t('footer.privacyPolicy')}</Link>
+            <Link to="/terms" className="text-text-secondary hover:text-primary transition-colors">{t('footer.terms')}</Link>
           </div>
         </div>
       </div>

@@ -50,7 +50,7 @@ const Regulamin = () => {
       <SEO
         title="Regulamin"
         description="Regulamin aplikacji Pillo — warunki korzystania z aplikacji do zarządzania lekami."
-        canonical="/regulamin"
+        canonical="/terms"
         noindex
         lang={i18n.language}
       />

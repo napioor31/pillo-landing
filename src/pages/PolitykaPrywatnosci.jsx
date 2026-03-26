@@ -69,7 +69,7 @@ const PolitykaPrywatnosci = () => {
       <SEO
         title="Polityka prywatności"
         description="Polityka prywatności aplikacji Pillo. Dowiedz się, jak chronimy Twoje dane osobowe."
-        canonical="/polityka-prywatnosci"
+        canonical="/privacy-policy"
         noindex
         lang={i18n.language}
       />
