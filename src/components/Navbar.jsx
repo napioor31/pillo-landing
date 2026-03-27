@@ -36,8 +36,8 @@ const Navbar = ({ activeRole, onRoleChange, isDark = false }) => {
             }`}>Pillo</span>
         </a>
 
-        {/* Role Switcher — centered on sm+, right-aligned on mobile */}
-        <div className="sm:absolute sm:left-1/2 sm:-translate-x-1/2">
+        {/* Role Switcher — centered on lg+, right-aligned on mobile/tablet */}
+        <div className="lg:absolute lg:left-1/2 lg:-translate-x-1/2">
           <RoleSwitcher activeRole={activeRole} onRoleChange={onRoleChange} isDark={isDark && !isScrolled || isScrolled} />
         </div>
 
@@ -48,7 +48,7 @@ const Navbar = ({ activeRole, onRoleChange, isDark = false }) => {
             e.preventDefault();
             document.getElementById('download')?.scrollIntoView({ behavior: 'smooth' });
           }}
-          className={`hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isScrolled
+          className={`hidden lg:flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isScrolled
             ? 'bg-primary text-surface hover:bg-primary-dark focus-visible:ring-primary focus-visible:ring-offset-white'
             : isDark
               ? 'bg-white text-[#1B2E27] hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-[#1B2E27]'

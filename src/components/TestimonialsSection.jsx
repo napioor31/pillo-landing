@@ -1,10 +1,21 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Quote, Star } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
+function pickRandom(arr, n) {
+  return [...arr].sort(() => Math.random() - 0.5).slice(0, n);
+}
+
 const TestimonialsSection = ({ activeRole = 'patient', testimonials = [] }) => {
   const isCaregiver = activeRole === 'caregiver';
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const [displayed, setDisplayed] = useState(() => pickRandom(testimonials, 3));
+
+  useEffect(() => {
+    setDisplayed(pickRandom(testimonials, 3));
+  }, [activeRole, i18n.language]);
 
   return (
     <section className={`w-full py-14 sm:py-24 relative overflow-hidden transition-colors duration-700 ${
@@ -40,7 +51,7 @@ const TestimonialsSection = ({ activeRole = 'patient', testimonials = [] }) => {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 pt-4">
-          {testimonials.map((testimonial, index) => (
+          {displayed.map((testimonial, index) => (
             <motion.div
               key={index}
               className="relative"

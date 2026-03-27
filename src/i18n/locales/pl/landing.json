@@ -41,21 +41,16 @@
       }
     ],
     "testimonials": [
-      {
-        "quote": "Córka mi to zainstalowała i po tygodniu już sama wiedziałam, gdzie klikać. Nie myślałam, że to będzie takie proste.",
-        "author": "Jadwiga Kowalska",
-        "role": "73 lata, Warszawa"
-      },
-      {
-        "quote": "Próbowałem innych aplikacji, ale były za skomplikowane. Ta działa tak jak powinna — bez zbędnych kroków.",
-        "author": "Stanisław Nowak",
-        "role": "68 lat, Kraków"
-      },
-      {
-        "quote": "Nareszcie mam jedno miejsce dla wszystkich leków. Nic nie ginie, nic nie umyka.",
-        "author": "Henryk Wiśniewski",
-        "role": "71 lat, Gdańsk"
-      }
+      { "quote": "Córka zainstalowała, teraz sama obsługuję. Leki biorę regularnie od miesiąca, wcześniej zawsze coś umknęło.", "author": "Krystyna Wójcik", "role": "72 lata, Kraków" },
+      { "quote": "Prosta sprawa. Dodałem 4 leki, ustawiłem godziny i działa. Nie wymaga ode mnie żadnej wiedzy technicznej.", "author": "Stanisław Marek", "role": "68 lat, Gdańsk" },
+      { "quote": "Mam słaby wzrok więc czytanie na głos bardzo pomaga. Wnuk mówił że to nieskomplikowane i miał rację.", "author": "Irena Kowalczyk", "role": "78 lat, Wrocław" },
+      { "quote": "Nie trzeba się nigdzie rejestrować ani wymyślać hasła. To był dla mnie warunek. Polecam starszym osobom.", "author": "Halina Brzezińska", "role": "70 lat, Poznań" },
+      { "quote": "Próbowałem trzech aplikacji przed tą. To jedyna, z której korzystam każdego dnia. Prosta i niezawodna.", "author": "Franz Huber", "role": "75 lat, Wiedeń" },
+      { "quote": "Połączyłem konto z córką i już nie muszę jej meldować że wziąłem leki. Oboje zadowoleni.", "author": "Ryszard Dąbrowski", "role": "58 lat, Katowice" },
+      { "quote": "Mam 81 lat i daję radę sama. Przycisk duży, tekst czytelny, powiadomienia głośne. Nic więcej nie potrzebuję.", "author": "Elżbieta Kamińska", "role": "81 lat, Lublin" },
+      { "quote": "Skomplikowany harmonogram po leczeniu — Pillo ogarnia bez problemu. Inne aplikacje się gubiły przy więcej niż 3 lekach.", "author": "Marta Lewandowska", "role": "52 lata, Warszawa" },
+      { "quote": "Lek co 8 godzin działał od razu po ustawieniu. Przypomnienie powtarza się jeśli nie odpowiem, co mi bardzo odpowiada.", "author": "Bogdan Wiśniewski", "role": "66 lat, Bydgoszcz" },
+      { "quote": "Używam od 6 tygodni. Nie jest idealna ale robi to do czego służy i nie komplikuje życia.", "author": "Zofia Adamska", "role": "74 lata, Białystok" }
     ],
     "faq": [
       {
@@ -127,21 +122,16 @@
       }
     ],
     "testimonials": [
-      {
-        "quote": "Mieszkam daleko od rodziców i przez długi czas żyłam z niepokojem w tle. Teraz po prostu wiem. To ogromna różnica.",
-        "author": "Anna Nowicka",
-        "role": "Córka, Wrocław"
-      },
-      {
-        "quote": "Opiekuję się dwunastoma seniorami. Wcześniej musiałam wszystko trzymać w głowie — teraz Pillo robi to za mnie.",
-        "author": "Maria Kowalska",
-        "role": "Pielęgniarka środowiskowa"
-      },
-      {
-        "quote": "Tata czasem zapominał i wstydził się przyznać. Teraz widzę to sama i mogę zareagować — bez robienia z tego sprawy.",
-        "author": "Piotr Wiśniewski",
-        "role": "Syn, Gdańsk"
-      }
+      { "quote": "Mama 76 lat, zawsze zapominała. Teraz widzę w aplikacji czy wzięła leki i nie muszę dzwonić codziennie żeby sprawdzić.", "author": "Agnieszka Zielińska", "role": "44 lata, Warszawa" },
+      { "quote": "Skonfigurowałem przez telefon z tatą — zajęło może 20 minut. Dashboard jest czytelny, alerty działają.", "author": "Piotr Kowalski", "role": "38 lat, Gdynia" },
+      { "quote": "Mam dwie połączone osoby w jednej aplikacji. Wchodzę raz dziennie, widzę czy wszystko ok. Tyle mi potrzeba.", "author": "Katarzyna Nowak", "role": "51 lat, Kraków" },
+      { "quote": "Używam zawodowo i prywatnie dla taty. Aplikacja nie zasypuje alarmami przy każdej drobnostce, co bardzo doceniam.", "author": "Dorota Wiśniewska", "role": "48 lat, Wrocław" },
+      { "quote": "Historia dawek z tygodnia pokazuje czy ojciec ma jakiś wzorzec pomijania. To więcej niż mi dawały inne narzędzia.", "author": "Marek Jankowski", "role": "42 lata, Łódź" },
+      { "quote": "Tata z Alzheimerem. Zamiast 3 telefonów dziennie mam jedno sprawdzenie dashboardu. To wystarczy.", "author": "Tomasz Krawczyk", "role": "40 lat, Rzeszów" },
+      { "quote": "Łatwa w konfiguracji, mama ogarnęła sama po pierwszym pokazaniu. Powiadomienia dochodzą szybko.", "author": "Joanna Piotrowska", "role": "33 lata, Gdańsk" },
+      { "quote": "Alert o pominiętej dawce przychodzi od razu. Nie za 2 godziny — od razu. To jedyna rzecz której naprawdę potrzebowałam.", "author": "Anna Wojciechowska", "role": "55 lat, Szczecin" },
+      { "quote": "Wykres tygodniowy daje szybki przegląd bez wchodzenia w szczegóły. Przydatny kiedy mam mało czasu.", "author": "Michał Szymański", "role": "35 lat, Poznań" },
+      { "quote": "Tata sceptyczny wobec technologii, ale po tygodniu sam otwiera aplikację i naciska przycisk. Nie spodziewałam się że to tak pójdzie.", "author": "Beata Mazur", "role": "46 lat, Lublin" }
     ],
     "faq": [
       {

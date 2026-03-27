@@ -41,21 +41,16 @@
       }
     ],
     "testimonials": [
-      {
-        "quote": "Meine Tochter hat es installiert und nach einer Woche wusste ich schon, wo ich tippen muss. Ich dachte nicht, dass es so einfach sein würde.",
-        "author": "Jadwiga Kowalska",
-        "role": "73 Jahre, Warschau"
-      },
-      {
-        "quote": "Ich habe andere Apps ausprobiert, aber sie waren zu kompliziert. Diese funktioniert so, wie sie soll — ohne unnötige Schritte.",
-        "author": "Stanisław Nowak",
-        "role": "68 Jahre, Krakau"
-      },
-      {
-        "quote": "Endlich ein Ort für alle meine Medikamente. Nichts geht verloren, nichts entgeht mir.",
-        "author": "Henryk Wiśniewski",
-        "role": "71 Jahre, Danzig"
-      }
+      { "quote": "Meine Tochter hat es installiert und jetzt bediene ich es selbst. Ich nehme meine Medikamente seit einem Monat regelmäßig — vorher ist immer etwas durchgerutscht.", "author": "Krystyna Wójcik", "role": "72 Jahre, Krakau" },
+      { "quote": "Einfache Sache. Ich habe 4 Medikamente hinzugefügt, die Zeiten eingestellt und es funktioniert. Erfordert keinerlei technische Kenntnisse.", "author": "Stanisław Marek", "role": "68 Jahre, Danzig" },
+      { "quote": "Ich habe schlechte Augen, deshalb hilft das Vorlesen sehr. Mein Enkel sagte, es sei unkompliziert — und er hatte Recht.", "author": "Irena Kowalczyk", "role": "78 Jahre, Breslau" },
+      { "quote": "Kein Registrieren, kein Passwort erfinden. Das war meine Bedingung. Ich empfehle es älteren Menschen.", "author": "Halina Brzezińska", "role": "70 Jahre, Posen" },
+      { "quote": "Drei Apps ausprobiert, bevor ich diese gefunden habe. Das ist die einzige, die ich wirklich jeden Tag benutze. Einfach und zuverlässig.", "author": "Franz Huber", "role": "75 Jahre, Wien" },
+      { "quote": "Ich habe mein Konto mit meiner Tochter verbunden und muss ihr nicht mehr melden, dass ich die Medikamente genommen habe. Wir sind beide zufrieden.", "author": "Ryszard Dąbrowski", "role": "58 Jahre, Kattowitz" },
+      { "quote": "Ich bin 81 Jahre alt und komme alleine zurecht. Großer Knopf, lesbarer Text, laute Benachrichtigungen. Mehr brauche ich nicht.", "author": "Elżbieta Kamińska", "role": "81 Jahre, Lublin" },
+      { "quote": "Komplizierter Zeitplan nach der Behandlung — Pillo schafft das problemlos. Andere Apps kamen durcheinander bei mehr als 3 Medikamenten.", "author": "Marta Lewandowska", "role": "52 Jahre, Warschau" },
+      { "quote": "Das Alle-8-Stunden-Medikament hat sofort nach der Einrichtung funktioniert. Die Erinnerung wiederholt sich, wenn ich nicht antworte — das passt mir sehr gut.", "author": "Bogdan Wiśniewski", "role": "66 Jahre, Bromberg" },
+      { "quote": "Benutze es seit 6 Wochen. Es ist nicht perfekt, aber es tut, wofür es da ist, und macht das Leben nicht komplizierter.", "author": "Zofia Adamska", "role": "74 Jahre, Białystok" }
     ],
     "faq": [
       {
@@ -127,21 +122,16 @@
       }
     ],
     "testimonials": [
-      {
-        "quote": "Ich wohne weit von meinen Eltern entfernt und lebte lange mit Hintergrundangst. Jetzt weiß ich es einfach. Das ist ein riesiger Unterschied.",
-        "author": "Anna Nowicka",
-        "role": "Tochter, Breslau"
-      },
-      {
-        "quote": "Ich betreue zwölf Senioren. Früher musste ich alles im Kopf behalten — jetzt macht Pillo das für mich.",
-        "author": "Maria Kowalska",
-        "role": "Gemeindeschwester"
-      },
-      {
-        "quote": "Papa vergaß manchmal und schämte sich zuzugeben. Jetzt sehe ich es selbst und kann reagieren — ohne ein großes Thema daraus zu machen.",
-        "author": "Piotr Wiśniewski",
-        "role": "Sohn, Danzig"
-      }
+      { "quote": "Mama ist 76, hat immer vergessen. Jetzt sehe ich in der App, ob sie ihre Medikamente genommen hat, und muss nicht mehr jeden Tag anrufen.", "author": "Agnieszka Zielińska", "role": "44 Jahre, Warschau" },
+      { "quote": "Über das Telefon mit meinem Vater eingerichtet — hat vielleicht 20 Minuten gedauert. Das Dashboard ist übersichtlich, Benachrichtigungen funktionieren.", "author": "Piotr Kowalski", "role": "38 Jahre, Gdynia" },
+      { "quote": "Ich habe zwei verbundene Personen in einer App. Ich schaue einmal täglich rein, sehe ob alles in Ordnung ist. Das reicht mir.", "author": "Katarzyna Nowak", "role": "51 Jahre, Krakau" },
+      { "quote": "Ich nutze es beruflich und privat für meinen Vater. Die App überhäuft einen nicht mit Alarmen für jede Kleinigkeit — das schätze ich sehr.", "author": "Dorota Wiśniewska", "role": "48 Jahre, Breslau" },
+      { "quote": "Die Wochendosis-Historie zeigt, ob mein Vater ein Muster beim Auslassen hat. Das ist mehr als mir andere Tools bieten konnten.", "author": "Marek Jankowski", "role": "42 Jahre, Lodsch" },
+      { "quote": "Papa hat Alzheimer. Statt 3 Anrufen täglich habe ich eine Dashboard-Überprüfung. Das reicht.", "author": "Tomasz Krawczyk", "role": "40 Jahre, Rzeszów" },
+      { "quote": "Einfach einzurichten, Mama hat es nach dem ersten Zeigen selbst verstanden. Benachrichtigungen kommen schnell.", "author": "Joanna Piotrowska", "role": "33 Jahre, Danzig" },
+      { "quote": "Die Benachrichtigung über eine verpasste Dosis kommt sofort. Nicht nach 2 Stunden — sofort. Das war das Einzige, was ich wirklich brauchte.", "author": "Anna Wojciechowska", "role": "55 Jahre, Stettin" },
+      { "quote": "Das Wochendiagramm gibt einen schnellen Überblick, ohne ins Detail zu gehen. Nützlich, wenn ich wenig Zeit habe.", "author": "Michał Szymański", "role": "35 Jahre, Posen" },
+      { "quote": "Papa ist skeptisch gegenüber Technik, aber nach einer Woche öffnet er die App selbst und drückt den Knopf. Ich hätte nicht erwartet, dass es so gut läuft.", "author": "Beata Mazur", "role": "46 Jahre, Lublin" }
     ],
     "faq": [
       {

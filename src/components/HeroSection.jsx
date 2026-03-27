@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useCallback, useRef, useEffect } from 'react';
 import { ArrowRight, ShieldCheck, Star, CheckCircle2, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -9,27 +8,13 @@ import { useWaitlistForm } from '../hooks/useWaitlistForm';
 
 const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) => {
   const isCaregiver = activeRole === 'caregiver';
-  const containerRef = useRef(null);
-  const [containerHeight, setContainerHeight] = useState(null);
   const { t, i18n } = useTranslation();
   const heroImage = getHeroPhone(activeRole, i18n.language);
   const { email, setEmail, status, errorMsg, handleSubmit, handleKeyDown } = useWaitlistForm();
-
-  const measureHalf = useCallback(() => {
-    const img = containerRef.current?.querySelector('img');
-    if (!img || !img.naturalWidth) return;
-    const ratio = img.naturalHeight / img.naturalWidth;
-    setContainerHeight(Math.round(img.clientWidth * ratio / 2));
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('resize', measureHalf);
-    return () => window.removeEventListener('resize', measureHalf);
-  }, [measureHalf]);
   
   return (
     <section
-      className={`h-screen lg:min-h-screen w-full relative overflow-hidden flex flex-col transition-colors duration-700 ${
+      className={`lg:min-h-screen w-full relative overflow-hidden flex flex-col transition-colors duration-700 ${
         isCaregiver
           ? 'bg-[#1B2E27]'
           : 'bg-surface'
@@ -60,13 +45,11 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
       {/* Spacer for always-fixed navbar */}
       <div className="h-[72px] shrink-0" aria-hidden="true" />
 
-      {/* Mobile Hero Image — top 40% crop, above title */}
+      {/* Mobile Hero Image — top portion of phone, above content */}
       <AnimatePresence mode="wait">
         <motion.div
           key={activeRole}
-          ref={containerRef}
-          className={`lg:hidden flex-shrink-0 overflow-hidden relative mx-auto rounded-2xl ${isCaregiver ? 'bg-[#1B2E27]' : 'bg-surface'}`}
-          style={{ height: containerHeight ? `${containerHeight}px` : 'calc((100vh - 72px) * 0.38)', width: '72%' }}
+          className={`lg:hidden flex-shrink-0 overflow-hidden relative mx-auto rounded-2xl w-[55%] sm:w-[40%] max-h-[38vh] min-[480px]:max-h-[50vh] sm:max-h-[40vh] ${isCaregiver ? 'bg-[#1B2E27]' : 'bg-surface'}`}
           initial={{ opacity: 0, y: 20 }}
           animate={loaderDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           exit={{ opacity: 0, y: -20 }}
@@ -78,8 +61,7 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
             alt=""
             width={390}
             height={844}
-            className="absolute top-0 left-0 w-full h-auto"
-            onLoad={measureHalf}
+            className="w-full h-auto"
           />
           {/* Bottom fade into background */}
           <div
@@ -94,8 +76,8 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
       </AnimatePresence>
 
       {/* Hero Content */}
-      <div className="flex-1 flex items-center min-h-0">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-0">
+      <div className="flex-1 lg:flex lg:items-center min-h-0">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 pb-8 sm:pb-10 lg:py-0">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-0">
             
             {/* Left Column - Copy */}
@@ -110,21 +92,21 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
                 >
 
                   {/* Headline */}
-                  <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-[family-name:var(--font-family-heading)] mb-4 sm:mb-6 transition-colors duration-500 ${
+                  <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-[family-name:var(--font-family-heading)] mb-3 sm:mb-6 transition-colors duration-500 ${
                     isCaregiver ? 'text-white' : 'text-text-primary'
                   }`}>
                     {content.headline}
                   </h1>
 
                   {/* Subtitle */}
-                  <p className={`text-base sm:text-lg max-w-lg leading-relaxed mb-6 sm:mb-8 transition-colors duration-500 ${
+                  <p className={`text-base sm:text-lg max-w-lg leading-relaxed mb-4 sm:mb-8 transition-colors duration-500 ${
                     isCaregiver ? 'text-white/70' : 'text-text-secondary'
                   }`}>
                     {content.subheadline}
                   </p>
 
                   {/* Email signup form */}
-                  <div className="mb-5">
+                  <div className="mb-3 sm:mb-5">
                     {status === 'success' ? (
                       <motion.div
                         initial={{ opacity: 0, scale: 0.92, y: 8 }}
