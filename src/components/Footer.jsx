@@ -20,7 +20,7 @@ const Footer = ({ activeRole = 'patient', footer = {} }) => {
         isCaregiver ? 'bg-[#3F8F6B]/20' : 'bg-accent-gold/10'
       }`} aria-hidden="true" />
 
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ const Footer = ({ activeRole = 'patient', footer = {} }) => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-surface mb-6 font-[family-name:var(--font-family-heading)]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-surface mb-6 font-[family-name:var(--font-family-heading)]">
             {footer.headline}
           </h2>
           <p className="text-lg text-surface/80 max-w-2xl mx-auto mb-10">

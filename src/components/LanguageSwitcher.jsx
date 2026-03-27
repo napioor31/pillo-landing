@@ -78,7 +78,7 @@ const LanguageSwitcher = () => {
         aria-haspopup="listbox"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.97 }}
-        className="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#243D34] text-white text-sm font-semibold shadow-xl border border-[#3F8F6B]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F8F6B]"
+        className="flex items-center gap-1.5 px-3.5 py-3 sm:py-2 rounded-full bg-[#243D34] text-white text-sm font-semibold shadow-xl border border-[#3F8F6B]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F8F6B]"
       >
         <Globe size={15} aria-hidden="true" />
         {currentLang.code.toUpperCase()}

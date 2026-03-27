@@ -24,7 +24,7 @@ const StatsBar = ({ activeRole = 'patient' }) => {
           : 'bg-gradient-to-b from-[#1B2E27] to-transparent opacity-50'
       }`} aria-hidden="true" />
 
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <motion.div
@@ -35,11 +35,11 @@ const StatsBar = ({ activeRole = 'patient' }) => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="flex items-center justify-center gap-3 mb-2">
+              <div className="flex flex-col sm:flex-row items-center justify-center sm:gap-3 gap-1 mb-2">
                 <stat.Icon size={24} className={`transition-colors duration-500 ${
                   isCaregiver ? 'text-[#3F8F6B]/80' : 'text-white/80'
                 }`} aria-hidden="true" />
-                <span className={`text-3xl md:text-4xl font-bold font-[family-name:var(--font-family-heading)] transition-colors duration-500 ${
+                <span className={`text-2xl sm:text-3xl md:text-4xl font-bold font-[family-name:var(--font-family-heading)] transition-colors duration-500 ${
                   isCaregiver ? 'text-[#1B2E27]' : 'text-white'
                 }`}>
                   {stat.value}

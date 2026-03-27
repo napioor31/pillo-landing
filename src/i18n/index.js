@@ -19,6 +19,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    showSupportNotice: false,
     resources: {
       pl: { common: plCommon, landing: plLanding, privacy: plPrivacy, terms: plTerms },
       en: { common: enCommon, landing: enLanding, privacy: enPrivacy, terms: enTerms },

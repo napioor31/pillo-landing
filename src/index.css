@@ -58,6 +58,7 @@
 
 /* Base styles */
 html {
+  overflow-x: hidden; /* prevents horizontal scroll on iOS Safari when elements overflow */
   scroll-behavior: smooth;
   background-color: #243D34; /* match footer — prevents white flash on iOS overscroll */
 }

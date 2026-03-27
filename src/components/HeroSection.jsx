@@ -94,7 +94,7 @@ const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) =
       </AnimatePresence>
 
       {/* Hero Content */}
-      <div className="flex-1 flex items-center min-h-0 overflow-hidden">
+      <div className="flex-1 flex items-center min-h-0">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-0">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-0">
             

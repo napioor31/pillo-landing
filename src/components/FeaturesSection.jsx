@@ -32,7 +32,7 @@ const FeaturesSection = ({ activeRole, features }) => {
         }`} aria-hidden="true" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 transition-colors duration-500 ${
@@ -90,7 +90,7 @@ const FeaturesSection = ({ activeRole, features }) => {
                 )}
 
                 {/* Content */}
-                <div className="p-7 flex flex-col flex-1">
+                <div className="p-5 sm:p-7 flex flex-col flex-1">
                   {/* Icon */}
                   <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 ${
                     isCaregiver ? 'bg-[#3F8F6B]/20' : 'bg-primary/10'

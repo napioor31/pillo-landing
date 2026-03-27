@@ -19,10 +19,10 @@ const PartnerBadges = ({ activeRole = 'patient' }) => {
         ? 'bg-surface border-[#3F8F6B]/20'
         : 'bg-surface-alt border-divider/50'
     }`}>
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <p className={`text-center text-sm mb-8 transition-colors duration-500 text-text-secondary`}>{t('partners.trustedBy')}</p>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-16">
           {partners.map((partner, index) => (
             <motion.div
               key={index}

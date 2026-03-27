@@ -23,7 +23,7 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
         }`} aria-hidden="true" />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 relative">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
               }`}>
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className={`w-full px-6 py-5 flex items-center justify-between text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset ${
+                  className={`w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset ${
                     isCaregiver
                       ? 'hover:bg-[#1B2E27] focus-visible:ring-[#3F8F6B]'
                       : 'hover:bg-surface/50 focus-visible:ring-primary'
@@ -93,7 +93,7 @@ const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className={`px-6 pb-5 leading-relaxed transition-colors duration-500 ${
+                      <div className={`px-4 sm:px-6 pb-4 sm:pb-5 leading-relaxed transition-colors duration-500 ${
                         isCaregiver ? 'text-white/70' : 'text-text-secondary'
                       }`}>
                         {faq.answer}

@@ -36,7 +36,7 @@ const RoleSwitcher = ({ activeRole, onRoleChange, isDark = false }) => {
             aria-pressed={isActive}
             aria-label={labelFull}
             className={`relative flex items-center justify-center gap-2 rounded-full font-semibold text-sm transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 cursor-pointer
-              px-4 py-2 sm:px-5 sm:py-2.5
+              px-4 py-3 sm:px-5 sm:py-2.5
               ${isActive
                 ? isDark
                   ? 'text-[#1B2E27] focus-visible:ring-white'

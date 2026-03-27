@@ -16,7 +16,7 @@ const HowItWorksSection = ({ activeRole, content }) => {
         }`} aria-hidden="true" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ const HowItWorksSection = ({ activeRole, content }) => {
                 </div>
               )}
 
-              <div className={`rounded-3xl p-8 border transition-all duration-500 relative z-10 w-full ${
+              <div className={`rounded-3xl p-5 sm:p-8 border transition-all duration-500 relative z-10 w-full ${
                 isCaregiver
                   ? 'bg-surface-alt border-[#3F8F6B]/20 hover:border-[#3F8F6B]/40 hover:shadow-lg hover:shadow-[#3F8F6B]/10'
                   : 'bg-surface-alt border-[#3F8F6B]/20 hover:border-[#3F8F6B]/40 hover:shadow-lg hover:shadow-[#3F8F6B]/10'

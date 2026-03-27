@@ -44,7 +44,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
         }`} aria-hidden="true" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -105,7 +105,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
           <div
             ref={scrollRef}
             onScroll={handleScroll}
-            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-6 px-6"
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-4 sm:-mx-6 px-4 sm:px-6"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {features.map((feature, index) => (
@@ -118,7 +118,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
                 className="flex-shrink-0 w-[calc(85vw-1.5rem)] sm:w-72 snap-center"
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
-                <div className={`rounded-3xl p-8 h-full border transition-all duration-500 ${
+                <div className={`rounded-3xl p-5 sm:p-8 h-full border transition-all duration-500 ${
                   isCaregiver
                     ? 'bg-[#243D34]/80 border-[#3F8F6B]/30 hover:border-[#3F8F6B]/50 hover:bg-[#243D34]'
                     : 'bg-surface-alt border-divider/50 hover:border-primary-light/30 hover:shadow-lg hover:shadow-primary/5'
@@ -150,7 +150,7 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
           </div>
 
           {/* Pagination Dots */}
-          <div className="flex items-center justify-center gap-2 mt-6">
+          <div className="flex items-center justify-center gap-1 mt-6">
             {features.map((_, index) => (
               <button
                 key={index}
@@ -159,14 +159,16 @@ const AppShowcase = ({ activeRole = 'patient' }) => {
                     scrollRef.current.scrollTo({ left: index * 300, behavior: 'smooth' });
                   }
                 }}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === activeIndex
-                    ? (isCaregiver ? 'bg-[#3F8F6B] w-6' : 'bg-primary w-6')
-                    : 'bg-divider hover:bg-primary-light'
-                }`}
+                className="w-8 h-8 flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full"
                 aria-label={t('showcase.goToSlide', { n: index + 1 })}
                 aria-current={index === activeIndex ? 'true' : 'false'}
-              />
+              >
+                <span className={`h-2 rounded-full transition-all duration-300 block ${
+                  index === activeIndex
+                    ? (isCaregiver ? 'bg-[#3F8F6B] w-6' : 'bg-primary w-6')
+                    : 'bg-divider hover:bg-primary-light w-2'
+                }`} />
+              </button>
             ))}
           </div>
         </div>

@@ -19,7 +19,7 @@ const TestimonialsSection = ({ activeRole = 'patient', testimonials = [] }) => {
         }`} aria-hidden="true" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ const TestimonialsSection = ({ activeRole = 'patient', testimonials = [] }) => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 pt-4">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -49,7 +49,7 @@ const TestimonialsSection = ({ activeRole = 'patient', testimonials = [] }) => {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className={`rounded-3xl p-8 border h-full transition-all duration-500 ${
+              <div className={`rounded-3xl p-5 sm:p-8 border h-full transition-all duration-500 ${
                 isCaregiver
                   ? 'bg-surface-alt border-[#3F8F6B]/20'
                   : 'bg-[#1B2E27]/80 border-white/10'
