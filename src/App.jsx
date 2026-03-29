@@ -23,7 +23,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 function LandingPage({ loaderDone }) {
   const [activeRole, setActiveRole] = useState('patient');
   const { t, i18n } = useTranslation('landing');
-  const currentContent = getRoleContent(activeRole, t, i18n.language);
+  const currentContent = getRoleContent(activeRole, t, i18n.resolvedLanguage ?? i18n.language);
 
   return (
     <main className="min-h-screen bg-surface">
