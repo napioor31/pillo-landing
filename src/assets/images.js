@@ -11,12 +11,12 @@
 // Telefon w sekcji hero (prawa strona) - zależne od roli i języka
 export const heroPhone = {
   patient: {
-    en: { src: '/images/hero/hero_patient - en.png', alt: 'Pillo app on phone - patient view' },
-    pl: { src: '/images/hero/hero_patient - pl.png', alt: 'Aplikacja Pillo na telefonie - widok pacjenta' },
+    en: { src: '/images/hero/hero_patient - en.webp', alt: 'Pillo app on phone - patient view' },
+    pl: { src: '/images/hero/hero_patient.webp', alt: 'Aplikacja Pillo na telefonie - widok pacjenta' },
   },
   caregiver: {
-    en: { src: '/images/hero/hero_caregiver - en.png', alt: 'Pillo app on phone - caregiver view' },
-    pl: { src: '/images/hero/hero_caregiver - pl.png', alt: 'Aplikacja Pillo na telefonie - widok opiekuna' },
+    en: { src: '/images/hero/hero_caregiver - en.webp', alt: 'Pillo app on phone - caregiver view' },
+    pl: { src: '/images/hero/hero_caregiver.webp', alt: 'Aplikacja Pillo na telefonie - widok opiekuna' },
   }
 };
 
@@ -102,7 +102,7 @@ export const testimonialAvatars = {
 // Przyciski pobierania
 export const storeBadges = {
   appStore: '/images/badges/app-store.svg',
-  googlePlay: '/images/badges/google-play.png'
+  googlePlay: '/images/badges/google-play.webp'
 };
 
 // ==================== LOGO ====================

@@ -174,7 +174,7 @@ export default function Download() {
           className="flex-1 min-h-0 flex items-end justify-center mt-2 px-6 [@media(max-height:900px)]:hidden"
         >
           <img
-            src="/images/download -pl.png"
+            src="/images/download -pl.webp"
             alt={t('download.phoneAlt')}
             draggable="false"
             className="w-auto object-contain object-bottom pointer-events-none select-none"

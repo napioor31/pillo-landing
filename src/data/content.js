@@ -7,9 +7,9 @@ const staticFeatures = {
       { icon: 'CheckCircle', image: '/images/to co potrzebne -pl.webp' },
     ],
     en: [
-      { icon: 'Type', image: '/images/przejrzyste i czytelne -en.png' },
-      { icon: 'Bell', image: '/images/przypomni -en.png' },
-      { icon: 'CheckCircle', image: '/images/to co potrzebne -en.png' },
+      { icon: 'Type', image: '/images/przejrzyste i czytelne -en.webp' },
+      { icon: 'Bell', image: '/images/przypomni -en.webp' },
+      { icon: 'CheckCircle', image: '/images/to co potrzebne -en.webp' },
     ],
   },
   caregiver: {
@@ -19,9 +19,9 @@ const staticFeatures = {
       { icon: 'BarChart3', image: '/images/tydzien -pl.webp' },
     ],
     en: [
-      { icon: 'BellRing', image: '/images/powiadomienie -en.png' },
-      { icon: 'History', image: '/images/tydzien -en.png' },
-      { icon: 'BarChart3', image: '/images/tydzien -en.png' },
+      { icon: 'BellRing', image: '/images/powiadomienie -en.webp' },
+      { icon: 'History', image: '/images/tydzien -en.webp' },
+      { icon: 'BarChart3', image: '/images/tydzien -en.webp' },
     ],
   },
 };
