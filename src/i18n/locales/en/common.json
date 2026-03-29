@@ -1,6 +1,6 @@
 {
   "nav": {
-    "notifyMe": "Notify me",
+    "notifyMe": "Get free access",
     "back": "Back",
     "backToSite": "Back to site"
   },
@@ -12,7 +12,7 @@
     "ariaLabel": "Select user perspective"
   },
   "waitlist": {
-    "cta": "Notify me at launch",
+    "cta": "Get free access",
     "submitting": "Sending…",
     "success": "Saved! We'll notify you when the app launches.",
     "trust": "Free · No spam · We'll notify you when the app is ready",

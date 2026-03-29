@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, MessageCircle } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useOrphanT } from '../hooks/useOrphanT';
 
 const FAQ = ({ activeRole = 'patient', faqs = [] }) => {
   const isCaregiver = activeRole === 'caregiver';
   const [openIndex, setOpenIndex] = useState(null);
-  const { t } = useTranslation();
+  const { t } = useOrphanT();
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);

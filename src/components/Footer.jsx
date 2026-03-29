@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useOrphanT } from '../hooks/useOrphanT';
 import { logo } from '../assets/images';
 import { useWaitlistForm } from '../hooks/useWaitlistForm';
 
 const Footer = ({ activeRole = 'patient', footer = {} }) => {
   const isCaregiver = activeRole === 'caregiver';
-  const { t } = useTranslation();
+  const { t } = useOrphanT();
   const { email, setEmail, status, errorMsg, handleSubmit, handleKeyDown } = useWaitlistForm();
 
   return (

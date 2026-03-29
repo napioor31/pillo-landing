@@ -2,7 +2,7 @@
   "patient": {
     "headline": "Już nie musisz trzymać wszystkiego w głowie",
     "subheadline": "Pillo pilnuje Twoich leków — przypomni o każdej dawce, we właściwej chwili. Ty zajmujesz się resztą.",
-    "ctaPrimary": "Pobierz bezpłatnie",
+    "ctaPrimary": "Uzyskaj bezpłatny dostęp",
     "ctaSecondary": "Jak to działa?",
     "trustNote": "Bezpłatne · Bez zakładania konta · iOS i Android",
     "howItWorks": {
@@ -83,7 +83,7 @@
   "caregiver": {
     "headline": "Już nie musisz sprawdzać — po prostu wiesz",
     "subheadline": "Pillo śledzi leki bliskiej osoby i informuje Cię, gdy coś wymaga Twojej uwagi. Spokój, który czujesz — nie tylko deklarujesz.",
-    "ctaPrimary": "Wypróbuj bezpłatnie",
+    "ctaPrimary": "Uzyskaj bezpłatny dostęp",
     "ctaSecondary": "Jak to działa?",
     "trustNote": "7 dni bezpłatnie · Anuluj kiedy chcesz · iOS i Android",
     "howItWorks": {
@@ -131,7 +131,7 @@
       { "quote": "Łatwa w konfiguracji, mama ogarnęła sama po pierwszym pokazaniu. Powiadomienia dochodzą szybko.", "author": "Joanna Piotrowska", "role": "33 lata, Gdańsk" },
       { "quote": "Alert o pominiętej dawce przychodzi od razu. Nie za 2 godziny — od razu. To jedyna rzecz której naprawdę potrzebowałam.", "author": "Anna Wojciechowska", "role": "55 lat, Szczecin" },
       { "quote": "Wykres tygodniowy daje szybki przegląd bez wchodzenia w szczegóły. Przydatny kiedy mam mało czasu.", "author": "Michał Szymański", "role": "35 lat, Poznań" },
-      { "quote": "Tata sceptyczny wobec technologii, ale po tygodniu sam otwiera aplikację i naciska przycisk. Nie spodziewałam się że to tak pójdzie.", "author": "Beata Mazur", "role": "46 lat, Lublin" }
+      { "quote": "Tata sceptyczny wobec technologii, ale po tygodniu sam otwiera aplikację i naciska przycisk. Nie spodziewałam się że to tak pójdzie.", "author": "Beata Mazur", "role": "30 lat, Lublin" }
     ],
     "faq": [
       {

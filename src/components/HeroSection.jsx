@@ -1,14 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Star, CheckCircle2, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { useOrphanT } from '../hooks/useOrphanT';
 import Navbar from './Navbar';
 import { getHeroPhone } from '../assets/images';
 import { useWaitlistForm } from '../hooks/useWaitlistForm';
 
 const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) => {
   const isCaregiver = activeRole === 'caregiver';
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useOrphanT();
   const heroImage = getHeroPhone(activeRole, i18n.resolvedLanguage ?? i18n.language);
   const { email, setEmail, status, errorMsg, handleSubmit, handleKeyDown } = useWaitlistForm();
   

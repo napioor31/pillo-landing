@@ -1,5 +1,5 @@
 import { Bell, CheckCircle, Type, Volume2, Users, ShieldCheck, BarChart3, History, BellRing, MessageCircle } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useOrphanT } from '../hooks/useOrphanT';
 
 const iconMap = {
   Bell,
@@ -16,7 +16,7 @@ const iconMap = {
 
 const FeaturesSection = ({ activeRole, features }) => {
   const isCaregiver = activeRole === 'caregiver';
-  const { t } = useTranslation();
+  const { t } = useOrphanT();
 
   return (
     <section id="features" className={`w-full py-14 sm:py-24 relative overflow-hidden transition-colors duration-700 ${

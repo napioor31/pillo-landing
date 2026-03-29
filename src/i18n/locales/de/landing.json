@@ -2,7 +2,7 @@
   "patient": {
     "headline": "Sie müssen nicht mehr alles im Kopf behalten",
     "subheadline": "Pillo verwaltet Ihre Medikamente — erinnert Sie an jede Dosis zur richtigen Zeit. Sie kümmern sich um den Rest.",
-    "ctaPrimary": "Kostenlos herunterladen",
+    "ctaPrimary": "Kostenlosen Zugang erhalten",
     "ctaSecondary": "Wie funktioniert es?",
     "trustNote": "Kostenlos · Kein Konto erforderlich · iOS und Android",
     "howItWorks": {
@@ -83,7 +83,7 @@
   "caregiver": {
     "headline": "Sie müssen nicht mehr nachfragen — Sie wissen es einfach",
     "subheadline": "Pillo verfolgt die Medikamente Ihrer Angehörigen und benachrichtigt Sie, wenn etwas Ihre Aufmerksamkeit erfordert. Seelenfrieden, den Sie fühlen — nicht nur behaupten.",
-    "ctaPrimary": "Kostenlos ausprobieren",
+    "ctaPrimary": "Kostenlosen Zugang erhalten",
     "ctaSecondary": "Wie funktioniert es?",
     "trustNote": "7 Tage kostenlos · Jederzeit kündbar · iOS und Android",
     "howItWorks": {
@@ -131,7 +131,7 @@
       { "quote": "Einfach einzurichten, Mama hat es nach dem ersten Zeigen selbst verstanden. Benachrichtigungen kommen schnell.", "author": "Joanna Piotrowska", "role": "33 Jahre, Danzig" },
       { "quote": "Die Benachrichtigung über eine verpasste Dosis kommt sofort. Nicht nach 2 Stunden — sofort. Das war das Einzige, was ich wirklich brauchte.", "author": "Anna Wojciechowska", "role": "55 Jahre, Stettin" },
       { "quote": "Das Wochendiagramm gibt einen schnellen Überblick, ohne ins Detail zu gehen. Nützlich, wenn ich wenig Zeit habe.", "author": "Michał Szymański", "role": "35 Jahre, Posen" },
-      { "quote": "Papa ist skeptisch gegenüber Technik, aber nach einer Woche öffnet er die App selbst und drückt den Knopf. Ich hätte nicht erwartet, dass es so gut läuft.", "author": "Beata Mazur", "role": "46 Jahre, Lublin" }
+      { "quote": "Papa ist skeptisch gegenüber Technik, aber nach einer Woche öffnet er die App selbst und drückt den Knopf. Ich hätte nicht erwartet, dass es so gut läuft.", "author": "Beata Mazur", "role": "30 Jahre, Lublin" }
     ],
     "faq": [
       {

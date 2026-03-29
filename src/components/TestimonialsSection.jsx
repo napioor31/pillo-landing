@@ -1,15 +1,41 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Quote, Star } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useOrphanT } from '../hooks/useOrphanT';
 
 function pickRandom(arr, n) {
   return [...arr].sort(() => Math.random() - 0.5).slice(0, n);
 }
 
+const PATIENT_AVATARS = {
+  'Krystyna Wójcik':    '/images/pacjenci-webp/krystyna-wojcik.webp',
+  'Stanisław Marek':    '/images/pacjenci-webp/stanislaw-marek.webp',
+  'Irena Kowalczyk':    '/images/pacjenci-webp/irena-kowalczyk.webp',
+  'Halina Brzezińska':  '/images/pacjenci-webp/halina-brzezinska.webp',
+  'Franz Huber':        '/images/pacjenci-webp/franz-huber.webp',
+  'Ryszard Dąbrowski':  '/images/pacjenci-webp/ryszard-dabrowski.webp',
+  'Elżbieta Kamińska':  '/images/pacjenci-webp/elzbieta-kaminska.webp',
+  'Marta Lewandowska':  '/images/pacjenci-webp/marta-lewandowska.webp',
+  'Bogdan Wiśniewski':  '/images/pacjenci-webp/bogdan-wisniewski.webp',
+  'Zofia Adamska':      '/images/pacjenci-webp/zofia-adamska.webp',
+};
+
+const CAREGIVER_AVATARS = {
+  'Agnieszka Zielińska': '/images/opiekun-webp/agnieszka-zielinska.webp',
+  'Piotr Kowalski':      '/images/opiekun-webp/piotr-kowalski.webp',
+  'Katarzyna Nowak':     '/images/opiekun-webp/katarzyna-nowak.webp',
+  'Dorota Wiśniewska':   '/images/opiekun-webp/dorota-wisniewska.webp',
+  'Marek Jankowski':     '/images/opiekun-webp/marek-jankowski.webp',
+  'Tomasz Krawczyk':     '/images/opiekun-webp/tomasz-krawczyk.webp',
+  'Joanna Piotrowska':   '/images/opiekun-webp/joanna-piotrowska.webp',
+  'Anna Wojciechowska':  '/images/opiekun-webp/anna-wojciechowska.webp',
+  'Michał Szymański':    '/images/opiekun-webp/michal-szymanski.webp',
+  'Beata Mazur':         '/images/opiekun-webp/beata-mazur.webp',
+};
+
 const TestimonialsSection = ({ activeRole = 'patient', testimonials = [] }) => {
   const isCaregiver = activeRole === 'caregiver';
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useOrphanT();
 
   const [displayed, setDisplayed] = useState(() => pickRandom(testimonials, 3));
 
@@ -88,14 +114,29 @@ const TestimonialsSection = ({ activeRole = 'patient', testimonials = [] }) => {
                 </p>
 
                 <div className="flex items-center gap-3">
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-500 ${
+                  <div className={`w-12 h-12 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 transition-colors duration-500 ${
                     isCaregiver ? 'bg-[#3F8F6B]/10' : 'bg-accent-gold/10'
                   }`}>
-                    <span className={`font-semibold transition-colors duration-500 ${
-                      isCaregiver ? 'text-[#3F8F6B]' : 'text-accent-gold'
-                    }`}>
-                      {testimonial.author.split(' ').map(n => n[0]).join('')}
-                    </span>
+                    {(() => {
+                      const avatar = isCaregiver
+                        ? CAREGIVER_AVATARS[testimonial.author]
+                        : PATIENT_AVATARS[testimonial.author];
+                      return avatar ? (
+                        <img
+                          src={avatar}
+                          alt={testimonial.author}
+                          width={48}
+                          height={48}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <span className={`font-semibold transition-colors duration-500 ${
+                          isCaregiver ? 'text-[#3F8F6B]' : 'text-accent-gold'
+                        }`}>
+                          {testimonial.author.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      );
+                    })()}
                   </div>
                   <div>
                     <p className={`font-semibold transition-colors duration-500 ${

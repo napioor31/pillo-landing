@@ -1,6 +1,6 @@
 {
   "nav": {
-    "notifyMe": "Powiadom mnie",
+    "notifyMe": "Uzyskaj bezpłatny dostęp",
     "back": "Wróć",
     "backToSite": "Wróć na stronę"
   },
@@ -12,7 +12,7 @@
     "ariaLabel": "Wybierz perspektywę użytkownika"
   },
   "waitlist": {
-    "cta": "Powiadom mnie o premierze",
+    "cta": "Uzyskaj bezpłatny dostęp",
     "submitting": "Wysyłam…",
     "success": "Zapisano! Powiadomimy Cię o premierze.",
     "trust": "Bezpłatne · Bez spamu · Powiadomimy gdy aplikacja będzie gotowa",

@@ -2,7 +2,7 @@
   "patient": {
     "headline": "You no longer need to keep everything in your head",
     "subheadline": "Pillo tracks your medications — reminding you of every dose at the right moment. You focus on everything else.",
-    "ctaPrimary": "Download for free",
+    "ctaPrimary": "Get free access",
     "ctaSecondary": "How does it work?",
     "trustNote": "Free · No account needed · iOS and Android",
     "howItWorks": {
@@ -83,7 +83,7 @@
   "caregiver": {
     "headline": "You no longer need to check — you just know",
     "subheadline": "Pillo tracks your loved one's medications and alerts you when something needs your attention. Peace of mind you feel — not just claim.",
-    "ctaPrimary": "Try for free",
+    "ctaPrimary": "Get free access",
     "ctaSecondary": "How does it work?",
     "trustNote": "7 days free · Cancel anytime · iOS and Android",
     "howItWorks": {
@@ -131,7 +131,7 @@
       { "quote": "Easy to set up, mum figured it out herself after the first walkthrough. Notifications come through quickly.", "author": "Joanna Piotrowska", "role": "33 years old, Gdańsk" },
       { "quote": "The missed dose alert comes immediately. Not in 2 hours — right away. That was the only thing I really needed.", "author": "Anna Wojciechowska", "role": "55 years old, Szczecin" },
       { "quote": "The weekly chart gives a quick overview without diving into details. Useful when I don't have much time.", "author": "Michał Szymański", "role": "35 years old, Poznań" },
-      { "quote": "Dad is skeptical about technology, but after a week he opens the app himself and presses the button. I didn't expect it to go so smoothly.", "author": "Beata Mazur", "role": "46 years old, Lublin" }
+      { "quote": "Dad is skeptical about technology, but after a week he opens the app himself and presses the button. I didn't expect it to go so smoothly.", "author": "Beata Mazur", "role": "30 years old, Lublin" }
     ],
     "faq": [
       {

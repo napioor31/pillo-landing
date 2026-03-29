@@ -1,6 +1,6 @@
 {
   "nav": {
-    "notifyMe": "Benachrichtigen",
+    "notifyMe": "Kostenlosen Zugang erhalten",
     "back": "Zurück",
     "backToSite": "Zurück zur Website"
   },
@@ -12,7 +12,7 @@
     "ariaLabel": "Benutzerperspektive auswählen"
   },
   "waitlist": {
-    "cta": "Beim Launch benachrichtigen",
+    "cta": "Kostenlosen Zugang erhalten",
     "submitting": "Sende…",
     "success": "Gespeichert! Wir benachrichtigen Sie beim Launch.",
     "trust": "Kostenlos · Kein Spam · Wir benachrichtigen Sie wenn die App bereit ist",
