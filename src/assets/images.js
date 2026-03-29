@@ -22,7 +22,8 @@ export const heroPhone = {
 
 // Returns the correct hero image for role + language (EN and DE both use 'en' variant)
 export const getHeroPhone = (role, lang) => {
-  const langKey = lang === 'pl' ? 'pl' : 'en';
+  const normalized = lang?.split('-')[0];
+  const langKey = normalized === 'pl' ? 'pl' : 'en';
   return heroPhone[role][langKey];
 };
 

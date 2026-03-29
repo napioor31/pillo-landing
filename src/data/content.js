@@ -27,7 +27,7 @@ const staticFeatures = {
 };
 
 export function getRoleContent(role, t, lang = 'pl') {
-  const imgKey = lang === 'pl' ? 'pl' : 'en';
+  const imgKey = lang?.split('-')[0] === 'pl' ? 'pl' : 'en';
   const translatedFeatures = t(`${role}.features`, { returnObjects: true });
   const features = Array.isArray(translatedFeatures)
     ? translatedFeatures.map((f, i) => ({ ...staticFeatures[role][imgKey][i], ...f }))

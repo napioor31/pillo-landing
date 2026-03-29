@@ -9,7 +9,7 @@ import { useWaitlistForm } from '../hooks/useWaitlistForm';
 const HeroSection = ({ activeRole, onRoleChange, content, loaderDone = true }) => {
   const isCaregiver = activeRole === 'caregiver';
   const { t, i18n } = useTranslation();
-  const heroImage = getHeroPhone(activeRole, i18n.language);
+  const heroImage = getHeroPhone(activeRole, i18n.resolvedLanguage ?? i18n.language);
   const { email, setEmail, status, errorMsg, handleSubmit, handleKeyDown } = useWaitlistForm();
   
   return (
