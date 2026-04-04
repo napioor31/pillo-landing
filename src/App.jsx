@@ -19,6 +19,7 @@ const Regulamin = lazy(() => import('./pages/Regulamin'));
 const PolitykaPrywatnosci = lazy(() => import('./pages/PolitykaPrywatnosci'));
 const Download = lazy(() => import('./pages/Download'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Testing = lazy(() => import('./pages/Testing'));
 
 function LandingPage({ loaderDone }) {
   const [activeRole, setActiveRole] = useState('patient');
@@ -102,6 +103,7 @@ function App() {
           <Route path="/privacy-policy" element={<PolitykaPrywatnosci />} />
           <Route path="/download" element={<Download />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/testing" element={<Testing />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
