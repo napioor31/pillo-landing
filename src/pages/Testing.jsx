@@ -1,12 +1,14 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowLeft, FlaskConical } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowLeft, FlaskConical, ArrowRight, CheckCircle2, Info } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { logo } from '../assets/images';
 import SEO from '../components/SEO';
+import { useAndroidBetaForm } from '../hooks/useAndroidBetaForm';
 
 // ─── Placeholder links — replace when ready ─────────────────────────────────
-const TESTFLIGHT_URL = '#';   // e.g. 'https://testflight.apple.com/join/XXXXXXXX'
+const TESTFLIGHT_URL = 'https://testflight.apple.com/join/Eq23wzvg';   // e.g. 'https://testflight.apple.com/join/XXXXXXXX'
 const GOOGLE_PLAY_URL = '#';  // e.g. 'https://play.google.com/apps/testing/...'
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -18,6 +20,8 @@ const fadeUp = (delay = 0) => ({
 
 export default function Testing() {
   const { i18n } = useTranslation('common');
+  const [showAndroidForm, setShowAndroidForm] = useState(false);
+  const { email, setEmail, status, errorMsg, handleSubmit, handleKeyDown } = useAndroidBetaForm();
 
   return (
     <div className="min-h-screen flex flex-col bg-surface relative overflow-x-hidden">
@@ -137,14 +141,15 @@ export default function Testing() {
           </motion.a>
 
           {/* Google Play — Android */}
-          <motion.a
+          <motion.div
             {...fadeUp(0.28)}
-            href={GOOGLE_PLAY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             id="google-play-link"
-            aria-label="Download via Google Play for Android"
-            className="group relative flex flex-col items-center gap-4 p-7 rounded-2xl border border-divider/60 bg-surface/80 backdrop-blur-sm hover:border-[#5DB38D]/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DB38D] focus-visible:ring-offset-2"
+            role="button"
+            tabIndex={0}
+            aria-label="Join Android beta waitlist"
+            onClick={() => setShowAndroidForm(true)}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setShowAndroidForm(true); }}
+            className={`group relative flex flex-col items-center gap-4 p-7 rounded-2xl border bg-surface/80 backdrop-blur-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DB38D] focus-visible:ring-offset-2 ${showAndroidForm ? 'border-[#5DB38D]/50 shadow-md' : 'border-divider/60 hover:border-[#5DB38D]/40'}`}
           >
             {/* Icon */}
             <img
@@ -158,19 +163,84 @@ export default function Testing() {
             <div className="text-center">
               <p className="text-xs font-semibold uppercase tracking-widest text-text-secondary/60 mb-1">Android</p>
               <p className="text-lg font-bold text-primary font-[family-name:var(--font-family-heading)]">Google Play</p>
-              <p className="text-sm text-text-secondary/80 mt-1">
-                {GOOGLE_PLAY_URL === '#' ? 'Link coming soon' : 'Open in Play Store'}
-              </p>
+              <p className="text-sm text-text-secondary/80 mt-1">Request an invite</p>
             </div>
 
-            {/* Coming soon pill */}
-            {GOOGLE_PLAY_URL === '#' && (
-              <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/30">
-                Soon
-              </span>
-            )}
-          </motion.a>
+            {/* Invite only pill */}
+            <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/30">
+              Invite only
+            </span>
+          </motion.div>
         </div>
+
+        {/* Android beta email form */}
+        <AnimatePresence>
+          {showAndroidForm && (
+            <motion.div
+              key="android-form"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="w-full max-w-xl mt-6 px-7 py-6 rounded-2xl border border-[#5DB38D]/30 bg-surface/80 backdrop-blur-sm"
+            >
+              <p className="text-sm font-semibold text-text-secondary/80 mb-1 uppercase tracking-widest text-center">Android beta</p>
+              <p className="text-base text-text-secondary text-center mb-4">
+                Android testing is currently invite-only. Leave your email and we'll reach out when a spot opens up.
+              </p>
+
+              {status === 'success' ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.92 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex items-center justify-center gap-3 px-5 py-3.5 rounded-2xl border bg-primary/8 border-primary/20 text-primary"
+                >
+                  <CheckCircle2 size={20} className="shrink-0" aria-hidden="true" />
+                  <span className="text-base font-semibold">You're on the list! We'll invite you when Android opens.</span>
+                </motion.div>
+              ) : status === 'duplicate' ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.92 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex items-center justify-center gap-3 px-5 py-3.5 rounded-2xl border bg-accent-gold/10 border-accent-gold/30 text-text-primary"
+                >
+                  <Info size={20} className="shrink-0" aria-hidden="true" />
+                  <span className="text-base font-semibold">You're already on the list.</span>
+                </motion.div>
+              ) : (
+                <>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      onKeyDown={handleKeyDown}
+                      placeholder="your@email.com"
+                      disabled={status === 'submitting'}
+                      className="flex-1 min-w-0 px-5 py-3.5 rounded-full text-base border-2 outline-none focus:ring-2 focus:ring-offset-0 transition-all duration-300 disabled:opacity-60 bg-white text-text-primary placeholder-text-secondary/50 border-divider focus:border-[#5DB38D]/50 focus:ring-[#5DB38D]/10"
+                    />
+                    <motion.button
+                      type="button"
+                      onClick={handleSubmit}
+                      disabled={status === 'submitting'}
+                      whileHover={status !== 'submitting' ? { y: -2 } : {}}
+                      whileTap={status !== 'submitting' ? { scale: 0.98 } : {}}
+                      className="px-5 py-3.5 rounded-full font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed bg-[#5DB38D] text-white hover:bg-[#4ea07d] shadow-lg shadow-[#5DB38D]/25 hover:shadow-xl hover:shadow-[#5DB38D]/30 focus-visible:ring-[#5DB38D]"
+                    >
+                      {status === 'submitting' ? 'Sending…' : 'Notify me'}
+                      {status !== 'submitting' && <ArrowRight size={18} aria-hidden="true" />}
+                    </motion.button>
+                  </div>
+                  {status === 'error' && (
+                    <p className="mt-2.5 text-sm text-red-500">{errorMsg}</p>
+                  )}
+                </>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Fine print */}
         <motion.p
