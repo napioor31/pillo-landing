@@ -37,22 +37,31 @@ export default async function handler(req, res) {
   if (isRateLimited(ip)) return res.status(429).json({ error: 'Too many requests.' });
 
   // Validate
-  const { name, email, topic, message } = req.body || {};
+  const { name, email, topic, message, attachments } = req.body || {};
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!name?.trim() || !EMAIL_RE.test(email) || !message?.trim()) {
     return res.status(400).json({ error: 'Missing required fields.' });
   }
 
-  // Send via Resend
+  // Build email payload
   const subject = topic ? `[Pillo] ${topic}` : '[Pillo] Nowa wiadomość';
-  const { error } = await resend.emails.send({
+  const payload = {
     from: 'Pillo Kontakt <kontakt@trypillo.pl>',
     to: 'support@trypillo.pl',
     replyTo: email,
     subject,
     text: `Od: ${name} <${email}>\n\n${message}`,
     html: `<p><strong>Od:</strong> ${name} &lt;${email}&gt;</p><p><strong>Temat:</strong> ${topic || '—'}</p><hr/><p>${message.replace(/\n/g, '<br/>')}</p>`,
-  });
+  };
+
+  if (Array.isArray(attachments) && attachments.length > 0) {
+    payload.attachments = attachments.slice(0, 3).map(a => ({
+      filename: String(a.filename).replace(/[^\w.\-\s]/g, '_'),
+      content: a.content,
+    }));
+  }
+
+  const { error } = await resend.emails.send(payload);
 
   if (error) {
     console.error('[contact] Resend error:', JSON.stringify(error));

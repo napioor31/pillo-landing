@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Send, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+import { ArrowLeft, Send, CheckCircle, AlertCircle, Loader, Paperclip, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { logo } from '../assets/images';
 import SEO from '../components/SEO';
@@ -14,14 +14,53 @@ const inputClass =
 export default function Contact() {
   const { t, i18n } = useTranslation('common');
   const [form, setForm] = useState({ name: '', email: '', topic: '', message: '', botcheck: '' });
+  const [files, setFiles] = useState([]);
+  const [fileError, setFileError] = useState('');
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
   const [errorMsg, setErrorMsg] = useState('');
+  const fileInputRef = useRef(null);
 
   const TOPICS = t('contact.topics', { returnObjects: true });
+  const MAX_FILES = 3;
+  const MAX_SIZE = 2 * 1024 * 1024; // 2 MB
 
   function handleChange(e) {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
+  }
+
+  function handleFiles(e) {
+    const incoming = Array.from(e.target.files || []);
+    if (!incoming.length) return;
+    const combined = [...files, ...incoming];
+    if (combined.length > MAX_FILES) {
+      setFileError(t('contact.attachTooMany'));
+      e.target.value = '';
+      return;
+    }
+    const oversized = combined.find(f => f.size > MAX_SIZE);
+    if (oversized) {
+      setFileError(t('contact.attachTooLarge', { name: oversized.name }));
+      e.target.value = '';
+      return;
+    }
+    setFileError('');
+    setFiles(combined);
+    e.target.value = '';
+  }
+
+  function removeFile(index) {
+    setFiles(prev => prev.filter((_, i) => i !== index));
+    setFileError('');
+  }
+
+  function readFileAsBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result.split(',')[1]);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
   }
 
   async function handleSubmit(e) {
@@ -37,6 +76,10 @@ export default function Contact() {
     const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
 
     try {
+      const attachments = await Promise.all(
+        files.map(async f => ({ filename: f.name, content: await readFileAsBase64(f) }))
+      );
+
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -45,6 +88,7 @@ export default function Contact() {
           email: form.email,
           topic: form.topic,
           message: form.message,
+          attachments,
         }),
         signal: controller.signal,
       });
@@ -54,6 +98,7 @@ export default function Contact() {
       if (data.success) {
         setStatus('success');
         setForm({ name: '', email: '', topic: '', message: '', botcheck: '' });
+        setFiles([]);
       } else {
         throw new Error(data.error || t('contact.genericError'));
       }
@@ -230,6 +275,53 @@ export default function Contact() {
                         <option key={topic} value={topic}>{topic}</option>
                       ))}
                     </select>
+                  </div>
+
+                  {/* Attachments */}
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-sm font-medium text-text-primary">
+                      {t('contact.attachLbl')}
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dashed border-divider bg-surface hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 text-sm text-text-secondary w-full"
+                    >
+                      <Paperclip size={15} className="shrink-0" aria-hidden="true" />
+                      {t('contact.attachHint')}
+                    </button>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      multiple
+                      accept="image/*,.pdf,.txt,.doc,.docx"
+                      onChange={handleFiles}
+                      className="hidden"
+                      aria-label={t('contact.attachLbl')}
+                    />
+                    {files.length > 0 && (
+                      <ul className="flex flex-col gap-1.5 mt-0.5">
+                        {files.map((f, i) => (
+                          <li key={i} className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg bg-surface border border-divider/60 text-sm text-text-primary">
+                            <span className="truncate min-w-0">{f.name}</span>
+                            <button
+                              type="button"
+                              onClick={() => removeFile(i)}
+                              className="shrink-0 text-text-secondary hover:text-error transition-colors"
+                              aria-label={`Remove ${f.name}`}
+                            >
+                              <X size={14} />
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {fileError && (
+                      <p className="text-error text-xs flex items-center gap-1.5">
+                        <AlertCircle size={13} className="shrink-0" />
+                        {fileError}
+                      </p>
+                    )}
                   </div>
 
                   {/* Message */}
