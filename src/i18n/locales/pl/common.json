@@ -109,6 +109,33 @@
     "viewingOriginal": "Wyświetlasz oryginalną wersję polską.",
     "backToTranslation": "Wróć do polskiego"
   },
+  "testing": {
+    "seoTitle": "Beta Testing — Pillo",
+    "seoDesc": "Dołącz do programu beta Pillo. Pobierz aplikację przez TestFlight (iOS) lub Google Play (Android).",
+    "badge": "Beta Testing",
+    "heading": "Testuj Pillo",
+    "headingSub": "przed premierą",
+    "subheading": "Masz zaproszenie do wypróbowania wczesnej wersji Pillo. Wybierz platformę poniżej i pomóż nam kształtować aplikację.",
+    "iosLabel": "Pobierz przez TestFlight na iOS",
+    "iosPlatform": "iOS",
+    "iosCta": "Otwórz TestFlight",
+    "androidLabel": "Dołącz do listy oczekujących na Androida",
+    "androidPlatform": "Android",
+    "androidCta": "Poproś o zaproszenie",
+    "inviteOnly": "Tylko zaproszeni",
+    "finePrint": "To jest wersja przedpremierowa. Funkcje i wygląd mogą ulec zmianie.",
+    "androidForm": {
+      "title": "Android beta",
+      "description": "Testy na Androida są obecnie dostępne tylko na zaproszenie. Zostaw swój adres e-mail, a odezwiemy się, gdy zwolni się miejsce.",
+      "placeholder": "twój@email.pl",
+      "submitting": "Wysyłam…",
+      "cta": "Powiadom mnie",
+      "success": "Jesteś na liście! Wyślemy zaproszenie, gdy Android będzie dostępny.",
+      "duplicate": "Już jesteś na liście.",
+      "invalidEmail": "Podaj poprawny adres e-mail.",
+      "error": "Coś poszło nie tak. Spróbuj ponownie."
+    }
+  },
   "download": {
     "available": "Dostępne bezpłatnie",
     "headline": "Zadbaj o siebie",

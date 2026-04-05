@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import i18n from '../i18n/index.js';
 
 // Keep in sync with api/android-beta.js
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -13,7 +14,7 @@ export function useAndroidBetaForm() {
   async function handleSubmit() {
     if (!EMAIL_RE.test(email)) {
       setStatus('error');
-      setErrorMsg('Please enter a valid email address.');
+      setErrorMsg(i18n.t('common:testing.androidForm.invalidEmail'));
       return;
     }
 
@@ -38,14 +39,14 @@ export function useAndroidBetaForm() {
       }
 
       if (!res.ok) {
-        throw new Error(data.error || 'Something went wrong. Please try again.');
+        throw new Error(data.error || i18n.t('common:testing.androidForm.error'));
       }
 
       setStatus('success');
       setEmail('');
     } catch (err) {
       setStatus('error');
-      setErrorMsg(err.message || 'Something went wrong. Please try again.');
+      setErrorMsg(err.message || i18n.t('common:testing.androidForm.error'));
     } finally {
       clearTimeout(timeout);
     }

@@ -8,8 +8,7 @@ import SEO from '../components/SEO';
 import { useAndroidBetaForm } from '../hooks/useAndroidBetaForm';
 
 // ─── Placeholder links — replace when ready ─────────────────────────────────
-const TESTFLIGHT_URL = 'https://testflight.apple.com/join/Eq23wzvg';   // e.g. 'https://testflight.apple.com/join/XXXXXXXX'
-const GOOGLE_PLAY_URL = '#';  // e.g. 'https://play.google.com/apps/testing/...'
+const TESTFLIGHT_URL = 'https://testflight.apple.com/join/Eq23wzvg';
 // ────────────────────────────────────────────────────────────────────────────
 
 const fadeUp = (delay = 0) => ({
@@ -19,15 +18,15 @@ const fadeUp = (delay = 0) => ({
 });
 
 export default function Testing() {
-  const { i18n } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
   const [showAndroidForm, setShowAndroidForm] = useState(false);
   const { email, setEmail, status, errorMsg, handleSubmit, handleKeyDown } = useAndroidBetaForm();
 
   return (
     <div className="min-h-screen flex flex-col bg-surface relative overflow-x-hidden">
       <SEO
-        title="Beta Testing — Pillo"
-        description="Join the Pillo beta programme. Download the app via TestFlight (iOS) or Google Play (Android)."
+        title={t('testing.seoTitle')}
+        description={t('testing.seoDesc')}
         canonical="/testing"
         lang={i18n.language}
       />
@@ -80,7 +79,7 @@ export default function Testing() {
         <motion.div {...fadeUp(0)} className="flex items-center gap-2 mb-6">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5DB38D]/15 border border-[#5DB38D]/30 text-[#5DB38D] text-xs font-semibold uppercase tracking-widest">
             <FlaskConical size={12} aria-hidden="true" />
-            Beta Testing
+            {t('testing.badge')}
           </span>
         </motion.div>
 
@@ -89,8 +88,8 @@ export default function Testing() {
           {...fadeUp(0.08)}
           className="text-3xl sm:text-5xl md:text-6xl font-bold text-primary text-center leading-[1.1] mb-4 font-[family-name:var(--font-family-heading)]"
         >
-          Test Pillo<br />
-          <span className="text-primary/50">before launch</span>
+          {t('testing.heading')}<br />
+          <span className="text-primary/50">{t('testing.headingSub')}</span>
         </motion.h1>
 
         {/* Sub-heading */}
@@ -98,8 +97,7 @@ export default function Testing() {
           {...fadeUp(0.16)}
           className="text-text-secondary text-base sm:text-lg leading-relaxed max-w-md text-center mb-12"
         >
-          You're invited to try the early version of Pillo.
-          Choose your platform below and help us shape the app.
+          {t('testing.subheading')}
         </motion.p>
 
         {/* Cards */}
@@ -112,7 +110,7 @@ export default function Testing() {
             target="_blank"
             rel="noopener noreferrer"
             id="testflight-link"
-            aria-label="Download via TestFlight for iOS"
+            aria-label={t('testing.iosLabel')}
             className="group relative flex flex-col items-center gap-4 p-7 rounded-2xl border border-divider/60 bg-surface/80 backdrop-blur-sm hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
           >
             {/* Icon */}
@@ -125,11 +123,9 @@ export default function Testing() {
 
             {/* Text */}
             <div className="text-center">
-              <p className="text-xs font-semibold uppercase tracking-widest text-text-secondary/60 mb-1">iOS</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-text-secondary/60 mb-1">{t('testing.iosPlatform')}</p>
               <p className="text-lg font-bold text-primary font-[family-name:var(--font-family-heading)]">TestFlight</p>
-              <p className="text-sm text-text-secondary/80 mt-1">
-                {TESTFLIGHT_URL === '#' ? 'Link coming soon' : 'Tap to open TestFlight'}
-              </p>
+              <p className="text-sm text-text-secondary/80 mt-1">{t('testing.iosCta')}</p>
             </div>
 
             {/* Coming soon pill */}
@@ -146,7 +142,7 @@ export default function Testing() {
             id="google-play-link"
             role="button"
             tabIndex={0}
-            aria-label="Join Android beta waitlist"
+            aria-label={t('testing.androidLabel')}
             onClick={() => setShowAndroidForm(true)}
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setShowAndroidForm(true); }}
             className={`group relative flex flex-col items-center gap-4 p-7 rounded-2xl border bg-surface/80 backdrop-blur-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DB38D] focus-visible:ring-offset-2 ${showAndroidForm ? 'border-[#5DB38D]/50 shadow-md' : 'border-divider/60 hover:border-[#5DB38D]/40'}`}
@@ -161,14 +157,14 @@ export default function Testing() {
 
             {/* Text */}
             <div className="text-center">
-              <p className="text-xs font-semibold uppercase tracking-widest text-text-secondary/60 mb-1">Android</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-text-secondary/60 mb-1">{t('testing.androidPlatform')}</p>
               <p className="text-lg font-bold text-primary font-[family-name:var(--font-family-heading)]">Google Play</p>
-              <p className="text-sm text-text-secondary/80 mt-1">Request an invite</p>
+              <p className="text-sm text-text-secondary/80 mt-1">{t('testing.androidCta')}</p>
             </div>
 
             {/* Invite only pill */}
             <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/30">
-              Invite only
+              {t('testing.inviteOnly')}
             </span>
           </motion.div>
         </div>
@@ -184,9 +180,9 @@ export default function Testing() {
               transition={{ duration: 0.4, ease: 'easeOut' }}
               className="w-full max-w-xl mt-6 px-7 py-6 rounded-2xl border border-[#5DB38D]/30 bg-surface/80 backdrop-blur-sm"
             >
-              <p className="text-sm font-semibold text-text-secondary/80 mb-1 uppercase tracking-widest text-center">Android beta</p>
+              <p className="text-sm font-semibold text-text-secondary/80 mb-1 uppercase tracking-widest text-center">{t('testing.androidForm.title')}</p>
               <p className="text-base text-text-secondary text-center mb-4">
-                Android testing is currently invite-only. Leave your email and we'll reach out when a spot opens up.
+                {t('testing.androidForm.description')}
               </p>
 
               {status === 'success' ? (
@@ -197,7 +193,7 @@ export default function Testing() {
                   className="flex items-center justify-center gap-3 px-5 py-3.5 rounded-2xl border bg-primary/8 border-primary/20 text-primary"
                 >
                   <CheckCircle2 size={20} className="shrink-0" aria-hidden="true" />
-                  <span className="text-base font-semibold">You're on the list! We'll invite you when Android opens.</span>
+                  <span className="text-base font-semibold">{t('testing.androidForm.success')}</span>
                 </motion.div>
               ) : status === 'duplicate' ? (
                 <motion.div
@@ -207,7 +203,7 @@ export default function Testing() {
                   className="flex items-center justify-center gap-3 px-5 py-3.5 rounded-2xl border bg-accent-gold/10 border-accent-gold/30 text-text-primary"
                 >
                   <Info size={20} className="shrink-0" aria-hidden="true" />
-                  <span className="text-base font-semibold">You're already on the list.</span>
+                  <span className="text-base font-semibold">{t('testing.androidForm.duplicate')}</span>
                 </motion.div>
               ) : (
                 <>
@@ -217,7 +213,7 @@ export default function Testing() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       onKeyDown={handleKeyDown}
-                      placeholder="your@email.com"
+                      placeholder={t('testing.androidForm.placeholder')}
                       disabled={status === 'submitting'}
                       className="flex-1 min-w-0 px-5 py-3.5 rounded-full text-base border-2 outline-none focus:ring-2 focus:ring-offset-0 transition-all duration-300 disabled:opacity-60 bg-white text-text-primary placeholder-text-secondary/50 border-divider focus:border-[#5DB38D]/50 focus:ring-[#5DB38D]/10"
                     />
@@ -229,7 +225,7 @@ export default function Testing() {
                       whileTap={status !== 'submitting' ? { scale: 0.98 } : {}}
                       className="px-5 py-3.5 rounded-full font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed bg-[#5DB38D] text-white hover:bg-[#4ea07d] shadow-lg shadow-[#5DB38D]/25 hover:shadow-xl hover:shadow-[#5DB38D]/30 focus-visible:ring-[#5DB38D]"
                     >
-                      {status === 'submitting' ? 'Sending…' : 'Notify me'}
+                      {status === 'submitting' ? t('testing.androidForm.submitting') : t('testing.androidForm.cta')}
                       {status !== 'submitting' && <ArrowRight size={18} aria-hidden="true" />}
                     </motion.button>
                   </div>
@@ -247,7 +243,7 @@ export default function Testing() {
           {...fadeUp(0.36)}
           className="text-text-secondary/45 text-xs mt-8 text-center"
         >
-          This is a pre-release build. Features and design may change.
+          {t('testing.finePrint')}
         </motion.p>
       </main>
 

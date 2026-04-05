@@ -109,6 +109,33 @@
     "viewingOriginal": "You are viewing the original Polish version.",
     "backToTranslation": "Back to English"
   },
+  "testing": {
+    "seoTitle": "Beta Testing — Pillo",
+    "seoDesc": "Join the Pillo beta programme. Download the app via TestFlight (iOS) or Google Play (Android).",
+    "badge": "Beta Testing",
+    "heading": "Test Pillo",
+    "headingSub": "before launch",
+    "subheading": "You're invited to try the early version of Pillo. Choose your platform below and help us shape the app.",
+    "iosLabel": "Download via TestFlight for iOS",
+    "iosPlatform": "iOS",
+    "iosCta": "Tap to open TestFlight",
+    "androidLabel": "Join Android beta waitlist",
+    "androidPlatform": "Android",
+    "androidCta": "Request an invite",
+    "inviteOnly": "Invite only",
+    "finePrint": "This is a pre-release build. Features and design may change.",
+    "androidForm": {
+      "title": "Android beta",
+      "description": "Android testing is currently invite-only. Leave your email and we'll reach out when a spot opens up.",
+      "placeholder": "your@email.com",
+      "submitting": "Sending…",
+      "cta": "Notify me",
+      "success": "You're on the list! We'll invite you when Android opens.",
+      "duplicate": "You're already on the list.",
+      "invalidEmail": "Please enter a valid email address.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
   "download": {
     "available": "Available for free",
     "headline": "Take care of yourself",
